@@ -408,32 +408,80 @@ class PDFManager:
         pdf = PremiumReportPDF()
         pdf.add_page()
         
+        # TITLE
         pdf.set_font('Arial', 'B', 16)
         pdf.set_text_color(44, 62, 80)
-        pdf.cell(0, 10, f"MANUAL: {self.app.current_model_name.upper()}", 0, 1, 'C')
+        pdf.cell(0, 10, "MANUAL DE USUARIO E INSTRUCCIONES DEL SOFTWARE", 0, 1, 'C')
         pdf.ln(5)
         
         pdf.set_font('Arial', '', 11)
         pdf.set_text_color(80, 80, 80)
-        pdf.cell(0, 6, "Tamano del origami: 15x15 cm", 0, 1, 'C')
+        pdf.cell(0, 6, "Software: CronoGrulla - Ingenieria de Metodos", 0, 1, 'C')
         pdf.cell(0, 6, "Autores (Ingenieros Industriales): David Santiago Castelblanco Artunduaga (5201057)", 0, 1, 'C')
         pdf.cell(0, 6, "Juan Diego Escobar Duarte (5200969) | Laura Vanessa Cespedes Acosta (5200901)", 0, 1, 'C')
         pdf.ln(8)
         
-        pdf.set_font('Arial', 'I', 11)
-        pdf.cell(0, 8, f"Procedimiento de {len(self.app.ACTIVITIES)} pasos para manufactura.", 0, 1, 'C')
+        # 1. EXPLICACION DEL PROGRAMA
+        pdf.set_font('Arial', 'B', 14)
+        pdf.set_text_color(52, 152, 219)
+        pdf.cell(0, 8, "1. Descripcion del Software", 0, 1, 'L')
+        pdf.set_font('Arial', '', 11)
+        pdf.set_text_color(0, 0, 0)
+        desc_software = (
+            "CronoGrulla es un software de escritorio desarrollado para apoyar los estudios de tiempos y "
+            "analisis de metodos, con un enfoque en el balanceo de lineas de produccion. El programa "
+            "documenta, cronometra y evalua el rendimiento de operarios en procesos estandarizados.\n\n"
+            "Modulos Principales de la Aplicacion:\n\n"
+            " - Dashboard: Es el panel resumen de control. Muestra metricas generales como los ciclos "
+            "completados de todos los modelos, el tiempo promedio general de produccion y la cantidad "
+            "de operarios activos en la linea.\n\n"
+            " - Modelos Origami: Es el administrador de ensambles. Aqui se pueden crear nuevas 'recetas' "
+            "o listados de pasos para diferentes productos (por defecto incluye la Grulla Clasica). Permite editar "
+            "instrucciones personalizadas y visualizar PDFs de referencia adjuntos.\n\n"
+            " - Equipo y Tareas: Este modulo distribuye equitativamente (balancea) los pasos de manufactura "
+            "segun la cantidad de trabajadores definidos para la celula de trabajo actuando como un configurador de turnos.\n\n"
+            " - Cronometrar: Es el cronometro en tiempo real que dicta las pautas y asiste paso a paso en "
+            "la produccion indicando que operario debe actuar en base al balanceo previo. Ademas, permite "
+            "reportar defectos o incidencias de calidad justo despues de cada tarea.\n\n"
+            " - Datos y Tabla: Muestra la bitacora de recoleccion en forma de matriz, listando los tiempos "
+            "en segundos de todas las tareas a lo largo de los ciclos registrados para auditar posteriormente.\n\n"
+            " - Estadisticas: Grafica visualmente las metricas derivadas de los tiempos guardados "
+            "mostrando claramente cuales tareas se demoran mas (cuellos de botella por operacion)."
+        ).encode('latin-1', 'replace').decode('latin-1')
+        pdf.multi_cell(0, 6, desc_software, 0, 'J')
         pdf.ln(8)
+
+        # 2. MODELOS REGISTRADOS
+        pdf.add_page()
+        pdf.set_font('Arial', 'B', 14)
+        pdf.set_text_color(52, 152, 219)
+        pdf.cell(0, 8, "2. Instructivo de Manufactura (Modelos)", 0, 1, 'L')
+        pdf.ln(4)
         
-        for idx in range(len(self.app.ACTIVITIES)):
+        pdf.set_text_color(0, 0, 0)
+        
+        for model_name, model_info in self.app.models.items():
             pdf.set_font('Arial', 'B', 12)
-            pdf.set_text_color(52, 152, 219)
-            clean_act = self.app.ACTIVITIES[idx].encode('latin-1', 'replace').decode('latin-1')
-            pdf.cell(0, 8, clean_act, 0, 1, 'L')
+            pdf.set_fill_color(220, 230, 240)
+            clean_name = model_name.encode('latin-1', 'replace').decode('latin-1')
+            pdf.cell(0, 8, f" MODELO: {clean_name}", 0, 1, 'L', True)
+            pdf.ln(2)
             
-            pdf.set_font('Arial', '', 11)
-            pdf.set_text_color(0, 0, 0)
-            clean_desc = self.app.FULL_DESCRIPTIONS[idx].encode('latin-1', 'replace').decode('latin-1')
-            pdf.multi_cell(0, 6, clean_desc, 0, 'J')
+            acts = model_info.get("activities", [])
+            descs = model_info.get("descriptions", [])
+            
+            for idx in range(len(acts)):
+                pdf.set_font('Arial', 'B', 10)
+                pdf.set_text_color(44, 62, 80)
+                clean_act = acts[idx].encode('latin-1', 'replace').decode('latin-1')
+                pdf.cell(0, 6, f"{idx+1}. {clean_act}", 0, 1, 'L')
+                
+                pdf.set_font('Arial', '', 10)
+                pdf.set_text_color(0, 0, 0)
+                clean_desc = descs[idx].encode('latin-1', 'replace').decode('latin-1')
+                pdf.set_x(15)
+                pdf.multi_cell(0, 5, clean_desc, 0, 'J')
+                pdf.ln(2)
             pdf.ln(5)
             
         try:
