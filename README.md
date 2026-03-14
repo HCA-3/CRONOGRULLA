@@ -17,10 +17,29 @@ La aplicación ha sido reescrita en los siguientes archivos y carpetas (arquitec
 - `views/view_tables.py`: Matrices en tabla para ver las mediciones tomadas agrupadas por ciclos.
 - `views/view_stats.py`: Gráficos de barras que visualizan promedios y posibles cuellos de botella por estación de trabajo.
 
-## Cómo Ejecutar
-Asegúrate de tener instaladas las dependencias:
+## Cómo Ejecutar (Ejecutable e Instalador)
+
+Para facilitar su uso sin necesidad de Python ni consola de comandos, hemos creado un ejecutable y un instalador para Windows.
+
+### 1. Opción de Instalador Automático
+Puedes distribuir el archivo `Instalador_CronoGrulla.zip` ubicado en la carpeta `dist`. Dile a los usuarios que:
+1. Extraigan el archivo zip (`Clic derecho -> Extraer todo...`).
+2. Hagan doble clic sobre `install.bat`.
+3. ¡Listo! El instalador creará un acceso directo de CronoGrulla directamente en su Escritorio, enlazado de forma oculta y segura.
+
+### 2. Opción de Ejecutable (Archivo Único)
+Si prefieres no instalar nada, puedes utilizar directamente el archivo `.exe`:
+1. Ve a la carpeta `dist` en los archivos originales.
+2. Copia el archivo `CronoGrulla.exe` a tu Escritorio o donde prefieras.
+3. Ábrelo con doble clic.
+
+> **⚠️ Nota de Datos:** Si ya tenías datos guardados sobre tus operarios, tiempos y modelos, no olvides colocar el archivo `craneflow_data.json` en la misma ubicación donde pegues o instales tu ejecutable para que retome tus datos anteriores. De otra forma, el programa iniciará limpio.
+
+## Cómo Ejecutar (Desde Código Fuente)
+
+Si eres desarrollador, asegúrate de tener instaladas las dependencias:
 ```bash
-pip install customtkinter fpdf matplotlib numpy
+pip install -r requirements.txt
 ```
 
 Simplemente ejecuta:
@@ -28,4 +47,4 @@ Simplemente ejecuta:
 python main.py
 ```
 
-Sus archivos de datos y guías adjuntas se mantendrán sincronizados en la misma ubicación que el script principal.
+Sus archivos de datos y guías adjuntas se mantendrán sincronizados en la misma ubicación que el ejecutable o script principal.
