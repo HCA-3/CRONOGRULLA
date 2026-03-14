@@ -1,0 +1,2289 @@
+{
+    "operators": [
+        "diego",
+        "david",
+        "laura"
+    ],
+    "measurements": [
+        {
+            "cycle_id": 1,
+            "timestamp": "2026-03-11 16:50",
+            "total_time": 262.03,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "diego",
+                    "duration": 30.95,
+                    "observation": "Falta de concentración"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "diego",
+                    "duration": 16.28,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "diego",
+                    "duration": 37.8,
+                    "observation": "Falta de concentración"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "diego",
+                    "duration": 17.8,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "david",
+                    "duration": 7.35,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "david",
+                    "duration": 3.21,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "david",
+                    "duration": 4.08,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "david",
+                    "duration": 37.69,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "laura",
+                    "duration": 15.95,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "laura",
+                    "duration": 5.7,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "laura",
+                    "duration": 35.62,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "laura",
+                    "duration": 27.1,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 2,
+            "timestamp": "2026-03-11 16:55",
+            "total_time": 210.12,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "diego",
+                    "duration": 17.39,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "diego",
+                    "duration": 13.61,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "diego",
+                    "duration": 14.53,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "diego",
+                    "duration": 20.3,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "david",
+                    "duration": 2.88,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "david",
+                    "duration": 2.36,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "david",
+                    "duration": 34.83,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "david",
+                    "duration": 3.64,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "laura",
+                    "duration": 18.99,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "laura",
+                    "duration": 6.14,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "laura",
+                    "duration": 6.13,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "laura",
+                    "duration": 45.1,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 3,
+            "timestamp": "2026-03-11 16:58",
+            "total_time": 214.63,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "diego",
+                    "duration": 19.59,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "diego",
+                    "duration": 13.31,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "diego",
+                    "duration": 37.14,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "diego",
+                    "duration": 2.07,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "david",
+                    "duration": 5.2,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "david",
+                    "duration": 3.3,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "david",
+                    "duration": 21.78,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "david",
+                    "duration": 23.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "laura",
+                    "duration": 6.21,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "laura",
+                    "duration": 15.45,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "laura",
+                    "duration": 27.18,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "laura",
+                    "duration": 20.76,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 4,
+            "timestamp": "2026-03-11 17:01",
+            "total_time": 169.68,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "diego",
+                    "duration": 21.89,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "diego",
+                    "duration": 12.08,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "diego",
+                    "duration": 10.07,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "diego",
+                    "duration": 14.79,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "david",
+                    "duration": 2.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "david",
+                    "duration": 4.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "david",
+                    "duration": 22.27,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "david",
+                    "duration": 10.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "laura",
+                    "duration": 8.88,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "laura",
+                    "duration": 7.61,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "laura",
+                    "duration": 14.96,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "laura",
+                    "duration": 15.92,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 5,
+            "timestamp": "2026-03-11 17:04",
+            "total_time": 165.79,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "diego",
+                    "duration": 7.31,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "diego",
+                    "duration": 2.44,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "diego",
+                    "duration": 1.69,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "diego",
+                    "duration": 2.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "david",
+                    "duration": 6.81,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "david",
+                    "duration": 3.92,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "david",
+                    "duration": 13.92,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "david",
+                    "duration": 3.79,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "laura",
+                    "duration": 4.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "laura",
+                    "duration": 2.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "laura",
+                    "duration": 1.44,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "laura",
+                    "duration": 1.52,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 6,
+            "timestamp": "2026-03-11 17:19",
+            "total_time": 215.99,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "david",
+                    "duration": 20.63,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "david",
+                    "duration": 5.04,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "david",
+                    "duration": 2.58,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "david",
+                    "duration": 3.98,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "laura",
+                    "duration": 5.57,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "laura",
+                    "duration": 5.72,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "laura",
+                    "duration": 17.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "laura",
+                    "duration": 4.77,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "diego",
+                    "duration": 8.5,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "diego",
+                    "duration": 4.93,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "diego",
+                    "duration": 2.18,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "diego",
+                    "duration": 11.02,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 7,
+            "timestamp": "2026-03-11 17:22",
+            "total_time": 199.66,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "david",
+                    "duration": 9.58,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "david",
+                    "duration": 1.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "david",
+                    "duration": 1.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "david",
+                    "duration": 1.89,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "laura",
+                    "duration": 27.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "laura",
+                    "duration": 5.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "laura",
+                    "duration": 1.52,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "laura",
+                    "duration": 4.46,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "diego",
+                    "duration": 22.4,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "diego",
+                    "duration": 7.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "diego",
+                    "duration": 1.17,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "diego",
+                    "duration": 2.75,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 8,
+            "timestamp": "2026-03-11 17:26",
+            "total_time": 191.2,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "david",
+                    "duration": 3.01,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "david",
+                    "duration": 2.09,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "david",
+                    "duration": 2.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "david",
+                    "duration": 3.09,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "laura",
+                    "duration": 2.26,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "laura",
+                    "duration": 6.86,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "laura",
+                    "duration": 11.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "laura",
+                    "duration": 3.98,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "diego",
+                    "duration": 22.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "diego",
+                    "duration": 4.71,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "diego",
+                    "duration": 0.86,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "diego",
+                    "duration": 1.03,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 9,
+            "timestamp": "2026-03-11 17:29",
+            "total_time": 184.17,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "david",
+                    "duration": 1.59,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "david",
+                    "duration": 1.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "david",
+                    "duration": 1.82,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "david",
+                    "duration": 1.49,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "laura",
+                    "duration": 8.27,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "laura",
+                    "duration": 5.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "laura",
+                    "duration": 4.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "laura",
+                    "duration": 1.95,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "diego",
+                    "duration": 11.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "diego",
+                    "duration": 1.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "diego",
+                    "duration": 2.21,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "diego",
+                    "duration": 1.05,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 10,
+            "timestamp": "2026-03-11 17:33",
+            "total_time": 201.61,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "david",
+                    "duration": 7.85,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "david",
+                    "duration": 1.78,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "david",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "david",
+                    "duration": 2.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "laura",
+                    "duration": 11.55,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "laura",
+                    "duration": 1.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "laura",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "laura",
+                    "duration": 1.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "diego",
+                    "duration": 5.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "diego",
+                    "duration": 1.9,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "diego",
+                    "duration": 0.95,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "diego",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 11,
+            "timestamp": "2026-03-11 17:37",
+            "total_time": 205.62,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "laura",
+                    "duration": 7.88,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "laura",
+                    "duration": 1.46,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "laura",
+                    "duration": 1.59,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "laura",
+                    "duration": 3.28,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "diego",
+                    "duration": 4.51,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "diego",
+                    "duration": 4.31,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "diego",
+                    "duration": 1.47,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "diego",
+                    "duration": 2.71,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "david",
+                    "duration": 1.98,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "david",
+                    "duration": 1.58,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "david",
+                    "duration": 0.86,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "david",
+                    "duration": 0.93,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 12,
+            "timestamp": "2026-03-11 17:42",
+            "total_time": 233.8,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "laura",
+                    "duration": 1.54,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "laura",
+                    "duration": 2.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "laura",
+                    "duration": 0.82,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "laura",
+                    "duration": 1.52,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "diego",
+                    "duration": 7.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "diego",
+                    "duration": 3.32,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "diego",
+                    "duration": 13.17,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "diego",
+                    "duration": 1.5,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "david",
+                    "duration": 3.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "david",
+                    "duration": 3.67,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "david",
+                    "duration": 0.67,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "david",
+                    "duration": 1.76,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 13,
+            "timestamp": "2026-03-11 17:45",
+            "total_time": 190.53,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "laura",
+                    "duration": 3.2,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "laura",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "laura",
+                    "duration": 1.68,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "laura",
+                    "duration": 2.56,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "diego",
+                    "duration": 2.44,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "diego",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "diego",
+                    "duration": 1.54,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "diego",
+                    "duration": 2.4,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "david",
+                    "duration": 1.5,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "david",
+                    "duration": 1.11,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "david",
+                    "duration": 0.9,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "david",
+                    "duration": 0.86,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 14,
+            "timestamp": "2026-03-11 17:49",
+            "total_time": 187.46,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "laura",
+                    "duration": 17.48,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "laura",
+                    "duration": 1.73,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "laura",
+                    "duration": 1.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "laura",
+                    "duration": 1.5,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "diego",
+                    "duration": 1.41,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "diego",
+                    "duration": 1.89,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "diego",
+                    "duration": 1.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "diego",
+                    "duration": 11.73,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "david",
+                    "duration": 1.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "david",
+                    "duration": 1.26,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "david",
+                    "duration": 2.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "david",
+                    "duration": 1.08,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 15,
+            "timestamp": "2026-03-11 17:53",
+            "total_time": 195.46,
+            "splits": [
+                {
+                    "activity": "Paso 1: Diagonal y mitad",
+                    "operator": "laura",
+                    "duration": 13.71,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 2: Pliegues cruzados",
+                    "operator": "laura",
+                    "duration": 1.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 3: Juntar esquinas (Base)",
+                    "operator": "laura",
+                    "duration": 3.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 4: Marcar solapas",
+                    "operator": "laura",
+                    "duration": 1.86,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 5: Marcar punta superior",
+                    "operator": "diego",
+                    "duration": 2.02,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 6: Abrir solapa superior",
+                    "operator": "diego",
+                    "duration": 0.88,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 7: Repetir cara posterior",
+                    "operator": "diego",
+                    "duration": 1.31,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 8: Solapas al centro",
+                    "operator": "diego",
+                    "duration": 2.72,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 9: Repetir lado opuesto",
+                    "operator": "david",
+                    "duration": 1.27,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 10: Marcar patas inf.",
+                    "operator": "david",
+                    "duration": 0.92,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 11: Pliegue invertido",
+                    "operator": "david",
+                    "duration": 0.68,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Paso 12: Cabeza y alas",
+                    "operator": "david",
+                    "duration": 2.66,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 16,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 12:14",
+            "total_time": 140.15,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "laura",
+                    "duration": 0.99,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "laura",
+                    "duration": 2.28,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "laura",
+                    "duration": 1.41,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "laura",
+                    "duration": 1.45,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "diego",
+                    "duration": 1.28,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "diego",
+                    "duration": 5.63,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "diego",
+                    "duration": 0.99,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "diego",
+                    "duration": 1.78,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "david",
+                    "duration": 1.8,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "david",
+                    "duration": 1.2,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 17,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 12:18",
+            "total_time": 164.08,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "laura",
+                    "duration": 1.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "laura",
+                    "duration": 4.71,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "laura",
+                    "duration": 1.61,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "laura",
+                    "duration": 1.35,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "diego",
+                    "duration": 1.67,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "diego",
+                    "duration": 2.49,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "diego",
+                    "duration": 3.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "diego",
+                    "duration": 1.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "david",
+                    "duration": 1.52,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "david",
+                    "duration": 1.29,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 18,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 12:21",
+            "total_time": 148.0,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "laura",
+                    "duration": 0.82,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "laura",
+                    "duration": 1.6,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "laura",
+                    "duration": 1.62,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "laura",
+                    "duration": 1.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "diego",
+                    "duration": 0.9,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "diego",
+                    "duration": 1.01,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "diego",
+                    "duration": 1.3,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "diego",
+                    "duration": 1.2,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "david",
+                    "duration": 1.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "david",
+                    "duration": 3.08,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 19,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 12:23",
+            "total_time": 153.37,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "laura",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "laura",
+                    "duration": 0.93,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "laura",
+                    "duration": 1.14,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "laura",
+                    "duration": 1.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "diego",
+                    "duration": 0.85,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "diego",
+                    "duration": 7.57,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "diego",
+                    "duration": 1.39,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "diego",
+                    "duration": 1.13,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "david",
+                    "duration": 1.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "david",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 20,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 12:26",
+            "total_time": 140.47,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "laura",
+                    "duration": 1.02,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "laura",
+                    "duration": 0.95,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "laura",
+                    "duration": 3.04,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "laura",
+                    "duration": 1.42,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "diego",
+                    "duration": 5.02,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "diego",
+                    "duration": 2.91,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "diego",
+                    "duration": 1.17,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "diego",
+                    "duration": 1.57,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "david",
+                    "duration": 2.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "david",
+                    "duration": 0.94,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 21,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:12",
+            "total_time": 135.07,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "david",
+                    "duration": 0.93,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "david",
+                    "duration": 1.92,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "david",
+                    "duration": 1.16,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "david",
+                    "duration": 1.21,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "laura",
+                    "duration": 2.93,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "laura",
+                    "duration": 1.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "laura",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "laura",
+                    "duration": 1.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "diego",
+                    "duration": 3.69,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "diego",
+                    "duration": 0.95,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 22,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:15",
+            "total_time": 140.26,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "david",
+                    "duration": 2.7,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "david",
+                    "duration": 1.16,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "david",
+                    "duration": 1.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "david",
+                    "duration": 1.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "laura",
+                    "duration": 1.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "laura",
+                    "duration": 1.56,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "laura",
+                    "duration": 3.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "laura",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "diego",
+                    "duration": 1.02,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "diego",
+                    "duration": 2.23,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 23,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:17",
+            "total_time": 132.72,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "david",
+                    "duration": 1.26,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "david",
+                    "duration": 0.93,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "david",
+                    "duration": 1.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "david",
+                    "duration": 1.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "laura",
+                    "duration": 1.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "laura",
+                    "duration": 1.55,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "laura",
+                    "duration": 1.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "laura",
+                    "duration": 1.55,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "diego",
+                    "duration": 1.1,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "diego",
+                    "duration": 1.02,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 24,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:21",
+            "total_time": 134.23,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "david",
+                    "duration": 1.43,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "david",
+                    "duration": 0.79,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "david",
+                    "duration": 1.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "david",
+                    "duration": 1.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "laura",
+                    "duration": 1.43,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "laura",
+                    "duration": 1.53,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "laura",
+                    "duration": 1.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "laura",
+                    "duration": 1.18,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "diego",
+                    "duration": 0.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "diego",
+                    "duration": 1.63,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 25,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:24",
+            "total_time": 133.6,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "david",
+                    "duration": 3.7,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "david",
+                    "duration": 1.74,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "david",
+                    "duration": 1.01,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "david",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "laura",
+                    "duration": 1.42,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "laura",
+                    "duration": 1.47,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "laura",
+                    "duration": 5.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "laura",
+                    "duration": 21.13,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "diego",
+                    "duration": 1.12,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "diego",
+                    "duration": 9.68,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 26,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:27",
+            "total_time": 134.63,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "diego",
+                    "duration": 2.86,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "diego",
+                    "duration": 1.53,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "diego",
+                    "duration": 1.39,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "diego",
+                    "duration": 1.49,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "david",
+                    "duration": 2.05,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "david",
+                    "duration": 1.79,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "david",
+                    "duration": 1.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "david",
+                    "duration": 2.87,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "laura",
+                    "duration": 1.16,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "laura",
+                    "duration": 1.28,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 27,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:30",
+            "total_time": 143.05,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "diego",
+                    "duration": 1.13,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "diego",
+                    "duration": 1.57,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "diego",
+                    "duration": 1.11,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "diego",
+                    "duration": 1.1,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "david",
+                    "duration": 1.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "david",
+                    "duration": 1.49,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "david",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "david",
+                    "duration": 1.22,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "laura",
+                    "duration": 0.98,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "laura",
+                    "duration": 5.17,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 28,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:33",
+            "total_time": 146.07,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "diego",
+                    "duration": 2.5,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "diego",
+                    "duration": 0.96,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "diego",
+                    "duration": 1.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "diego",
+                    "duration": 1.09,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "david",
+                    "duration": 7.13,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "david",
+                    "duration": 1.61,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "david",
+                    "duration": 1.1,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "david",
+                    "duration": 1.34,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "laura",
+                    "duration": 1.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "laura",
+                    "duration": 1.1,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 29,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:35",
+            "total_time": 139.05,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "diego",
+                    "duration": 2.92,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "diego",
+                    "duration": 0.9,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "diego",
+                    "duration": 1.35,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "diego",
+                    "duration": 17.27,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "david",
+                    "duration": 1.0,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "david",
+                    "duration": 1.38,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "david",
+                    "duration": 1.27,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "david",
+                    "duration": 1.05,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "laura",
+                    "duration": 0.85,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "laura",
+                    "duration": 1.43,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 30,
+            "model": "Grulla Tipo I  Laura",
+            "timestamp": "2026-03-13 17:38",
+            "total_time": 129.25,
+            "splits": [
+                {
+                    "activity": "Posición inicial",
+                    "operator": "diego",
+                    "duration": 1.1,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Doblar en diagonal",
+                    "operator": "diego",
+                    "duration": 0.62,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Segundo doblez",
+                    "operator": "diego",
+                    "duration": 0.74,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la base",
+                    "operator": "diego",
+                    "duration": 1.99,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir del otro lado",
+                    "operator": "david",
+                    "duration": 0.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar una especie de pentágono",
+                    "operator": "david",
+                    "duration": 1.19,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuerpo",
+                    "operator": "david",
+                    "duration": 0.91,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar el cuello",
+                    "operator": "david",
+                    "duration": 1.3,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Formar la cabeza",
+                    "operator": "laura",
+                    "duration": 1.14,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Ajustar la figura",
+                    "operator": "laura",
+                    "duration": 0.9,
+                    "observation": "Normal"
+                }
+            ]
+        }
+    ],
+    "line_config": {
+        "0": "diego",
+        "1": "diego",
+        "2": "diego",
+        "3": "diego",
+        "4": "david",
+        "5": "david",
+        "6": "david",
+        "7": "david",
+        "8": "laura",
+        "9": "laura",
+        "10": "laura",
+        "11": "laura"
+    },
+    "models": {
+        "Grulla Clásica": {
+            "activities": [
+                "Paso 1: Diagonal y mitad",
+                "Paso 2: Pliegues cruzados",
+                "Paso 3: Juntar esquinas (Base)",
+                "Paso 4: Marcar solapas",
+                "Paso 5: Marcar punta superior",
+                "Paso 6: Abrir solapa superior",
+                "Paso 7: Repetir cara posterior",
+                "Paso 8: Solapas al centro",
+                "Paso 9: Repetir lado opuesto",
+                "Paso 10: Marcar patas inf.",
+                "Paso 11: Pliegue invertido",
+                "Paso 12: Cabeza y alas"
+            ],
+            "descriptions": [
+                "Coloca el papel cuadrado con el color hacia arriba, dobla la esquina superior hacia la inferior para marcar la diagonal, desdobla y luego dobla el papel por la mitad lateralmente.",
+                "Da la vuelta al papel para que el lado blanco quede hacia arriba, dobla por la mitad en una dirección, marca el pliegue, desdobla y repite en la otra dirección.",
+                "Usando los pliegues realizados, junta las 3 esquinas superiores hacia la esquina inferior y alisa el modelo.",
+                "Dobla las solapas triangulares de los lados hacia el centro y luego desdóblalas para dejar la marca.",
+                "Dobla la punta superior del modelo hacia abajo, marca con fuerza la plegadura y vuelve a desdoblar.",
+                "Abre la solapa superior llevándola hacia arriba mientras presionas los laterales hacia el interior hasta que quede liso.",
+                "Voltea el modelo y repite exactamente los pasos 4, 5 y 6 en la cara posterior.",
+                "Dobla las solapas exteriores (las capas superiores) hacia la línea central.",
+                "Repite el mismo doblez de las solapas en el lado opuesto del modelo.",
+                "Dobla ambas 'patas' inferiores hacia arriba para marcar la posición, presiona bien y luego desdóblalas.",
+                "Realiza un pliegue invertido hacia adentro (por el revés) para situar las 'patas' en la posición de la marca que hiciste antes.",
+                "Realiza otro pliegue invertido en el extremo de una de las puntas para formar la cabeza y finalmente dobla las alas hacia abajo."
+            ],
+            "pdf_guide": "guias_pdf\\Grulla_Clásica.pdf"
+        },
+        "Grulla Tipo I  Laura": {
+            "activities": [
+                "Posición inicial",
+                "Doblar en diagonal",
+                "Segundo doblez",
+                "Formar la base",
+                "Repetir del otro lado",
+                "Formar una especie de pentágono",
+                "Formar el cuerpo",
+                "Formar el cuello",
+                "Formar la cabeza",
+                "Ajustar la figura"
+            ],
+            "descriptions": [
+                "Colocar la hoja de papel cuadrada sobre la mesa. El lado de color debe quedar hacia arriba.",
+                "Doblar el papel formando un triángulo y procurar marcar bien cada doblez",
+                "Doblar nuevamente el triángulo por la mitad para formar un triángulo más pequeño.",
+                "Desdoblar ese último doblez para quedar con el triángulo del Paso 2. Con la punta del triángulo hacia arriba doblar el vértice del lado derecho de modo de que toque la línea de la mitad marcada por el doblez del paso 3",
+                "Repetir el mismo doblez de la parte izquierda, para obtener una figura alargada conocida como base de cometa",
+                "Con la punta más larga hacia arriba, llevarla hasta la mitad poniendo su vértice en la línea de la mitad, de modo que en la parte superior se forme un triángulo miniatura",
+                "Girar la figura hacia la izquierda, de modo que quede el triángulo en la mano izquierda y la apertura hacia la mano derecha para luego doblar a la mitad por la línea que tiene el mismo triángulo",
+                "Doblar el triángulo de modo que se forme un ángulo de casi 90° con el cuerpo",
+                "Con la parte pequeña formada en el paso 8, doblar la punta hacia abajo de modo que se haga un triángulo más pequeño y aplastando la cabeza hacia el cuello",
+                "Separar suavemente las alas para que la grulla quede formada"
+            ],
+            "pdf_guide": "guias_pdf\\Grulla_Tipo_I__Laura.pdf"
+        }
+    },
+    "current_model": "Grulla Tipo I  Laura"
+}
