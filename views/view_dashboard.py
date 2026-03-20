@@ -37,6 +37,11 @@ class DashboardView(ctk.CTkFrame):
                   "• Puedes registrar observaciones de calidad finalizado cada paso si ocurre un contratiempo.")
         ctk.CTkLabel(banner, text=b_text, font=ctk.CTkFont(size=14), justify="left", text_color=("#0c5460", "#e2e8f0")).pack(pady=(0, 15), padx=20, anchor="w")
 
+        # Footer de Créditos
+        footer_label = ctk.CTkLabel(self, text="Desarrollado por: Ing. David C. | Ing. Juan E. | Ing. Laura C.", 
+                                   font=ctk.CTkFont(size=11, slant="italic"), text_color="gray")
+        footer_label.pack(side="bottom", pady=10)
+
     def create_info_card(self, parent, title, value, icon, col, colors):
         card = ctk.CTkFrame(parent, corner_radius=15, fg_color=colors[1])
         card.grid(row=0, column=col, padx=10, sticky="nsew", ipady=20)

@@ -12,6 +12,7 @@ from views.view_operators import OperatorsView
 from views.view_timer import TimerView
 from views.view_tables import TablesView
 from views.view_stats import StatsView
+from views.view_info import InfoView
 from utils.pdf_report import PDFManager
 
 # Configuración de apariencia Premium
@@ -125,38 +126,74 @@ class CraneFlowApp(ctk.CTk):
         # Barra lateral moderna
         self.sidebar = ctk.CTkFrame(self, width=220, corner_radius=0, fg_color=("#2c3e50", "#1a242f"))
         self.sidebar.grid(row=0, column=0, sticky="nsew")
-        self.sidebar.grid_rowconfigure(7, weight=1)
 
         self.logo_label = ctk.CTkLabel(self.sidebar, text="🏗️ CronoGrulla", font=ctk.CTkFont(size=24, weight="bold", family="Helvetica"))
-        self.logo_label.grid(row=0, column=0, padx=20, pady=(30, 20))
+        self.logo_label.pack(pady=(30, 20), padx=20)
 
-        # Botones de navegación
+        # Frame con desplazamiento para botones para evitar encimamiento
+        self.scroll_sidebar = ctk.CTkScrollableFrame(self.sidebar, fg_color="transparent", corner_radius=0)
+        self.scroll_sidebar.pack(fill="both", expand=True, padx=5)
+
+        # --- SECCIÓN: MÓDULOS DE TRABAJO ---
+        ctk.CTkLabel(self.scroll_sidebar, text="🔹 MÓDULOS DE TRABAJO", 
+                    font=ctk.CTkFont(size=11, weight="bold"), text_color="#3498db").pack(pady=(10, 5), padx=20, anchor="w")
+
         nav_buttons = [
             ("📊 Dashboard", self.show_dashboard),
             ("✨ Modelos Origami", self.show_models_panel),
             ("⏱️ Cronometrar", self.show_timer),
             ("📋 Datos y Tabla", self.show_tables),
             ("👥 Equipo y Tareas", self.show_operators_setup),
-            ("📈 Estadísticas", self.show_stats)
+            ("📈 Estadísticas", self.show_stats),
+            ("ℹ️ Info. Proyecto", self.show_info)
         ]
 
         self.nav_btns = []
-        for i, (text, cmd) in enumerate(nav_buttons):
-            btn = ctk.CTkButton(self.sidebar, text=text, anchor="w", fg_color="transparent", 
-                                text_color=("white", "#c9d1d9"), font=ctk.CTkFont(size=15),
+        for text, cmd in nav_buttons:
+            btn = ctk.CTkButton(self.scroll_sidebar, text=text, anchor="w", fg_color="transparent", 
+                                text_color=("white", "#c9d1d9"), font=ctk.CTkFont(size=14),
                                 hover_color=("#34495e", "#2c3e50"), command=cmd)
-            btn.grid(row=i+1, column=0, padx=20, pady=10, sticky="ew")
+            btn.pack(padx=10, pady=3, fill="x")
             self.nav_btns.append(btn)
 
-        self.btn_pdf_instructions = ctk.CTkButton(self.sidebar, text="📘 Exportar Manual Instrucciones", 
-                                     fg_color=("#3498db", "#2980b9"), hover_color=("#2980b9", "#3498db"),
-                                     font=ctk.CTkFont(size=14, weight="bold"), command=self.pdf_manager.generate_instructions_pdf)
-        self.btn_pdf_instructions.grid(row=8, column=0, padx=20, pady=(20, 0), sticky="ew")
+        # --- SECCIÓN: EXPORTACIÓN Y REPORTES ---
+        ctk.CTkLabel(self.scroll_sidebar, text="📄 REPORTES Y ENTREGABLES", 
+                    font=ctk.CTkFont(size=11, weight="bold"), text_color="#27ae60").pack(pady=(20, 5), padx=20, anchor="w")
 
-        self.btn_pdf = ctk.CTkButton(self.sidebar, text="📄 Exportar Informe PDF", 
-                                     fg_color=("#27ae60", "#219653"), hover_color=("#2ecc71", "#27ae60"),
-                                     font=ctk.CTkFont(size=14, weight="bold"), command=self.pdf_manager.generate_pdf)
-        self.btn_pdf.grid(row=9, column=0, padx=20, pady=20, sticky="ew")
+        self.btn_source = ctk.CTkButton(self.scroll_sidebar, text="💾 Exportar Código Fuente", 
+                                       fg_color="transparent", text_color=("white", "#c9d1d9"),
+                                       font=ctk.CTkFont(size=14), anchor="w",
+                                       hover_color=("#34495e", "#2c3e50"),
+                                       command=self.pdf_manager.generate_source_code_pdf)
+        self.btn_source.pack(padx=10, pady=3, fill="x")
+
+        self.btn_summary = ctk.CTkButton(self.scroll_sidebar, text="📜 Exportar Resumen Software", 
+                                       fg_color="transparent", text_color=("white", "#c9d1d9"),
+                                       font=ctk.CTkFont(size=14), anchor="w",
+                                       hover_color=("#34495e", "#2c3e50"),
+                                       command=self.pdf_manager.generate_summary_pdf)
+        self.btn_summary.pack(padx=10, pady=3, fill="x")
+
+        self.btn_manual = ctk.CTkButton(self.scroll_sidebar, text="📘 Exportar Manual Usuario", 
+                                       fg_color=("#3498db", "#2980b9"), hover_color=("#2980b9", "#3498db"),
+                                       font=ctk.CTkFont(size=14, weight="bold"), 
+                                       command=self.pdf_manager.generate_instructions_pdf)
+        self.btn_manual.pack(padx=10, pady=(15, 5), fill="x")
+
+        self.btn_report = ctk.CTkButton(self.scroll_sidebar, text="📄 Exportar Informe PDF", 
+                                       fg_color=("#27ae60", "#219653"), hover_color=("#2ecc71", "#27ae60"),
+                                       font=ctk.CTkFont(size=14, weight="bold"), 
+                                       command=self.pdf_manager.generate_pdf)
+        self.btn_report.pack(padx=10, pady=(5, 20), fill="x")
+
+        # --- INFORMACIÓN DE GUARDADO ---
+        self.footer_sidebar = ctk.CTkFrame(self.sidebar, fg_color="transparent")
+        self.footer_sidebar.pack(side="bottom", fill="x", pady=15)
+        
+        info_label = ctk.CTkLabel(self.footer_sidebar, 
+                                 text="📂 Los archivos se guardan en la\nruta seleccionada por el usuario.",
+                                 font=ctk.CTkFont(size=11, slant="italic"), text_color="gray")
+        info_label.pack()
 
         # Contenedor Principal
         self.main_frame = ctk.CTkFrame(self, corner_radius=15, fg_color=("#ecf0f1", "#0f172a"))
@@ -194,6 +231,11 @@ class CraneFlowApp(ctk.CTk):
     def show_stats(self):
         self.clear_main_frame()
         self.current_view = StatsView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    def show_info(self):
+        self.clear_main_frame()
+        self.current_view = InfoView(self.main_frame, self)
         self.current_view.pack(fill="both", expand=True)
 
     def open_pdf_guide(self, model_name):

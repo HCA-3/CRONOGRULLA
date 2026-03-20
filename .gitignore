@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+guias_pdf/
+*.pdf
+craneflow_data.json
+main_backup.py
+debug_pdf.py
+test.pdf
+Reporte_Grullas_20260310_1330.pdf
+Reporte_Metodos_Unificado.pdf

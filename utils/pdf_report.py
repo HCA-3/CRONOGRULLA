@@ -449,13 +449,36 @@ class PDFManager:
             "mostrando claramente cuales tareas se demoran mas (cuellos de botella por operacion)."
         ).encode('latin-1', 'replace').decode('latin-1')
         pdf.multi_cell(0, 6, desc_software, 0, 'J')
+        # 3. INSTRUCCIONES DE INSTALACION
+        pdf.set_font('Arial', 'B', 14)
+        pdf.set_text_color(52, 152, 219)
+        pdf.cell(0, 8, "2. Requerimientos e Instalacion", 0, 1, 'L')
+        pdf.set_font('Arial', '', 11)
+        pdf.set_text_color(0, 0, 0)
+        
+        inst_text = (
+            "Para el correcto funcionamiento de CronoGrulla, se deben cumplir los siguientes requisitos tecnicos:\n\n"
+            " Requisitos del Sistema:\n"
+            " - Sistema Operativo: Windows 10/11, macOS o Linux.\n"
+            " - Lenguaje: Python 3.10 o superior.\n"
+            " - Librerias Necesarias: customtkinter, fpdf, matplotlib, numpy.\n\n"
+            " Pasos para la ejecucion:\n"
+            " 1. Descomprimir el paquete de software en una carpeta local.\n"
+            " 2. Abrir una terminal o consola de comandos en dicha ubicacion.\n"
+            " 3. Instalar las dependencias ejecutando: pip install -r requirements.txt\n"
+            " 4. Iniciar la aplicacion con el comando: python main.py\n\n"
+            "Nota: El software requiere permisos de escritura en su carpeta para guardar la base de datos "
+            "(craneflow_data.json) y exportar los reportes generados."
+        ).encode('latin-1', 'replace').decode('latin-1')
+        
+        pdf.multi_cell(0, 6, inst_text, 0, 'J')
         pdf.ln(8)
 
-        # 2. MODELOS REGISTRADOS
+        # 4. MODELOS REGISTRADOS
         pdf.add_page()
         pdf.set_font('Arial', 'B', 14)
         pdf.set_text_color(52, 152, 219)
-        pdf.cell(0, 8, "2. Instructivo de Manufactura (Modelos)", 0, 1, 'L')
+        pdf.cell(0, 8, "3. Instructivo de Manufactura (Modelos)", 0, 1, 'L')
         pdf.ln(4)
         
         pdf.set_text_color(0, 0, 0)
@@ -489,3 +512,157 @@ class PDFManager:
             messagebox.showinfo("Manual Exportado", f"Manual guardado exitosamente en:\n{out_path}")
         except Exception as e:
             messagebox.showerror("Error de Exportacion", f"No se pudo guardar el PDF.\n\nDetalles: {e}")
+
+    def generate_source_code_pdf(self):
+        default_filename = f"Code_CronoGrulla_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+        out_path = filedialog.asksaveasfilename(
+            defaultextension=".pdf",
+            initialfile=default_filename,
+            title="Guardar Código Fuente Como...",
+            filetypes=[("Archivos PDF", "*.pdf"), ("Todos los archivos", "*.*")]
+        )
+        
+        if not out_path:
+            return
+            
+        pdf = PremiumReportPDF()
+        
+        # Página de Título
+        pdf.add_page()
+        pdf.set_font('Arial', 'B', 22)
+        pdf.set_text_color(44, 62, 80)
+        pdf.ln(40)
+        pdf.cell(0, 20, "ANEXO: CÓDIGO FUENTE COMPLETO", 0, 1, 'C')
+        pdf.set_font('Arial', 'B', 16)
+        pdf.cell(0, 10, "Software CronoGrulla", 0, 1, 'C')
+        pdf.ln(10)
+        pdf.set_font('Arial', '', 12)
+        pdf.cell(0, 10, f"Fecha de generación: {datetime.now().strftime('%d/%m/%Y %H:%M')}", 0, 1, 'C')
+        
+        # Lista de archivos a incluir (en orden lógico)
+        files_to_include = [
+            "main.py",
+            "utils/pdf_report.py",
+            "views/view_dashboard.py",
+            "views/view_info.py",
+            "views/view_models.py",
+            "views/view_operators.py",
+            "views/view_stats.py",
+            "views/view_tables.py",
+            "views/view_timer.py"
+        ]
+        
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        
+        for rel_path in files_to_include:
+            full_path = os.path.join(base_dir, rel_path.replace("/", os.sep))
+            if not os.path.exists(full_path):
+                continue
+                
+            pdf.add_page()
+            
+            # Header del archivo
+            pdf.set_fill_color(240, 240, 240)
+            pdf.set_font('Arial', 'B', 12)
+            pdf.set_text_color(52, 152, 219)
+            pdf.cell(0, 10, f" ARCHIVO: {rel_path}", 0, 1, 'L', True)
+            pdf.ln(5)
+            
+            # Contenido del código
+            try:
+                with open(full_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Reemplazar caracteres no compatibles con latin-1
+                clean_content = content.encode('latin-1', 'replace').decode('latin-1')
+                
+                pdf.set_font('Courier', '', 8)
+                pdf.set_text_color(0, 0, 0)
+                # Usar multi_cell para el código
+                pdf.multi_cell(0, 4, clean_content)
+                
+            except Exception as e:
+                pdf.set_font('Arial', 'I', 10)
+                pdf.set_text_color(192, 57, 43)
+                pdf.cell(0, 10, f"Error al leer archivo: {e}", 0, 1)
+
+        try:
+            pdf.output(out_path)
+            messagebox.showinfo("Código Exportado", f"El código fuente se ha exportado correctamente a:\n{out_path}")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo generar el PDF del código: {e}")
+
+    def generate_summary_pdf(self):
+        default_filename = f"Resumen_CronoGrulla_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+        out_path = filedialog.asksaveasfilename(
+            defaultextension=".pdf",
+            initialfile=default_filename,
+            title="Guardar Resumen del Software Como...",
+            filetypes=[("Archivos PDF", "*.pdf"), ("Todos los archivos", "*.*")]
+        )
+        
+        if not out_path:
+            return
+            
+        pdf = PremiumReportPDF()
+        pdf.add_page()
+        
+        # TÍTULO
+        pdf.set_font('Arial', 'B', 18)
+        pdf.set_text_color(44, 62, 80)
+        pdf.cell(0, 15, "MEMORIA DESCRIPTIVA DEL SOFTWARE", 0, 1, 'C')
+        pdf.set_font('Arial', 'B', 14)
+        pdf.cell(0, 10, "Proyecto: CronoGrulla", 0, 1, 'C')
+        pdf.ln(10)
+        
+        # AUTORES
+        pdf.set_fill_color(240, 240, 240)
+        pdf.set_font('Arial', 'B', 11)
+        pdf.cell(0, 8, " Identificacion de Autores y Titulares", 0, 1, 'L', True)
+        pdf.set_font('Arial', '', 10)
+        pdf.set_text_color(0, 0, 0)
+        pdf.ln(2)
+        pdf.cell(0, 6, " - David Santiago Castelblanco Artunduaga (ID: 5201057)", 0, 1)
+        pdf.cell(0, 6, " - Juan Diego Escobar Duarte (ID: 5200969)", 0, 1)
+        pdf.cell(0, 6, " - Laura Vanessa Cespedes Acosta (ID: 5200901)", 0, 1)
+        pdf.ln(8)
+        
+        # RESUMEN EJECUTIVO
+        pdf.set_font('Arial', 'B', 11)
+        pdf.set_text_color(52, 152, 219)
+        pdf.cell(0, 8, "Resumen General del Sistema", 0, 1, 'L')
+        pdf.set_font('Arial', '', 11)
+        pdf.set_text_color(0, 0, 0)
+        
+        summary_text = (
+            "CronoGrulla es una solucion de software avanzada disenada para la optimizacion de procesos en el ambito "
+            "de la Ingenieria de Metodos. Su objetivo principal es facilitar el estudio de tiempos y movimientos, "
+            "permitiendo a los analistas capturar datos con precision, balancear lineas de produccion de manera "
+            "equitativa y generar reportes estadisticos detallados de forma automatizada.\n\n"
+            "El sistema se estructura en diversos modulos integrados que cubren el ciclo completo de un estudio de metodos. "
+            "El 'Dashboard' proporciona una vision ejecutiva del rendimiento global; el modulo de 'Modelos Origami' permite "
+            "estandarizar las hojas de operaciones y metodologias de ensamble; el gestor de 'Equipo y Tareas' implementa "
+            "algoritmos de balanceo de carga para distribuir el trabajo segun el numero de operarios disponibles; y el "
+            "'Cronometro' guiado asiste en la recoleccion de tiempos en tiempo real, integrando controles de calidad e incidencias.\n\n"
+            "Desde una perspectiva tecnica, CronoGrulla destaca por su capacidad de procesar matrices de tiempos complejas "
+            "para identificar cuellos de botella mediante visualizaciones graficas de rendimiento individual y grupal. "
+            "La herramienta no solo digitaliza la toma de tiempos tradicional, sino que añade una capa de inteligencia "
+            "analitica que calcula indicadores de eficiencia, volatilidad operativa y cumplimiento de estandares de calidad.\n\n"
+            "En resumen, CronoGrulla transforma la recoleccion de datos crudos en informacion estrategica para la toma de "
+            "decisiones, reduciendo el margen de error humano y optimizando los recursos en entornos de manufactura y "
+            "aprendizaje academico."
+        ).encode('latin-1', 'replace').decode('latin-1')
+        
+        pdf.multi_cell(0, 6, summary_text, 0, 'J')
+        
+        # FIRMA O PIE
+        pdf.ln(20)
+        pdf.set_font('Arial', 'I', 9)
+        pdf.set_text_color(100, 100, 100)
+        pdf.cell(0, 5, f"Documento generado automaticamente por el sistema CronoGrulla el {datetime.now().strftime('%d/%m/%Y')}.", 0, 1, 'C')
+
+        try:
+            pdf.output(out_path)
+            messagebox.showinfo("Resumen Exportado", f"La memoria descriptiva se ha exportado correctamente a:\n{out_path}")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo generar el PDF del resumen: {e}")
