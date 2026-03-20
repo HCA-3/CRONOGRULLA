@@ -205,7 +205,8 @@ class PDFManager:
             plt.ylabel('Segundos')
             plt.tight_layout()
             
-            tmp_img = os.path.join(tempfile.gettempdir(), f"graph_{m_name}.png")
+            safe_m_name = "".join([c if c.isalnum() else "_" for c in m_name])
+            tmp_img = os.path.join(tempfile.gettempdir(), f"graph_{safe_m_name}.png")
             plt.savefig(tmp_img)
             plt.close()
             pdf.ln(5)
@@ -251,7 +252,8 @@ class PDFManager:
             plt.grid(axis='y', linestyle='--', alpha=0.7)
             plt.tight_layout()
             
-            tmp_op_img = os.path.join(tempfile.gettempdir(), f"op_graph_{m_name}.png")
+            safe_m_name = "".join([c if c.isalnum() else "_" for c in m_name])
+            tmp_op_img = os.path.join(tempfile.gettempdir(), f"op_graph_{safe_m_name}.png")
             plt.savefig(tmp_op_img)
             plt.close()
             
@@ -349,7 +351,8 @@ class PDFManager:
                     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
                     plt.tight_layout()
                     
-                    grafica_errores_path = os.path.join(tempfile.gettempdir(), f"err_{m_name}.png")
+                    safe_m_name = "".join([c if c.isalnum() else "_" for c in m_name])
+                    grafica_errores_path = os.path.join(tempfile.gettempdir(), f"err_{safe_m_name}.png")
                     plt.savefig(grafica_errores_path)
                     plt.close()
                     

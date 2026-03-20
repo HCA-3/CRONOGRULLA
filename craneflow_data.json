@@ -1,8 +1,8 @@
 {
     "operators": [
-        "diego",
-        "david",
-        "laura"
+        "Laura",
+        "Diego",
+        "David"
     ],
     "measurements": [
         {
@@ -2209,21 +2209,421 @@
                     "observation": "Normal"
                 }
             ]
+        },
+        {
+            "cycle_id": 31,
+            "model": "\"Grulla 5-S\"",
+            "timestamp": "2026-03-16 18:52",
+            "total_time": 326.5,
+            "splits": [
+                {
+                    "activity": "Diagonal y \nmitad",
+                    "operator": "Laura",
+                    "duration": 9.68,
+                    "observation": "Falta de concentración"
+                },
+                {
+                    "activity": "liegues \ncruzados",
+                    "operator": "Laura",
+                    "duration": 1.41,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Juntar \nesquinas \n(Base)",
+                    "operator": "Laura",
+                    "duration": 10.23,
+                    "observation": "Demora externa"
+                },
+                {
+                    "activity": "Marcar \nsolapas",
+                    "operator": "Laura",
+                    "duration": 14.7,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar punta \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.63,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Abrir solapa \nsuperior",
+                    "operator": "Diego",
+                    "duration": 2.96,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir cara \nposterior",
+                    "operator": "Diego",
+                    "duration": 3.18,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Solapas al \ncentro",
+                    "operator": "Diego",
+                    "duration": 2.04,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir lado \nopuesto",
+                    "operator": "David",
+                    "duration": 2.35,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar patas \ninf.",
+                    "operator": "David",
+                    "duration": 1.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Pliegue \ninvertido",
+                    "operator": "David",
+                    "duration": 0.97,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Cabeza y alas",
+                    "operator": "David",
+                    "duration": 1.91,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 32,
+            "model": "\"Grulla 5-S\"",
+            "timestamp": "2026-03-16 18:57",
+            "total_time": 306.69,
+            "splits": [
+                {
+                    "activity": "Diagonal y \nmitad",
+                    "operator": "Laura",
+                    "duration": 8.88,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "liegues \ncruzados",
+                    "operator": "Laura",
+                    "duration": 5.3,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Juntar \nesquinas \n(Base)",
+                    "operator": "Laura",
+                    "duration": 1.72,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar \nsolapas",
+                    "operator": "Laura",
+                    "duration": 1.88,
+                    "observation": "Falta de concentración | Demora externa | Equivocó el sentido del pliegue"
+                },
+                {
+                    "activity": "Marcar punta \nsuperior",
+                    "operator": "Diego",
+                    "duration": 9.66,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Abrir solapa \nsuperior",
+                    "operator": "Diego",
+                    "duration": 3.03,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir cara \nposterior",
+                    "operator": "Diego",
+                    "duration": 1.43,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Solapas al \ncentro",
+                    "operator": "Diego",
+                    "duration": 4.94,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir lado \nopuesto",
+                    "operator": "David",
+                    "duration": 2.23,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar patas \ninf.",
+                    "operator": "David",
+                    "duration": 1.08,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Pliegue \ninvertido",
+                    "operator": "David",
+                    "duration": 0.98,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Cabeza y alas",
+                    "operator": "David",
+                    "duration": 1.2,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 33,
+            "model": "\"Grulla 5-S\"",
+            "timestamp": "2026-03-16 19:01",
+            "total_time": 216.28,
+            "splits": [
+                {
+                    "activity": "Diagonal y \nmitad",
+                    "operator": "Laura",
+                    "duration": 7.68,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "liegues \ncruzados",
+                    "operator": "Laura",
+                    "duration": 1.36,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Juntar \nesquinas \n(Base)",
+                    "operator": "Laura",
+                    "duration": 1.17,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar \nsolapas",
+                    "operator": "Laura",
+                    "duration": 1.65,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar punta \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.62,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Abrir solapa \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.26,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir cara \nposterior",
+                    "operator": "Diego",
+                    "duration": 1.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Solapas al \ncentro",
+                    "operator": "Diego",
+                    "duration": 0.95,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir lado \nopuesto",
+                    "operator": "David",
+                    "duration": 1.4,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar patas \ninf.",
+                    "operator": "David",
+                    "duration": 1.01,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Pliegue \ninvertido",
+                    "operator": "David",
+                    "duration": 1.06,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Cabeza y alas",
+                    "operator": "David",
+                    "duration": 1.69,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 34,
+            "model": "\"Grulla 5-S\"",
+            "timestamp": "2026-03-16 19:05",
+            "total_time": 201.81,
+            "splits": [
+                {
+                    "activity": "Diagonal y \nmitad",
+                    "operator": "Laura",
+                    "duration": 2.59,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "liegues \ncruzados",
+                    "operator": "Laura",
+                    "duration": 1.11,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Juntar \nesquinas \n(Base)",
+                    "operator": "Laura",
+                    "duration": 1.47,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar \nsolapas",
+                    "operator": "Laura",
+                    "duration": 14.42,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar punta \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Abrir solapa \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.75,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir cara \nposterior",
+                    "operator": "Diego",
+                    "duration": 0.96,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Solapas al \ncentro",
+                    "operator": "Diego",
+                    "duration": 1.41,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir lado \nopuesto",
+                    "operator": "David",
+                    "duration": 1.29,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar patas \ninf.",
+                    "operator": "David",
+                    "duration": 3.81,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Pliegue \ninvertido",
+                    "operator": "David",
+                    "duration": 1.0,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Cabeza y alas",
+                    "operator": "David",
+                    "duration": 1.5,
+                    "observation": "Normal"
+                }
+            ]
+        },
+        {
+            "cycle_id": 35,
+            "model": "\"Grulla 5-S\"",
+            "timestamp": "2026-03-16 19:08",
+            "total_time": 206.52,
+            "splits": [
+                {
+                    "activity": "Diagonal y \nmitad",
+                    "operator": "Laura",
+                    "duration": 4.42,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "liegues \ncruzados",
+                    "operator": "Laura",
+                    "duration": 1.6,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Juntar \nesquinas \n(Base)",
+                    "operator": "Laura",
+                    "duration": 1.2,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar \nsolapas",
+                    "operator": "Laura",
+                    "duration": 1.18,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar punta \nsuperior",
+                    "operator": "Diego",
+                    "duration": 2.16,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Abrir solapa \nsuperior",
+                    "operator": "Diego",
+                    "duration": 1.33,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir cara \nposterior",
+                    "operator": "Diego",
+                    "duration": 0.87,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Solapas al \ncentro",
+                    "operator": "Diego",
+                    "duration": 1.28,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Repetir lado \nopuesto",
+                    "operator": "David",
+                    "duration": 5.37,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Marcar patas \ninf.",
+                    "operator": "David",
+                    "duration": 1.15,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Pliegue \ninvertido",
+                    "operator": "David",
+                    "duration": 1.96,
+                    "observation": "Normal"
+                },
+                {
+                    "activity": "Cabeza y alas",
+                    "operator": "David",
+                    "duration": 7.5,
+                    "observation": "Normal"
+                }
+            ]
         }
     ],
     "line_config": {
-        "0": "diego",
-        "1": "diego",
-        "2": "diego",
-        "3": "diego",
-        "4": "david",
-        "5": "david",
-        "6": "david",
-        "7": "david",
-        "8": "laura",
-        "9": "laura",
-        "10": "laura",
-        "11": "laura"
+        "0": "Laura",
+        "1": "Laura",
+        "2": "Laura",
+        "3": "Laura",
+        "4": "Diego",
+        "5": "Diego",
+        "6": "Diego",
+        "7": "Diego",
+        "8": "David",
+        "9": "David",
+        "10": "David",
+        "11": "David"
     },
     "models": {
         "Grulla Clásica": {
@@ -2283,7 +2683,37 @@
                 "Separar suavemente las alas para que la grulla quede formada"
             ],
             "pdf_guide": "guias_pdf\\Grulla_Tipo_I__Laura.pdf"
+        },
+        "\"Grulla 5-S\"": {
+            "activities": [
+                "Diagonal y mitad.",
+                "Pliegues cruzados.",
+                "Juntar esquinas (Base).",
+                "Marcar solapas.",
+                "Marcar punta superior.",
+                "Abrir solapa superior.",
+                "Repetir cara posterior.",
+                "Solapas al centro.",
+                "Repetir lado opuesto.",
+                "Marcar patas inf.",
+                "Pliegue invertido.",
+                "Cabeza y alas."
+            ],
+            "descriptions": [
+                "Coloca el papel cuadrado con el  color hacia arriba, dobla la esquina  superior hacia la inferior para  marcar la diagonal, desdobla y  luego dobla el papel por la mitad lateralmente.",
+                "Da la vuelta al papel para que el  lado blanco quede hacia arriba,  dobla por la mitad en una  dirección, marca el pliegue,  desdobla y repite en la otra \ndirección.",
+                "Usando los pliegues realizados,  junta las 3 esquinas superiores  hacia la esquina inferior y alisa el  modelo.",
+                "Dobla las solapas triangulares de  los lados hacia el centro y luego  desdóblalas para dejar la marca.",
+                "Dobla la punta superior del modelo  hacia abajo, marca con fuerza la  plegadura y vuelve a desdoblar.",
+                "Abre la solapa superior llevándola  hacia arriba mientras presionas los  laterales hacia el interior hasta que  quede liso.",
+                "Voltea el modelo y repite exactamente los pasos 4, 5 y 6 en la cara posterior.",
+                "Dobla las solapas exteriores (las capas superiores) hacia la línea central.",
+                "Repite el mismo doblez de las solapas en el lado opuesto del modelo.",
+                "Dobla ambas 'patas' inferiores  hacia arriba para marcar la posición, presiona bien y luego  desdóblalas",
+                "Realiza un pliegue invertido hacia adentro (por el revés) para situar las 'patas' en la posición de la marca que hiciste antes.",
+                "Realiza otro pliegue invertido en el extremo de una de las puntas para formar la cabeza y finalmente dobla las alas hacia abajo."
+            ]
         }
     },
-    "current_model": "Grulla Tipo I  Laura"
+    "current_model": "\"Grulla 5-S\""
 }

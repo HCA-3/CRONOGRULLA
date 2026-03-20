@@ -14,7 +14,7 @@ from views.view_tables import TablesView
 from views.view_stats import StatsView
 from utils.pdf_report import PDFManager
 
-# Configuración de apariencia Premium
+# Configuración de apariencia Premium..
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
