@@ -8,14 +8,15 @@ El código original monolítico de ~1400 líneas fue refactorizado y separado en
 
 La aplicación ha sido reescrita en los siguientes archivos y carpetas (arquitectura Modular UI / MVC):
 
-- `main.py`: Punto de entrada de la aplicación. Contiene la clase `CraneFlowApp` que administra el estado central, persistencia y la navegación principal entre vistas.
-- `utils/pdf_report.py`: Contiene las clases `PremiumReportPDF` y `PDFManager` que abordan lógica pesada para la generación de reportes y manuales en PDF.
-- `views/view_dashboard.py`: Interfaz principal con tarjetas estadísticas.
-- `views/view_models.py`: Administrador de modelos, instrucciones personalizadas de flujo y carga de PDFs adjuntos.
-- `views/view_operators.py`: Configuración del personal y balanceo de carga automático.
-- `views/view_timer.py`: Módulo del cronómetro, tracking de ciclos, operarios en tiempo real y registro de errores/eventos (QC).
-- `views/view_tables.py`: Matrices en tabla para ver las mediciones tomadas agrupadas por ciclos.
-- `views/view_stats.py`: Gráficos de barras que visualizan promedios y posibles cuellos de botella por estación de trabajo.
+- `main.py`: Punto de entrada que administra el estado central, persistencia y la navegación principal entre vistas. Ahora incluye una **Barra Lateral Colapsable** para maximizar el área de trabajo.
+- `utils/pdf_report.py`: Lógica avanzada para la generación de reportes y manuales industriales en PDF.
+- `views/view_dashboard.py`: Interfaz principal con tarjetas estadísticas de rendimiento.
+- `views/view_models.py`: Gestor de modelos de origami, instrucciones y carga de PDFs guía.
+- `views/view_operators.py`: Configuración de equipo de trabajo y balanceo de carga entre estaciones.
+- `views/view_timer.py`: **Módulo Vision Pro 6.0**. Incorpora cronometraje manos libres mediante detección de movimiento en zona, "Modo Enfoque" centrado en el paso actual con descripción detallada, y captura automática de evidencia fotográfica.
+- `views/view_media.py`: **Galería de Evidencia Visual**. Nueva sección que consolida todas las fotografías tomadas en los estudios, permitiendo auditar errores de operarios con pruebas visuales claras.
+- `views/view_tables.py`: Matrices de tiempos recolectados por ciclos.
+- `views/view_stats.py`: Gráficos dinámicos para análisis de cuellos de botella y promedios.
 
 ## Cómo Ejecutar (Ejecutable e Instalador)
 

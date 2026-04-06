@@ -12,6 +12,7 @@ from views.view_operators import OperatorsView
 from views.view_timer import TimerView
 from views.view_tables import TablesView
 from views.view_stats import StatsView
+from views.view_media import MediaGalleryView
 from utils.pdf_report import PDFManager
 
 # Configuración de apariencia Premium..
@@ -23,8 +24,9 @@ class CraneFlowApp(ctk.CTk):
         super().__init__()
 
         self.title("CronoGrulla | Ingeniería de Métodos")
-        self.geometry("1200x850")
-        self.minsize(1000, 700)
+        # Maximizar para ajustar a pantalla
+        self.after(0, lambda: self.state('zoomed'))
+        self.minsize(1100, 750)
         
         # Archivo de datos
         self.data_file = "craneflow_data.json"
@@ -128,7 +130,7 @@ class CraneFlowApp(ctk.CTk):
         self.sidebar.grid_rowconfigure(7, weight=1)
 
         self.logo_label = ctk.CTkLabel(self.sidebar, text="🏗️ CronoGrulla", font=ctk.CTkFont(size=24, weight="bold", family="Helvetica"))
-        self.logo_label.grid(row=0, column=0, padx=20, pady=(30, 20))
+        self.logo_label.grid(row=0, column=0, padx=20, pady=(40, 20))
 
         # Botones de navegación
         nav_buttons = [
@@ -137,6 +139,7 @@ class CraneFlowApp(ctk.CTk):
             ("⏱️ Cronometrar", self.show_timer),
             ("📋 Datos y Tabla", self.show_tables),
             ("👥 Equipo y Tareas", self.show_operators_setup),
+            ("📸 Evidencia Visual", self.show_media_gallery),
             ("📈 Estadísticas", self.show_stats)
         ]
 
@@ -161,6 +164,23 @@ class CraneFlowApp(ctk.CTk):
         # Contenedor Principal
         self.main_frame = ctk.CTkFrame(self, corner_radius=15, fg_color=("#ecf0f1", "#0f172a"))
         self.main_frame.grid(row=0, column=1, sticky="nsew", padx=20, pady=20)
+        
+        # Toggle Sidebar Variables y Botón Flotante
+        self.sidebar_expanded = True
+        self.btn_toggle = ctk.CTkButton(self, text="☰ Ocultar Menú", width=120, height=30, 
+                                        fg_color="#e74c3c", hover_color="#c0392b", font=ctk.CTkFont(weight="bold"),
+                                        command=self.toggle_sidebar)
+        self.btn_toggle.place(x=15, y=10)
+
+    def toggle_sidebar(self):
+        if self.sidebar_expanded:
+            self.sidebar.grid_remove() # Oculta la barra
+            self.btn_toggle.configure(text="☰ Mostrar Menú", fg_color="#3498db", hover_color="#2980b9")
+            self.sidebar_expanded = False
+        else:
+            self.sidebar.grid() # Muestra la barra
+            self.btn_toggle.configure(text="☰ Ocultar Menú", fg_color="#e74c3c", hover_color="#c0392b")
+            self.sidebar_expanded = True
 
     def clear_main_frame(self):
         for widget in self.main_frame.winfo_children():
@@ -194,6 +214,11 @@ class CraneFlowApp(ctk.CTk):
     def show_stats(self):
         self.clear_main_frame()
         self.current_view = StatsView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    def show_media_gallery(self):
+        self.clear_main_frame()
+        self.current_view = MediaGalleryView(self.main_frame, self)
         self.current_view.pack(fill="both", expand=True)
 
     def open_pdf_guide(self, model_name):

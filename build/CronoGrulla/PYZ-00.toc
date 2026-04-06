@@ -1,385 +1,388 @@
 ('C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
- 'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+ 'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria de '
  'metodos\\programa\\build\\CronoGrulla\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
   ('PIL.AvifImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\AvifImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\AvifImagePlugin.py',
    'PYMODULE'),
   ('PIL.BlpImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\BlpImagePlugin.py',
    'PYMODULE'),
   ('PIL.BmpImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\BmpImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\BmpImagePlugin.py',
    'PYMODULE'),
   ('PIL.BufrStubImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
    'PYMODULE'),
   ('PIL.CurImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\CurImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\CurImagePlugin.py',
    'PYMODULE'),
   ('PIL.DcxImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\DcxImagePlugin.py',
    'PYMODULE'),
   ('PIL.DdsImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\DdsImagePlugin.py',
    'PYMODULE'),
   ('PIL.EpsImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\EpsImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\EpsImagePlugin.py',
    'PYMODULE'),
   ('PIL.ExifTags',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ExifTags.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ExifTags.py',
    'PYMODULE'),
   ('PIL.FitsImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FitsImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FitsImagePlugin.py',
    'PYMODULE'),
   ('PIL.FliImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FliImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FliImagePlugin.py',
    'PYMODULE'),
   ('PIL.FpxImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FpxImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FpxImagePlugin.py',
    'PYMODULE'),
   ('PIL.FtexImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FtexImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\FtexImagePlugin.py',
    'PYMODULE'),
   ('PIL.GbrImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GbrImagePlugin.py',
    'PYMODULE'),
   ('PIL.GifImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GifImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GifImagePlugin.py',
    'PYMODULE'),
   ('PIL.GimpGradientFile',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GimpGradientFile.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GimpGradientFile.py',
    'PYMODULE'),
   ('PIL.GimpPaletteFile',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GimpPaletteFile.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GimpPaletteFile.py',
    'PYMODULE'),
   ('PIL.GribStubImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\GribStubImagePlugin.py',
    'PYMODULE'),
   ('PIL.Hdf5StubImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
    'PYMODULE'),
   ('PIL.IcnsImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IcnsImagePlugin.py',
    'PYMODULE'),
   ('PIL.IcoImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IcoImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IcoImagePlugin.py',
    'PYMODULE'),
   ('PIL.ImImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImImagePlugin.py',
    'PYMODULE'),
   ('PIL.Image',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\Image.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\Image.py',
    'PYMODULE'),
   ('PIL.ImageChops',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageChops.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageChops.py',
    'PYMODULE'),
   ('PIL.ImageCms',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageCms.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageCms.py',
    'PYMODULE'),
   ('PIL.ImageColor',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageColor.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageColor.py',
    'PYMODULE'),
   ('PIL.ImageFile',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageFile.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageFile.py',
    'PYMODULE'),
   ('PIL.ImageFilter',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageFilter.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageFilter.py',
    'PYMODULE'),
   ('PIL.ImageMath',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageMath.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageMath.py',
    'PYMODULE'),
   ('PIL.ImageMode',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageMode.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageMode.py',
    'PYMODULE'),
   ('PIL.ImageOps',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageOps.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageOps.py',
    'PYMODULE'),
   ('PIL.ImagePalette',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImagePalette.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImagePalette.py',
    'PYMODULE'),
   ('PIL.ImageQt',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageQt.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageQt.py',
    'PYMODULE'),
   ('PIL.ImageSequence',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageSequence.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageSequence.py',
    'PYMODULE'),
   ('PIL.ImageShow',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageShow.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageShow.py',
    'PYMODULE'),
   ('PIL.ImageTk',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageTk.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageTk.py',
    'PYMODULE'),
   ('PIL.ImageWin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageWin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImageWin.py',
    'PYMODULE'),
   ('PIL.ImtImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImtImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\ImtImagePlugin.py',
    'PYMODULE'),
   ('PIL.IptcImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\IptcImagePlugin.py',
    'PYMODULE'),
   ('PIL.Jpeg2KImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
    'PYMODULE'),
   ('PIL.JpegImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\JpegImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\JpegImagePlugin.py',
    'PYMODULE'),
   ('PIL.JpegPresets',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\JpegPresets.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\JpegPresets.py',
    'PYMODULE'),
   ('PIL.McIdasImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\McIdasImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\McIdasImagePlugin.py',
    'PYMODULE'),
   ('PIL.MicImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MicImagePlugin.py',
    'PYMODULE'),
   ('PIL.MpegImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MpegImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MpegImagePlugin.py',
    'PYMODULE'),
   ('PIL.MpoImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MpoImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MpoImagePlugin.py',
    'PYMODULE'),
   ('PIL.MspImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MspImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\MspImagePlugin.py',
    'PYMODULE'),
   ('PIL.PaletteFile',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PaletteFile.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PaletteFile.py',
    'PYMODULE'),
   ('PIL.PalmImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PalmImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PalmImagePlugin.py',
    'PYMODULE'),
   ('PIL.PcdImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PcdImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PcdImagePlugin.py',
    'PYMODULE'),
   ('PIL.PcxImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PcxImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PcxImagePlugin.py',
    'PYMODULE'),
   ('PIL.PdfImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PdfImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PdfImagePlugin.py',
    'PYMODULE'),
   ('PIL.PdfParser',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PdfParser.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PdfParser.py',
    'PYMODULE'),
   ('PIL.PixarImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PixarImagePlugin.py',
    'PYMODULE'),
   ('PIL.PngImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PngImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PngImagePlugin.py',
    'PYMODULE'),
   ('PIL.PpmImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PpmImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PpmImagePlugin.py',
    'PYMODULE'),
   ('PIL.PsdImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\PsdImagePlugin.py',
    'PYMODULE'),
   ('PIL.QoiImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\QoiImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\QoiImagePlugin.py',
    'PYMODULE'),
   ('PIL.SgiImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SgiImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SgiImagePlugin.py',
    'PYMODULE'),
   ('PIL.SpiderImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SpiderImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SpiderImagePlugin.py',
    'PYMODULE'),
   ('PIL.SunImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SunImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\SunImagePlugin.py',
    'PYMODULE'),
   ('PIL.TgaImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TgaImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TgaImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TiffImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TiffImagePlugin.py',
    'PYMODULE'),
   ('PIL.TiffTags',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TiffTags.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\TiffTags.py',
    'PYMODULE'),
   ('PIL.WebPImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\WebPImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\WebPImagePlugin.py',
    'PYMODULE'),
   ('PIL.WmfImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\WmfImagePlugin.py',
    'PYMODULE'),
   ('PIL.XVThumbImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
    'PYMODULE'),
   ('PIL.XbmImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XbmImagePlugin.py',
    'PYMODULE'),
   ('PIL.XpmImagePlugin',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\XpmImagePlugin.py',
    'PYMODULE'),
   ('PIL._binary',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_binary.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_binary.py',
    'PYMODULE'),
   ('PIL._deprecate',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_deprecate.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_deprecate.py',
    'PYMODULE'),
   ('PIL._typing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_typing.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_typing.py',
    'PYMODULE'),
   ('PIL._util',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_util.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_util.py',
    'PYMODULE'),
   ('PIL._version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\_version.py',
    'PYMODULE'),
   ('PIL.features',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\PIL\\features.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\PIL\\features.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\__future__.py',
@@ -419,17 +422,20 @@
    'PYMODULE'),
   ('_pyi_rth_utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\__init__.py',
    'PYMODULE'),
   ('_pyi_rth_utils._win32',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\_win32.py',
    'PYMODULE'),
   ('_pyi_rth_utils.tempfile',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\tempfile.py',
    'PYMODULE'),
   ('_pyrepl',
@@ -638,48 +644,48 @@
    'PYMODULE'),
   ('contourpy',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\__init__.py',
    'PYMODULE'),
   ('contourpy._version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\_version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\_version.py',
    'PYMODULE'),
   ('contourpy.array',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\array.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\array.py',
    'PYMODULE'),
   ('contourpy.chunk',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\chunk.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\chunk.py',
    'PYMODULE'),
   ('contourpy.convert',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\convert.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\convert.py',
    'PYMODULE'),
   ('contourpy.dechunk',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\dechunk.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\dechunk.py',
    'PYMODULE'),
   ('contourpy.enum_util',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\enum_util.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\enum_util.py',
    'PYMODULE'),
   ('contourpy.typecheck',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\typecheck.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\typecheck.py',
    'PYMODULE'),
   ('contourpy.types',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\types.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\contourpy\\types.py',
    'PYMODULE'),
   ('copy',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\copy.py',
@@ -719,247 +725,291 @@
    'PYMODULE'),
   ('customtkinter',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.ctk_input_dialog',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\ctk_input_dialog.py',
    'PYMODULE'),
   ('customtkinter.windows.ctk_tk',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\ctk_tk.py',
    'PYMODULE'),
   ('customtkinter.windows.ctk_toplevel',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\ctk_toplevel.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.appearance_mode',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\appearance_mode\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.appearance_mode.appearance_mode_base_class',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\appearance_mode\\appearance_mode_base_class.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.appearance_mode.appearance_mode_tracker',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\appearance_mode\\appearance_mode_tracker.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_rendering',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_rendering\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_rendering.ctk_canvas',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_rendering\\ctk_canvas.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_rendering.draw_engine',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_rendering\\draw_engine.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_widget_classes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_widget_classes\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_widget_classes.ctk_base_class',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_widget_classes\\ctk_base_class.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.core_widget_classes.dropdown_menu',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\core_widget_classes\\dropdown_menu.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_button',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_button.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_checkbox',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_checkbox.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_combobox',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_combobox.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_entry',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_entry.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_frame',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_frame.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_label',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_label.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_optionmenu',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_optionmenu.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_progressbar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_progressbar.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_radiobutton',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_radiobutton.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_scrollable_frame',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_scrollable_frame.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_scrollbar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_scrollbar.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_segmented_button',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_segmented_button.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_slider',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_slider.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_switch',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_switch.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_tabview',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_tabview.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.ctk_textbox',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\ctk_textbox.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.font',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\font\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.font.ctk_font',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\font\\ctk_font.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.font.font_manager',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\font\\font_manager.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.image',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\image\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.image.ctk_image',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\image\\ctk_image.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.scaling',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\scaling\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.scaling.scaling_base_class',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\scaling\\scaling_base_class.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.scaling.scaling_tracker',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\scaling\\scaling_tracker.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.theme',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\theme\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.theme.theme_manager',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\theme\\theme_manager.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.utility',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\utility\\__init__.py',
    'PYMODULE'),
   ('customtkinter.windows.widgets.utility.utility_functions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\customtkinter\\windows\\widgets\\utility\\utility_functions.py',
    'PYMODULE'),
   ('cycler',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\cycler\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\cycler\\__init__.py',
    'PYMODULE'),
   ('darkdetect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\__init__.py',
    'PYMODULE'),
   ('darkdetect._dummy',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_dummy.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_dummy.py',
    'PYMODULE'),
   ('darkdetect._linux_detect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_linux_detect.py',
    'PYMODULE'),
   ('darkdetect._mac_detect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_mac_detect.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_mac_detect.py',
    'PYMODULE'),
   ('darkdetect._windows_detect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\darkdetect\\_windows_detect.py',
    'PYMODULE'),
   ('dataclasses',
@@ -970,77 +1020,82 @@
    'PYMODULE'),
   ('dateutil',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\__init__.py',
    'PYMODULE'),
   ('dateutil._common',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\_common.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\_common.py',
    'PYMODULE'),
   ('dateutil._version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\_version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\_version.py',
    'PYMODULE'),
   ('dateutil.easter',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\easter.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\easter.py',
    'PYMODULE'),
   ('dateutil.parser',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\parser\\__init__.py',
    'PYMODULE'),
   ('dateutil.parser._parser',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\parser\\_parser.py',
    'PYMODULE'),
   ('dateutil.parser.isoparser',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\parser\\isoparser.py',
    'PYMODULE'),
   ('dateutil.relativedelta',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\relativedelta.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\relativedelta.py',
    'PYMODULE'),
   ('dateutil.rrule',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\rrule.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\rrule.py',
    'PYMODULE'),
   ('dateutil.tz',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\__init__.py',
    'PYMODULE'),
   ('dateutil.tz._common',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\_common.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\_common.py',
    'PYMODULE'),
   ('dateutil.tz._factories',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\_factories.py',
    'PYMODULE'),
   ('dateutil.tz.tz',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\tz.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\tz.py',
    'PYMODULE'),
   ('dateutil.tz.win',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\win.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\tz\\win.py',
    'PYMODULE'),
   ('dateutil.zoneinfo',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\dateutil\\zoneinfo\\__init__.py',
    'PYMODULE'),
   ('decimal',
@@ -1123,43 +1178,43 @@
    'PYMODULE'),
   ('fpdf',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\__init__.py',
    'PYMODULE'),
   ('fpdf.fonts',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\fonts.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\fonts.py',
    'PYMODULE'),
   ('fpdf.fpdf',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\fpdf.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\fpdf.py',
    'PYMODULE'),
   ('fpdf.html',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\html.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\html.py',
    'PYMODULE'),
   ('fpdf.php',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\php.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\php.py',
    'PYMODULE'),
   ('fpdf.py3k',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\py3k.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\py3k.py',
    'PYMODULE'),
   ('fpdf.template',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\template.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\template.py',
    'PYMODULE'),
   ('fpdf.ttfonts',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\ttfonts.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\fpdf\\ttfonts.py',
    'PYMODULE'),
   ('fractions',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\fractions.py',
@@ -1278,6 +1333,121 @@
   ('ipaddress',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\ipaddress.py',
    'PYMODULE'),
+  ('jinja2',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\__init__.py',
+   'PYMODULE'),
+  ('jinja2._identifier',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\_identifier.py',
+   'PYMODULE'),
+  ('jinja2.async_utils',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\async_utils.py',
+   'PYMODULE'),
+  ('jinja2.bccache',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\bccache.py',
+   'PYMODULE'),
+  ('jinja2.compiler',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\compiler.py',
+   'PYMODULE'),
+  ('jinja2.constants',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\constants.py',
+   'PYMODULE'),
+  ('jinja2.debug',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\debug.py',
+   'PYMODULE'),
+  ('jinja2.defaults',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\defaults.py',
+   'PYMODULE'),
+  ('jinja2.environment',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\environment.py',
+   'PYMODULE'),
+  ('jinja2.exceptions',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\exceptions.py',
+   'PYMODULE'),
+  ('jinja2.ext',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\ext.py',
+   'PYMODULE'),
+  ('jinja2.filters',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\filters.py',
+   'PYMODULE'),
+  ('jinja2.idtracking',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\idtracking.py',
+   'PYMODULE'),
+  ('jinja2.lexer',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\lexer.py',
+   'PYMODULE'),
+  ('jinja2.loaders',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\loaders.py',
+   'PYMODULE'),
+  ('jinja2.nodes',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\nodes.py',
+   'PYMODULE'),
+  ('jinja2.optimizer',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\optimizer.py',
+   'PYMODULE'),
+  ('jinja2.parser',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\parser.py',
+   'PYMODULE'),
+  ('jinja2.runtime',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\runtime.py',
+   'PYMODULE'),
+  ('jinja2.sandbox',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\sandbox.py',
+   'PYMODULE'),
+  ('jinja2.tests',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\tests.py',
+   'PYMODULE'),
+  ('jinja2.utils',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\utils.py',
+   'PYMODULE'),
+  ('jinja2.visitor',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\jinja2\\visitor.py',
+   'PYMODULE'),
   ('json',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\json\\__init__.py',
    'PYMODULE'),
@@ -1292,13 +1462,13 @@
    'PYMODULE'),
   ('kiwisolver',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\kiwisolver\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\kiwisolver\\__init__.py',
    'PYMODULE'),
   ('kiwisolver.exceptions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\kiwisolver\\exceptions.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\kiwisolver\\exceptions.py',
    'PYMODULE'),
   ('logging',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\logging\\__init__.py',
@@ -1306,490 +1476,538 @@
   ('lzma',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\lzma.py',
    'PYMODULE'),
+  ('markupsafe',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\markupsafe\\__init__.py',
+   'PYMODULE'),
+  ('markupsafe._native',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\markupsafe\\_native.py',
+   'PYMODULE'),
   ('matplotlib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\__init__.py',
    'PYMODULE'),
   ('matplotlib._afm',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_afm.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_afm.py',
    'PYMODULE'),
   ('matplotlib._api',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_api\\__init__.py',
    'PYMODULE'),
   ('matplotlib._api.deprecation',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_api\\deprecation.py',
    'PYMODULE'),
   ('matplotlib._blocking_input',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_blocking_input.py',
    'PYMODULE'),
   ('matplotlib._cm',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm.py',
    'PYMODULE'),
   ('matplotlib._cm_bivar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm_bivar.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm_bivar.py',
    'PYMODULE'),
   ('matplotlib._cm_listed',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm_listed.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm_listed.py',
    'PYMODULE'),
   ('matplotlib._cm_multivar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_cm_multivar.py',
    'PYMODULE'),
   ('matplotlib._color_data',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_color_data.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_color_data.py',
    'PYMODULE'),
   ('matplotlib._constrained_layout',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_constrained_layout.py',
    'PYMODULE'),
   ('matplotlib._docstring',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_docstring.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_docstring.py',
    'PYMODULE'),
   ('matplotlib._enums',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_enums.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_enums.py',
    'PYMODULE'),
   ('matplotlib._fontconfig_pattern',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_fontconfig_pattern.py',
    'PYMODULE'),
   ('matplotlib._layoutgrid',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_layoutgrid.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_layoutgrid.py',
    'PYMODULE'),
   ('matplotlib._mathtext',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_mathtext.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_mathtext.py',
    'PYMODULE'),
   ('matplotlib._mathtext_data',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_mathtext_data.py',
    'PYMODULE'),
   ('matplotlib._pylab_helpers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_pylab_helpers.py',
    'PYMODULE'),
   ('matplotlib._text_helpers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_text_helpers.py',
    'PYMODULE'),
   ('matplotlib._tight_bbox',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_tight_bbox.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_tight_bbox.py',
    'PYMODULE'),
   ('matplotlib._tight_layout',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_tight_layout.py',
    'PYMODULE'),
   ('matplotlib._version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\_version.py',
    'PYMODULE'),
   ('matplotlib.artist',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\artist.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\artist.py',
    'PYMODULE'),
   ('matplotlib.axes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\__init__.py',
    'PYMODULE'),
   ('matplotlib.axes._axes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\_axes.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\_axes.py',
    'PYMODULE'),
   ('matplotlib.axes._base',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\_base.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\_base.py',
    'PYMODULE'),
   ('matplotlib.axes._secondary_axes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axes\\_secondary_axes.py',
    'PYMODULE'),
   ('matplotlib.axis',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axis.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\axis.py',
    'PYMODULE'),
   ('matplotlib.backend_bases',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backend_bases.py',
    'PYMODULE'),
   ('matplotlib.backend_managers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backend_managers.py',
    'PYMODULE'),
   ('matplotlib.backend_tools',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backend_tools.py',
    'PYMODULE'),
   ('matplotlib.backends',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\__init__.py',
    'PYMODULE'),
   ('matplotlib.backends._backend_tk',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\_backend_tk.py',
    'PYMODULE'),
   ('matplotlib.backends.backend_agg',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\backend_agg.py',
    'PYMODULE'),
   ('matplotlib.backends.backend_tkagg',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\backend_tkagg.py',
    'PYMODULE'),
   ('matplotlib.backends.backend_webagg',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\backend_webagg.py',
    'PYMODULE'),
   ('matplotlib.backends.backend_webagg_core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\backend_webagg_core.py',
    'PYMODULE'),
   ('matplotlib.backends.registry',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\backends\\registry.py',
    'PYMODULE'),
   ('matplotlib.bezier',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\bezier.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\bezier.py',
    'PYMODULE'),
   ('matplotlib.category',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\category.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\category.py',
    'PYMODULE'),
   ('matplotlib.cbook',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\cbook.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\cbook.py',
    'PYMODULE'),
   ('matplotlib.cm',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\cm.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\cm.py',
    'PYMODULE'),
   ('matplotlib.collections',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\collections.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\collections.py',
    'PYMODULE'),
   ('matplotlib.colorbar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colorbar.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colorbar.py',
    'PYMODULE'),
   ('matplotlib.colorizer',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colorizer.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colorizer.py',
    'PYMODULE'),
   ('matplotlib.colors',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colors.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\colors.py',
    'PYMODULE'),
   ('matplotlib.container',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\container.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\container.py',
    'PYMODULE'),
   ('matplotlib.contour',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\contour.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\contour.py',
    'PYMODULE'),
   ('matplotlib.dates',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\dates.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\dates.py',
    'PYMODULE'),
   ('matplotlib.dviread',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\dviread.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\dviread.py',
    'PYMODULE'),
   ('matplotlib.figure',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\figure.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\figure.py',
    'PYMODULE'),
   ('matplotlib.font_manager',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\font_manager.py',
    'PYMODULE'),
   ('matplotlib.gridspec',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\gridspec.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\gridspec.py',
    'PYMODULE'),
   ('matplotlib.hatch',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\hatch.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\hatch.py',
    'PYMODULE'),
   ('matplotlib.image',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\image.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\image.py',
    'PYMODULE'),
   ('matplotlib.inset',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\inset.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\inset.py',
    'PYMODULE'),
   ('matplotlib.layout_engine',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\layout_engine.py',
    'PYMODULE'),
   ('matplotlib.legend',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\legend.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\legend.py',
    'PYMODULE'),
   ('matplotlib.legend_handler',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\legend_handler.py',
    'PYMODULE'),
   ('matplotlib.lines',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\lines.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\lines.py',
    'PYMODULE'),
   ('matplotlib.markers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\markers.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\markers.py',
    'PYMODULE'),
   ('matplotlib.mathtext',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\mathtext.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\mathtext.py',
    'PYMODULE'),
   ('matplotlib.mlab',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\mlab.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\mlab.py',
    'PYMODULE'),
   ('matplotlib.offsetbox',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\offsetbox.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\offsetbox.py',
    'PYMODULE'),
   ('matplotlib.patches',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\patches.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\patches.py',
    'PYMODULE'),
   ('matplotlib.path',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\path.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\path.py',
    'PYMODULE'),
   ('matplotlib.patheffects',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\patheffects.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\patheffects.py',
    'PYMODULE'),
   ('matplotlib.projections',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\projections\\__init__.py',
    'PYMODULE'),
   ('matplotlib.projections.geo',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\projections\\geo.py',
    'PYMODULE'),
   ('matplotlib.projections.polar',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\projections\\polar.py',
    'PYMODULE'),
   ('matplotlib.pyplot',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\pyplot.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\pyplot.py',
    'PYMODULE'),
   ('matplotlib.quiver',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\quiver.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\quiver.py',
    'PYMODULE'),
   ('matplotlib.rcsetup',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\rcsetup.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\rcsetup.py',
    'PYMODULE'),
   ('matplotlib.scale',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\scale.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\scale.py',
    'PYMODULE'),
   ('matplotlib.spines',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\spines.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\spines.py',
    'PYMODULE'),
   ('matplotlib.stackplot',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\stackplot.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\stackplot.py',
    'PYMODULE'),
   ('matplotlib.streamplot',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\streamplot.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\streamplot.py',
    'PYMODULE'),
   ('matplotlib.style',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\style\\__init__.py',
    'PYMODULE'),
   ('matplotlib.style.core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\style\\core.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\style\\core.py',
    'PYMODULE'),
   ('matplotlib.table',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\table.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\table.py',
    'PYMODULE'),
   ('matplotlib.texmanager',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\texmanager.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\texmanager.py',
    'PYMODULE'),
   ('matplotlib.text',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\text.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\text.py',
    'PYMODULE'),
   ('matplotlib.textpath',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\textpath.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\textpath.py',
    'PYMODULE'),
   ('matplotlib.ticker',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\ticker.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\ticker.py',
    'PYMODULE'),
   ('matplotlib.transforms',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\transforms.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\transforms.py',
    'PYMODULE'),
   ('matplotlib.tri',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\__init__.py',
    'PYMODULE'),
   ('matplotlib.tri._triangulation',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_triangulation.py',
    'PYMODULE'),
   ('matplotlib.tri._tricontour',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_tricontour.py',
    'PYMODULE'),
   ('matplotlib.tri._trifinder',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_trifinder.py',
    'PYMODULE'),
   ('matplotlib.tri._triinterpolate',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_triinterpolate.py',
    'PYMODULE'),
   ('matplotlib.tri._tripcolor',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_tripcolor.py',
    'PYMODULE'),
   ('matplotlib.tri._triplot',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_triplot.py',
    'PYMODULE'),
   ('matplotlib.tri._trirefine',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_trirefine.py',
    'PYMODULE'),
   ('matplotlib.tri._tritools',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\tri\\_tritools.py',
    'PYMODULE'),
   ('matplotlib.typing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\typing.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\typing.py',
    'PYMODULE'),
   ('matplotlib.units',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\units.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\units.py',
    'PYMODULE'),
   ('matplotlib.widgets',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\widgets.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\matplotlib\\widgets.py',
    'PYMODULE'),
   ('mimetypes',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\mimetypes.py',
@@ -1797,27 +2015,32 @@
   ('mpl_toolkits', '-', 'PYMODULE'),
   ('mpl_toolkits.mplot3d',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\mpl_toolkits\\mplot3d\\__init__.py',
    'PYMODULE'),
   ('mpl_toolkits.mplot3d.art3d',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\mpl_toolkits\\mplot3d\\art3d.py',
    'PYMODULE'),
   ('mpl_toolkits.mplot3d.axes3d',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\mpl_toolkits\\mplot3d\\axes3d.py',
    'PYMODULE'),
   ('mpl_toolkits.mplot3d.axis3d',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\mpl_toolkits\\mplot3d\\axis3d.py',
    'PYMODULE'),
   ('mpl_toolkits.mplot3d.proj3d',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\mpl_toolkits\\mplot3d\\proj3d.py',
    'PYMODULE'),
   ('multiprocessing',
@@ -1897,711 +2120,788 @@
    'PYMODULE'),
   ('numpy',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\__init__.py',
    'PYMODULE'),
   ('numpy.__config__',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\__config__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\__config__.py',
    'PYMODULE'),
   ('numpy._array_api_info',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_array_api_info.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_array_api_info.py',
    'PYMODULE'),
   ('numpy._core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\__init__.py',
    'PYMODULE'),
   ('numpy._core._add_newdocs',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_add_newdocs.py',
    'PYMODULE'),
   ('numpy._core._add_newdocs_scalars',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_add_newdocs_scalars.py',
    'PYMODULE'),
   ('numpy._core._asarray',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_asarray.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_asarray.py',
    'PYMODULE'),
   ('numpy._core._dtype',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_dtype.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_dtype.py',
    'PYMODULE'),
   ('numpy._core._dtype_ctypes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_dtype_ctypes.py',
    'PYMODULE'),
   ('numpy._core._exceptions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_exceptions.py',
    'PYMODULE'),
   ('numpy._core._internal',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_internal.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_internal.py',
    'PYMODULE'),
   ('numpy._core._methods',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_methods.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_methods.py',
    'PYMODULE'),
   ('numpy._core._string_helpers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_string_helpers.py',
    'PYMODULE'),
   ('numpy._core._type_aliases',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_type_aliases.py',
    'PYMODULE'),
   ('numpy._core._ufunc_config',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\_ufunc_config.py',
    'PYMODULE'),
   ('numpy._core.arrayprint',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\arrayprint.py',
    'PYMODULE'),
   ('numpy._core.defchararray',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\defchararray.py',
    'PYMODULE'),
   ('numpy._core.einsumfunc',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\einsumfunc.py',
    'PYMODULE'),
   ('numpy._core.fromnumeric',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py',
    'PYMODULE'),
   ('numpy._core.function_base',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\function_base.py',
    'PYMODULE'),
   ('numpy._core.getlimits',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\getlimits.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\getlimits.py',
    'PYMODULE'),
   ('numpy._core.memmap',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\memmap.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\memmap.py',
    'PYMODULE'),
   ('numpy._core.multiarray',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\multiarray.py',
    'PYMODULE'),
   ('numpy._core.numeric',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\numeric.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\numeric.py',
    'PYMODULE'),
   ('numpy._core.numerictypes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\numerictypes.py',
    'PYMODULE'),
   ('numpy._core.overrides',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\overrides.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\overrides.py',
    'PYMODULE'),
   ('numpy._core.printoptions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\printoptions.py',
    'PYMODULE'),
   ('numpy._core.records',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\records.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\records.py',
    'PYMODULE'),
   ('numpy._core.shape_base',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\shape_base.py',
    'PYMODULE'),
   ('numpy._core.strings',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\strings.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\strings.py',
    'PYMODULE'),
   ('numpy._core.umath',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\umath.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_core\\umath.py',
    'PYMODULE'),
   ('numpy._distributor_init',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_distributor_init.py',
    'PYMODULE'),
   ('numpy._expired_attrs_2_0',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_expired_attrs_2_0.py',
    'PYMODULE'),
   ('numpy._globals',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_globals.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_globals.py',
    'PYMODULE'),
   ('numpy._pytesttester',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_pytesttester.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_pytesttester.py',
    'PYMODULE'),
   ('numpy._typing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\__init__.py',
    'PYMODULE'),
   ('numpy._typing._add_docstring',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_add_docstring.py',
    'PYMODULE'),
   ('numpy._typing._array_like',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_array_like.py',
    'PYMODULE'),
   ('numpy._typing._char_codes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_char_codes.py',
    'PYMODULE'),
   ('numpy._typing._dtype_like',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_dtype_like.py',
    'PYMODULE'),
   ('numpy._typing._nbit',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_nbit.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_nbit.py',
    'PYMODULE'),
   ('numpy._typing._nbit_base',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_nbit_base.py',
    'PYMODULE'),
   ('numpy._typing._nested_sequence',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_nested_sequence.py',
    'PYMODULE'),
   ('numpy._typing._scalars',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_scalars.py',
    'PYMODULE'),
   ('numpy._typing._shape',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_shape.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_shape.py',
    'PYMODULE'),
   ('numpy._typing._ufunc',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_ufunc.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_typing\\_ufunc.py',
    'PYMODULE'),
   ('numpy._utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_utils\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_utils\\__init__.py',
    'PYMODULE'),
   ('numpy._utils._convertions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_utils\\_convertions.py',
    'PYMODULE'),
   ('numpy._utils._inspect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_utils\\_inspect.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\_utils\\_inspect.py',
    'PYMODULE'),
   ('numpy.char',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\char\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\char\\__init__.py',
    'PYMODULE'),
   ('numpy.core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\core\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\core\\__init__.py',
    'PYMODULE'),
   ('numpy.core._utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\core\\_utils.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\core\\_utils.py',
+   'PYMODULE'),
+  ('numpy.core.multiarray',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\core\\multiarray.py',
    'PYMODULE'),
   ('numpy.ctypeslib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ctypeslib\\__init__.py',
    'PYMODULE'),
   ('numpy.ctypeslib._ctypeslib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ctypeslib\\_ctypeslib.py',
    'PYMODULE'),
   ('numpy.dtypes',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\dtypes.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\dtypes.py',
    'PYMODULE'),
   ('numpy.exceptions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\exceptions.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\exceptions.py',
    'PYMODULE'),
   ('numpy.f2py',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\__init__.py',
    'PYMODULE'),
   ('numpy.f2py.__version__',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\__version__.py',
    'PYMODULE'),
   ('numpy.f2py._backends',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_backends\\__init__.py',
    'PYMODULE'),
   ('numpy.f2py._backends._backend',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_backends\\_backend.py',
    'PYMODULE'),
   ('numpy.f2py._backends._distutils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_backends\\_distutils.py',
    'PYMODULE'),
   ('numpy.f2py._backends._meson',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_backends\\_meson.py',
    'PYMODULE'),
   ('numpy.f2py._isocbind',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_isocbind.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\_isocbind.py',
    'PYMODULE'),
   ('numpy.f2py.auxfuncs',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\auxfuncs.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\auxfuncs.py',
    'PYMODULE'),
   ('numpy.f2py.capi_maps',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\capi_maps.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\capi_maps.py',
    'PYMODULE'),
   ('numpy.f2py.cb_rules',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\cb_rules.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\cb_rules.py',
    'PYMODULE'),
   ('numpy.f2py.cfuncs',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\cfuncs.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\cfuncs.py',
    'PYMODULE'),
   ('numpy.f2py.common_rules',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\common_rules.py',
    'PYMODULE'),
   ('numpy.f2py.crackfortran',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\crackfortran.py',
    'PYMODULE'),
   ('numpy.f2py.diagnose',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\diagnose.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\diagnose.py',
    'PYMODULE'),
   ('numpy.f2py.f2py2e',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\f2py2e.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\f2py2e.py',
    'PYMODULE'),
   ('numpy.f2py.f90mod_rules',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\f90mod_rules.py',
    'PYMODULE'),
   ('numpy.f2py.func2subr',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\func2subr.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\func2subr.py',
    'PYMODULE'),
   ('numpy.f2py.rules',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\rules.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\rules.py',
    'PYMODULE'),
   ('numpy.f2py.symbolic',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\symbolic.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\symbolic.py',
    'PYMODULE'),
   ('numpy.f2py.use_rules',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\use_rules.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\f2py\\use_rules.py',
    'PYMODULE'),
   ('numpy.fft',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\__init__.py',
    'PYMODULE'),
   ('numpy.fft._helper',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\_helper.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\_helper.py',
    'PYMODULE'),
   ('numpy.fft._pocketfft',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\_pocketfft.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\fft\\_pocketfft.py',
    'PYMODULE'),
   ('numpy.lib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\__init__.py',
    'PYMODULE'),
   ('numpy.lib._array_utils_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_array_utils_impl.py',
    'PYMODULE'),
   ('numpy.lib._arraypad_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_arraypad_impl.py',
    'PYMODULE'),
   ('numpy.lib._arraysetops_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_arraysetops_impl.py',
    'PYMODULE'),
   ('numpy.lib._arrayterator_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_arrayterator_impl.py',
    'PYMODULE'),
   ('numpy.lib._datasource',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_datasource.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_datasource.py',
    'PYMODULE'),
   ('numpy.lib._format_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_format_impl.py',
    'PYMODULE'),
   ('numpy.lib._function_base_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_function_base_impl.py',
    'PYMODULE'),
   ('numpy.lib._histograms_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_histograms_impl.py',
    'PYMODULE'),
   ('numpy.lib._index_tricks_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_index_tricks_impl.py',
    'PYMODULE'),
   ('numpy.lib._iotools',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_iotools.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_iotools.py',
    'PYMODULE'),
   ('numpy.lib._nanfunctions_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_nanfunctions_impl.py',
    'PYMODULE'),
   ('numpy.lib._npyio_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_npyio_impl.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_npyio_impl.py',
    'PYMODULE'),
   ('numpy.lib._polynomial_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_polynomial_impl.py',
    'PYMODULE'),
   ('numpy.lib._scimath_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_scimath_impl.py',
    'PYMODULE'),
   ('numpy.lib._shape_base_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_shape_base_impl.py',
    'PYMODULE'),
   ('numpy.lib._stride_tricks_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_stride_tricks_impl.py',
    'PYMODULE'),
   ('numpy.lib._twodim_base_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_twodim_base_impl.py',
    'PYMODULE'),
   ('numpy.lib._type_check_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_type_check_impl.py',
    'PYMODULE'),
   ('numpy.lib._ufunclike_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_ufunclike_impl.py',
    'PYMODULE'),
   ('numpy.lib._utils_impl',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_utils_impl.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_utils_impl.py',
    'PYMODULE'),
   ('numpy.lib._version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\_version.py',
    'PYMODULE'),
   ('numpy.lib.array_utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\array_utils.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\array_utils.py',
    'PYMODULE'),
   ('numpy.lib.format',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\format.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\format.py',
    'PYMODULE'),
   ('numpy.lib.introspect',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\introspect.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\introspect.py',
    'PYMODULE'),
   ('numpy.lib.mixins',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\mixins.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\mixins.py',
    'PYMODULE'),
   ('numpy.lib.npyio',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\npyio.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\npyio.py',
    'PYMODULE'),
   ('numpy.lib.recfunctions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\recfunctions.py',
    'PYMODULE'),
   ('numpy.lib.scimath',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\scimath.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\scimath.py',
    'PYMODULE'),
   ('numpy.lib.stride_tricks',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\lib\\stride_tricks.py',
    'PYMODULE'),
   ('numpy.linalg',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\linalg\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\linalg\\__init__.py',
    'PYMODULE'),
   ('numpy.linalg._linalg',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\linalg\\_linalg.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\linalg\\_linalg.py',
    'PYMODULE'),
   ('numpy.ma',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\__init__.py',
    'PYMODULE'),
   ('numpy.ma.core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\core.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\core.py',
    'PYMODULE'),
   ('numpy.ma.extras',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\extras.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\extras.py',
    'PYMODULE'),
   ('numpy.ma.mrecords',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\mrecords.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\ma\\mrecords.py',
    'PYMODULE'),
   ('numpy.matlib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\matlib.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\matlib.py',
    'PYMODULE'),
   ('numpy.matrixlib',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\matrixlib\\__init__.py',
    'PYMODULE'),
   ('numpy.matrixlib.defmatrix',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\matrixlib\\defmatrix.py',
    'PYMODULE'),
   ('numpy.polynomial',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\__init__.py',
    'PYMODULE'),
   ('numpy.polynomial._polybase',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\_polybase.py',
    'PYMODULE'),
   ('numpy.polynomial.chebyshev',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\chebyshev.py',
    'PYMODULE'),
   ('numpy.polynomial.hermite',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\hermite.py',
    'PYMODULE'),
   ('numpy.polynomial.hermite_e',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\hermite_e.py',
    'PYMODULE'),
   ('numpy.polynomial.laguerre',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\laguerre.py',
    'PYMODULE'),
   ('numpy.polynomial.legendre',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\legendre.py',
    'PYMODULE'),
   ('numpy.polynomial.polynomial',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\polynomial.py',
    'PYMODULE'),
   ('numpy.polynomial.polyutils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\polynomial\\polyutils.py',
    'PYMODULE'),
   ('numpy.random',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\random\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\random\\__init__.py',
    'PYMODULE'),
   ('numpy.random._pickle',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\random\\_pickle.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\random\\_pickle.py',
    'PYMODULE'),
   ('numpy.rec',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\rec\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\rec\\__init__.py',
    'PYMODULE'),
   ('numpy.strings',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\strings\\__init__.py',
    'PYMODULE'),
   ('numpy.testing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\testing\\__init__.py',
    'PYMODULE'),
   ('numpy.testing._private',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\testing\\_private\\__init__.py',
    'PYMODULE'),
   ('numpy.testing._private.extbuild',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\testing\\_private\\extbuild.py',
    'PYMODULE'),
   ('numpy.testing._private.utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py',
    'PYMODULE'),
   ('numpy.testing.overrides',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\testing\\overrides.py',
    'PYMODULE'),
   ('numpy.typing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\typing\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\typing\\__init__.py',
    'PYMODULE'),
   ('numpy.version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\numpy\\version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\numpy\\version.py',
    'PYMODULE'),
   ('opcode',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\opcode.py',
    'PYMODULE'),
   ('packaging',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\packaging\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\packaging\\__init__.py',
    'PYMODULE'),
   ('packaging._structures',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\packaging\\_structures.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\packaging\\_structures.py',
    'PYMODULE'),
   ('packaging.version',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\packaging\\version.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\packaging\\version.py',
    'PYMODULE'),
   ('pathlib',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\__init__.py',
@@ -2644,63 +2944,64 @@
    'PYMODULE'),
   ('pyparsing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\__init__.py',
    'PYMODULE'),
   ('pyparsing.actions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\actions.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\actions.py',
    'PYMODULE'),
   ('pyparsing.common',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\common.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\common.py',
    'PYMODULE'),
   ('pyparsing.core',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\core.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\core.py',
    'PYMODULE'),
   ('pyparsing.diagram',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de '
    'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\diagram\\__init__.py',
    'PYMODULE'),
   ('pyparsing.exceptions',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\exceptions.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\exceptions.py',
    'PYMODULE'),
   ('pyparsing.helpers',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\helpers.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\helpers.py',
    'PYMODULE'),
   ('pyparsing.results',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\results.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\results.py',
    'PYMODULE'),
   ('pyparsing.testing',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\testing.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\testing.py',
    'PYMODULE'),
   ('pyparsing.unicode',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\unicode.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\unicode.py',
    'PYMODULE'),
   ('pyparsing.util',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\util.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\util.py',
    'PYMODULE'),
   ('pyparsing.warnings',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\warnings.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\pyparsing\\warnings.py',
    'PYMODULE'),
   ('queue',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\queue.py',
@@ -2734,8 +3035,8 @@
    'PYMODULE'),
   ('six',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\venv\\Lib\\site-packages\\six.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\venv\\Lib\\site-packages\\six.py',
    'PYMODULE'),
   ('socket',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\socket.py',
@@ -2865,51 +3166,56 @@
    'PYMODULE'),
   ('utils',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\utils\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\utils\\__init__.py',
    'PYMODULE'),
   ('utils.pdf_report',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\utils\\pdf_report.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\utils\\pdf_report.py',
    'PYMODULE'),
   ('uuid',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\uuid.py',
    'PYMODULE'),
   ('views',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\__init__.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\__init__.py',
    'PYMODULE'),
   ('views.view_dashboard',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_dashboard.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_dashboard.py',
+   'PYMODULE'),
+  ('views.view_media',
+   'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_media.py',
    'PYMODULE'),
   ('views.view_models',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_models.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_models.py',
    'PYMODULE'),
   ('views.view_operators',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_operators.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_operators.py',
    'PYMODULE'),
   ('views.view_stats',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_stats.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_stats.py',
    'PYMODULE'),
   ('views.view_tables',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_tables.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_tables.py',
    'PYMODULE'),
   ('views.view_timer',
    'C:\\Users\\dsant\\Desktop\\U CATOLICA\\ING INDUSTRIAL\\SEMESTRES '
-   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\ingenieria de '
-   'metodos\\programa\\views\\view_timer.py',
+   'INDUSTRIAL\\segundo semestre\\ingenieria de metodos\\Corte 1\\ingenieria '
+   'de metodos\\programa\\views\\view_timer.py',
    'PYMODULE'),
   ('webbrowser',
    'C:\\Users\\dsant\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\webbrowser.py',

@@ -25,7 +25,7 @@ class PremiumReportPDF(FPDF):
         self.set_y(-15)
         self.set_font('Arial', 'I', 8)
         self.set_text_color(128)
-        self.cell(0, 10, f'Página {self.page_no()} | Generado automatizadamente por CronoGrulla', 0, 0, 'C')
+        self.cell(0, 10, f'Página {self.page_no()} | Generado automatizadamente por CronoGrulla', 1, 0, 'C')
 
 class PDFManager:
     def __init__(self, app):
@@ -33,7 +33,6 @@ class PDFManager:
 
     def generate_pdf(self, selected_models=None):
         if selected_models is None:
-            # Ventana de selección de modelos
             self.sel_win = ctk.CTkToplevel(self.app)
             self.sel_win.title("Seleccionar Modelos para Reporte")
             self.sel_win.geometry("500x550")
@@ -82,7 +81,7 @@ class PDFManager:
             messagebox.showwarning("Sin Datos", "Los modelos seleccionados no tienen ciclos registrados.")
             return
 
-        default_filename = f"Reporte_CronoGrulla_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+        default_filename = f"Reporte_Visual_CronoGrulla_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
         out_path = filedialog.asksaveasfilename(
             defaultextension=".pdf",
             initialfile=default_filename,
@@ -111,12 +110,12 @@ class PDFManager:
             pdf.cell(0, 8, "1. Informacion del Estudio y Especificaciones", 0, 1)
             pdf.set_font('Arial', '', 10)
             pdf.cell(0, 6, f"Fecha de emision: {datetime.now().strftime('%d/%m/%Y %H:%M')}", 0, 1)
-            pdf.cell(0, 6, "Tamano del origami: 15x15 cm", 0, 1)
+            pdf.cell(0, 6, "Captura por Gestos Visuales: Activa", 0, 1)
             
             pdf.set_font('Arial', 'B', 10)
             pdf.cell(0, 7, "Autores:", 0, 1)
             pdf.set_font('Arial', '', 10)
-            pdf.cell(0, 5, " - David Santiago Castelblanco Artunduaga | Juan Diego Escobar Duarte | Laura Vanessa Cespedes Acosta", 0, 1)
+            pdf.cell(0, 5, " - David Santiago Castelblanco Artunduaga (5201057) | Juan Diego Escobar Duarte (5200969) | Laura Vanessa Cespedes Acosta (5200901)", 0, 1)
             pdf.ln(3)
 
             pdf.cell(0, 6, f"Ciclos medidos: {len(measurements)}", 0, 1)
@@ -159,10 +158,35 @@ class PDFManager:
                     pdf.set_x(10)
                 pdf.ln(5)
 
-            # --- SECCION 3: Matriz de Tiempos ---
+            # --- SECCION 3: Evidencia Visual (Cámara) ---
             pdf.add_page()
             pdf.set_font('Arial', 'B', 12)
-            pdf.cell(0, 10, "3. Matriz de Tiempos Registrados (Segundos)", 0, 1)
+            pdf.cell(0, 10, "3. Evidencia Visual del Proceso (Capturas de Cámara)", 0, 1)
+            pdf.ln(5)
+            
+            # Mostrar fotos de los últimos ciclos
+            img_count = 0
+            for m in reversed(measurements):
+                if img_count >= 6: break # Límite de 6 fotos de evidencia por modelo en el reporte
+                for split in m.get("splits", []):
+                    img_path = split.get("evidence")
+                    if img_path and os.path.exists(img_path):
+                        # Dibujar imagen
+                        pdf.set_font('Arial', 'B', 8)
+                        pdf.cell(60, 6, f"Tarea: {split['activity'][:30]}", 0, 1)
+                        pdf.image(img_path, w=60)
+                        pdf.ln(5)
+                        img_count += 1
+                        if img_count >= 6: break
+                if img_count >= 6: break
+            
+            if img_count == 0:
+                pdf.cell(0, 10, "No se encontraron evidencias fotograficas en los registros.", 0, 1)
+
+            # --- SECCION 4: Matriz de Tiempos ---
+            pdf.add_page()
+            pdf.set_font('Arial', 'B', 12)
+            pdf.cell(0, 10, "4. Matriz de Tiempos Registrados (Segundos)", 0, 1)
             
             pdf.set_font('Arial', 'B', 8)
             pdf.set_fill_color(52, 152, 219)
@@ -212,10 +236,10 @@ class PDFManager:
             pdf.ln(5)
             pdf.image(tmp_img, x=10, w=190)
 
-            # --- SECCION 4: Eficiencia y Calidad ---
+            # --- SECCION 5: Eficiencia y Calidad ---
             pdf.add_page()
             pdf.set_font('Arial', 'B', 12)
-            pdf.cell(0, 10, "4. Analisis Detallado de Rendimiento por Operador", 0, 1)
+            pdf.cell(0, 10, "5. Analisis Detallado de Rendimiento por Operador", 0, 1)
             
             op_stats = {}
             incidences = []
@@ -304,191 +328,57 @@ class PDFManager:
             pdf.set_text_color(80, 80, 80)
             explicacion_eficiencia = (
                 "Análisis de Desempeño: La gráfica y la tabla presentan el perfil operativo de cada trabajador. "
-                "'Rango (Min - Max)' muestra sus tiempos más veloces y más lentos. La 'Volatilidad' (Desviación "
-                "Estándar) indica qué tan constante es un operador: un número bajo significa que trabaja a un "
-                "ritmo estable, mientras que un número alto puede indicar falta de experiencia o fatiga. El 'Promedio' "
-                "dictamina al operario más ágil en general."
+                "El uso de control por gestos visuales garantiza que los tiempos de cambio sean precisos."
             )
             pdf.multi_cell(0, 5, explicacion_eficiencia.encode('latin-1', 'replace').decode('latin-1'), 0, 'J')
-            pdf.set_x(10)
-            
+
             pdf.ln(10)
             pdf.set_font('Arial', 'B', 12)
             pdf.set_text_color(0, 0, 0)
-            pdf.cell(0, 8, "5. Registro de Incidencias de Calidad", 0, 1)
-            pdf.set_font('Arial', '', 9)
-            
-            if not incidences:
-                pdf.cell(0, 6, "No se registraron fallas de calidad en este modelo.", 0, 1)
-            else:
-                defect_counts = {}
-                pdf.set_text_color(192, 57, 43)
-                for inc in incidences:
-                    obs_text = inc.split(": ", 1)[1] if ": " in inc else inc
-                    clean_inc = inc.encode('latin-1', 'replace').decode('latin-1')
-                    pdf.multi_cell(0, 6, clean_inc)
-                    pdf.set_x(10)
-                    
-                    errores = obs_text.split(" | ")
-                    for err in errores:
-                        short_err = err[:25] + ".." if len(err) > 25 else err
-                        defect_counts[short_err] = defect_counts.get(short_err, 0) + 1
-
-                pdf.set_text_color(0, 0, 0)
-                
-                errores_ord = sorted(defect_counts.items(), key=lambda x: x[1], reverse=False)
-                if errores_ord:
-                    keys = [x[0] for x in errores_ord]
-                    vals = [x[1] for x in errores_ord]
-                    
-                    plt.figure(figsize=(10, 4))
-                    plt.barh(keys, vals, color='#e74c3c', edgecolor='black')
-                    plt.title(f'Frecuencia de Incidencias - {m_name}')
-                    plt.xlabel('Cantidad')
-                    plt.grid(axis='x', linestyle='--', alpha=0.7)
-                    
-                    from matplotlib.ticker import MaxNLocator
-                    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
-                    plt.tight_layout()
-                    
-                    safe_m_name = "".join([c if c.isalnum() else "_" for c in m_name])
-                    grafica_errores_path = os.path.join(tempfile.gettempdir(), f"err_{safe_m_name}.png")
-                    plt.savefig(grafica_errores_path)
-                    plt.close()
-                    
-                    pdf.ln(5)
-                    pdf.image(grafica_errores_path, x=10, w=190)
-
-                    pdf.ln(5)
-                    pdf.set_font('Arial', 'B', 10)
-                    pdf.cell(0, 8, "Analisis Porcentual de Incidencias:", 0, 1)
-                    pdf.set_font('Arial', '', 9)
-                    
-                    total_errores = sum(vals)
-                    for err_name, count in reversed(errores_ord):
-                        pct = (count / total_errores) * 100
-                        clean_err = err_name.encode('latin-1', 'replace').decode('latin-1')
-                        pdf.cell(0, 6, f" - {clean_err}: {count} ocurrencia(s) ({pct:.1f}%)", 0, 1)
-
-            pdf.ln(8)
-            pdf.set_font('Arial', 'B', 12)
-            pdf.set_text_color(0, 0, 0)
-            pdf.cell(0, 8, "6. Conclusiones y Resumen de Eficiencia", 0, 1)
+            pdf.cell(0, 8, "6. Conclusiones y Resumen", 0, 1)
             pdf.set_font('Arial', '', 10)
             
             total_time_all_cycles = sum(m["total_time"] for m in measurements)
             mejor_ciclo = min(m["total_time"] for m in measurements) if measurements else 0
             ideal_time = mejor_ciclo * len(measurements)
-            
             efficiency_pct = (ideal_time / total_time_all_cycles * 100) if total_time_all_cycles > 0 else 0
             
-            promedio_ciclo_txt = f"El estudio del modelo '{m_name}' constó de {len(measurements)} ciclos operativos. El tiempo promedio general de fabricación es de {avg:.2f} segundos, mientras que el tiempo récord (mejor ciclo) fue de {mejor_ciclo:.2f} segundos."
-            pdf.multi_cell(0, 6, promedio_ciclo_txt.encode('latin-1', 'replace').decode('latin-1'))
-            pdf.ln(2)
-            
-            concl_txt = f"Comparando el ritmo general de la línea frente al mejor tiempo registrado, se estima que el equipo operó a un {efficiency_pct:.1f}% de su capacidad ideal. Para acortar la brecha y acercarse al nivel óptimo, se recomienda re-balancear los cuellos de botella identificados en la Gráfica 3 y entrenar al personal para mitigar las deficiencias especificadas en la Sección 5."
+            concl_txt = f"El estudio del modelo '{m_name}' confirmo un tiempo promedio de {avg:.2f}s. La eficiencia general de la linea se situa en {efficiency_pct:.1f}%."
             pdf.multi_cell(0, 6, concl_txt.encode('latin-1', 'replace').decode('latin-1'))
             pdf.ln(5)
         
         try:
             pdf.output(out_path)
-            messagebox.showinfo("Reporte Exportado", f"Informe consolidado guardado en:\n{out_path}")
+            messagebox.showinfo("Reporte Exportado", f"Informe visual guardado en:\n{out_path}")
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo guardar el PDF: {e}")
 
     def generate_instructions_pdf(self):
-        default_filename = f"Manual_Instrucciones_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
+        default_filename = f"Manual_Instrucciones_Visual_{datetime.now().strftime('%Y%m%d_%H%M')}.pdf"
         out_path = filedialog.asksaveasfilename(
             defaultextension=".pdf",
             initialfile=default_filename,
-            title="Guardar Manual de Instrucciones Como...",
-            filetypes=[("Archivos PDF", "*.pdf"), ("Todos los archivos", "*.*")]
+            title="Guardar Manual Como...",
+            filetypes=[("Archivos PDF", "*.pdf")]
         )
-        
-        if not out_path:
-            return
+        if not out_path: return
         
         pdf = PremiumReportPDF()
         pdf.add_page()
-        
-        # TITLE
         pdf.set_font('Arial', 'B', 16)
-        pdf.set_text_color(44, 62, 80)
-        pdf.cell(0, 10, "MANUAL DE USUARIO E INSTRUCCIONES DEL SOFTWARE", 0, 1, 'C')
-        pdf.ln(5)
-        
-        pdf.set_font('Arial', '', 11)
-        pdf.set_text_color(80, 80, 80)
-        pdf.cell(0, 6, "Software: CronoGrulla - Ingenieria de Metodos", 0, 1, 'C')
-        pdf.cell(0, 6, "Autores (Ingenieros Industriales): David Santiago Castelblanco Artunduaga (5201057)", 0, 1, 'C')
-        pdf.cell(0, 6, "Juan Diego Escobar Duarte (5200969) | Laura Vanessa Cespedes Acosta (5200901)", 0, 1, 'C')
-        pdf.ln(8)
-        
-        # 1. EXPLICACION DEL PROGRAMA
-        pdf.set_font('Arial', 'B', 14)
-        pdf.set_text_color(52, 152, 219)
-        pdf.cell(0, 8, "1. Descripcion del Software", 0, 1, 'L')
-        pdf.set_font('Arial', '', 11)
-        pdf.set_text_color(0, 0, 0)
-        desc_software = (
-            "CronoGrulla es un software de escritorio desarrollado para apoyar los estudios de tiempos y "
-            "analisis de metodos, con un enfoque en el balanceo de lineas de produccion. El programa "
-            "documenta, cronometra y evalua el rendimiento de operarios en procesos estandarizados.\n\n"
-            "Modulos Principales de la Aplicacion:\n\n"
-            " - Dashboard: Es el panel resumen de control. Muestra metricas generales como los ciclos "
-            "completados de todos los modelos, el tiempo promedio general de produccion y la cantidad "
-            "de operarios activos en la linea.\n\n"
-            " - Modelos Origami: Es el administrador de ensambles. Aqui se pueden crear nuevas 'recetas' "
-            "o listados de pasos para diferentes productos (por defecto incluye la Grulla Clasica). Permite editar "
-            "instrucciones personalizadas y visualizar PDFs de referencia adjuntos.\n\n"
-            " - Equipo y Tareas: Este modulo distribuye equitativamente (balancea) los pasos de manufactura "
-            "segun la cantidad de trabajadores definidos para la celula de trabajo actuando como un configurador de turnos.\n\n"
-            " - Cronometrar: Es el cronometro en tiempo real que dicta las pautas y asiste paso a paso en "
-            "la produccion indicando que operario debe actuar en base al balanceo previo. Ademas, permite "
-            "reportar defectos o incidencias de calidad justo despues de cada tarea.\n\n"
-            " - Datos y Tabla: Muestra la bitacora de recoleccion en forma de matriz, listando los tiempos "
-            "en segundos de todas las tareas a lo largo de los ciclos registrados para auditar posteriormente.\n\n"
-            " - Estadisticas: Grafica visualmente las metricas derivadas de los tiempos guardados "
-            "mostrando claramente cuales tareas se demoran mas (cuellos de botella por operacion)."
+        pdf.cell(0, 10, "MANUAL DE OPERACION VISUAL (GESTOS)", 0, 1, 'C')
+        pdf.ln(10)
+        pdf.set_font('Arial', '', 12)
+        instrucciones = (
+            "1. INICIO: Para comenzar el ciclo, muestra la palma de la mano frente a la camara.\n"
+            "2. CAMBIO DE PASO: Al terminar una tarea, muestra la palma para registrar el tiempo y tomar evidencia.\n"
+            "3. TRANSICION: Si hay varios operarios, el sistema pausara al cambiar de responsable. El nuevo operario debe mostrar la palma para continuar.\n"
+            "4. EVIDENCIA: Cada gesto captura una fotografia automatica para el informe final."
         ).encode('latin-1', 'replace').decode('latin-1')
-        pdf.multi_cell(0, 6, desc_software, 0, 'J')
-        pdf.ln(8)
-
-        # 2. MODELOS REGISTRADOS
-        pdf.add_page()
-        pdf.set_font('Arial', 'B', 14)
-        pdf.set_text_color(52, 152, 219)
-        pdf.cell(0, 8, "2. Instructivo de Manufactura (Modelos)", 0, 1, 'L')
-        pdf.ln(4)
+        pdf.multi_cell(0, 8, instrucciones)
         
-        pdf.set_text_color(0, 0, 0)
-        
-        for model_name, model_info in self.app.models.items():
-            pdf.set_font('Arial', 'B', 12)
-            pdf.set_fill_color(220, 230, 240)
-            clean_name = model_name.encode('latin-1', 'replace').decode('latin-1')
-            pdf.cell(0, 8, f" MODELO: {clean_name}", 0, 1, 'L', True)
-            pdf.ln(2)
-            
-            acts = model_info.get("activities", [])
-            descs = model_info.get("descriptions", [])
-            
-            for idx in range(len(acts)):
-                pdf.set_font('Arial', 'B', 10)
-                pdf.set_text_color(44, 62, 80)
-                clean_act = acts[idx].encode('latin-1', 'replace').decode('latin-1')
-                pdf.cell(0, 6, f"{idx+1}. {clean_act}", 0, 1, 'L')
-                
-                pdf.set_font('Arial', '', 10)
-                pdf.set_text_color(0, 0, 0)
-                clean_desc = descs[idx].encode('latin-1', 'replace').decode('latin-1')
-                pdf.set_x(15)
-                pdf.multi_cell(0, 5, clean_desc, 0, 'J')
-                pdf.ln(2)
-            pdf.ln(5)
-            
         try:
             pdf.output(out_path)
-            messagebox.showinfo("Manual Exportado", f"Manual guardado exitosamente en:\n{out_path}")
+            messagebox.showinfo("Manual Exportado", f"Manual guardado en:\n{out_path}")
         except Exception as e:
-            messagebox.showerror("Error de Exportacion", f"No se pudo guardar el PDF.\n\nDetalles: {e}")
+            messagebox.showerror("Error", f"No se pudo guardar el manual: {e}")

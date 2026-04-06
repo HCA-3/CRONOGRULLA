@@ -1,0 +1,23 @@
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entorno Virtual
+venv/
+.env
+
+# PyInstaller y Compilación
+build/
+dist/
+*.spec
+
+# Archivos de Datos y Evidencia (Opcional, se recomienda ignorarlos para no saturar el repo)
+media_evidencia/
+craneflow_data.json
+*.pdf
+
+# Configuración del IDE
+.vscode/
+.idea/

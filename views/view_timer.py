@@ -1,9 +1,13 @@
 import customtkinter as ctk
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, simpledialog
 import time
 import os
-from datetime import datetime
+import cv2
+from PIL import Image, ImageTk
+import threading
+import urllib.request
+import numpy as np
 
 class TimerView(ctk.CTkFrame):
     def __init__(self, master, app):
@@ -16,246 +20,327 @@ class TimerView(ctk.CTkFrame):
         self.current_cycle_splits = []
         self.running = False
         self.current_activity_index = 0
+        self.waiting_for_operator = False
+        self.camera_source = 0
         
+        # Motion detection engine
+        self.prev_gray_zone = None
+        self.motion_threshold = 2000 # Sensibilidad
+        
+        self.cap = None
+        self.camera_active = False
+        self.media_path = "media_evidencia"
+        if not os.path.exists(self.media_path): os.makedirs(self.media_path)
+            
         self.build_ui()
+        self.show_camera_setup_dialog()
+
+    def show_camera_setup_dialog(self):
+        src_win = ctk.CTkToplevel(self)
+        src_win.title("Conectar Cámara")
+        src_win.geometry("600x550")
+        src_win.attributes("-topmost", True)
+        
+        ctk.CTkLabel(src_win, text="🎥 ¿QUÉ CÁMARA DESEAS USAR?", font=ctk.CTkFont(size=22, weight="bold")).pack(pady=20)
+        
+        def start_local():
+            self.camera_source = 0
+            src_win.destroy()
+            threading.Thread(target=self.init_camera_stream, daemon=True).start()
+
+        def start_usb():
+            self.camera_source = 1
+            src_win.destroy()
+            threading.Thread(target=self.init_camera_stream, daemon=True).start()
+
+        def start_ip():
+            ip_win = ctk.CTkToplevel(src_win)
+            ip_win.title("Usar Celular (WiFi)")
+            ip_win.geometry("500x450")
+            ip_win.attributes("-topmost", True)
+            
+            ctk.CTkLabel(ip_win, text="CONECTAR CELULAR (VÍA APP)", font=ctk.CTkFont(size=18, weight="bold")).pack(pady=10)
+            
+            inst = ("1. Instala la app gratuita 'IP Webcam' en tu celular Android.\n"
+                    "2. Abre la app, baja al final y toca 'Start server'.\n"
+                    "3. La app mostrará una dirección, por ejemplo:\n"
+                    "   http://192.168.1.15:8080\n"
+                    "4. Escríbela aquí abajo:")
+            ctk.CTkLabel(ip_win, text=inst, justify="left", font=ctk.CTkFont(size=14)).pack(pady=10, padx=20)
+            
+            entry_url = ctk.CTkEntry(ip_win, width=300, font=ctk.CTkFont(size=16), placeholder_text="http://192.168.1.xxx:8080")
+            entry_url.pack(pady=10)
+            
+            def connect():
+                base_url = entry_url.get().strip()
+                if not base_url.startswith("http"): base_url = "http://" + base_url
+                if base_url.endswith("/"): base_url = base_url[:-1]
+                
+                try:
+                    urllib.request.urlopen(f"{base_url}/shot.jpg", timeout=2)
+                except Exception:
+                    messagebox.showerror("Error", f"Fallo al conectar:\n{base_url}\nAsegúrate de estar en el mismo WiFi.", parent=ip_win)
+                    return
+                
+                self.camera_source = f"{base_url}/video"
+                ip_win.destroy()
+                src_win.destroy()
+                threading.Thread(target=self.init_camera_stream, daemon=True).start()
+                
+            ctk.CTkButton(ip_win, text="CONECTAR", font=ctk.CTkFont(weight="bold"), fg_color="#2ecc71", height=45, command=connect).pack(pady=20)
+
+        ctk.CTkButton(src_win, text="💻 CÁMARA DEL PC (Integrada)", height=60, font=ctk.CTkFont(size=15, weight="bold"), fg_color="#34495e", command=start_local).pack(pady=10, fill="x", padx=40)
+        ctk.CTkButton(src_win, text="🔌 CÁMARA EXTERNA (USB/DroidCam)", height=60, font=ctk.CTkFont(size=15, weight="bold"), fg_color="#2980b9", command=start_usb).pack(pady=10, fill="x", padx=40)
+        ctk.CTkButton(src_win, text="📱 CÁMARA DEL CELULAR (IP Webcam)", height=60, font=ctk.CTkFont(size=15, weight="bold"), fg_color="#e67e22", command=start_ip).pack(pady=10, fill="x", padx=40)
+
+    def init_camera_stream(self):
+        try:
+            self.after(0, lambda: self.gesture_status_lbl.configure(text="CONECTANDO CÁMARA...", text_color="#f1c40f"))
+            if isinstance(self.camera_source, int):
+                self.cap = cv2.VideoCapture(self.camera_source, cv2.CAP_DSHOW)
+            else:
+                self.cap = cv2.VideoCapture(self.camera_source)
+                
+            if self.cap.isOpened():
+                self.camera_active = True
+                self.after(200, self.update_loop)
+            else:
+                raise Exception("La cámara no responde.")
+        except Exception as e:
+            self.after(0, lambda: messagebox.showerror("Error", f"Fallo al conectar la cámara: {e}"))
+            self.after(0, lambda: self.gesture_status_lbl.configure(text="ERROR DE VIDEO", text_color="#e74c3c"))
 
     def build_ui(self):
-        if not self.app.line_config:
-            messagebox.showwarning("Falta Configuración", "Por favor configura el equipo y la distribución de tareas primero.")
-            self.app.show_operators_setup()
-            return
-
         header = ctk.CTkFrame(self, fg_color="transparent")
-        header.pack(fill="x", padx=40, pady=(20, 0))
-        
+        header.pack(fill="x", padx=40, pady=(15, 0))
         cycle_num = len(self.app.data.get("measurements", [])) + 1
-        ctk.CTkLabel(header, text=f"Estudio de Tiempos - Ciclo #{cycle_num}", font=ctk.CTkFont(size=26, weight="bold")).pack(side="left")
+        ctk.CTkLabel(header, text=f"Estudio CronoVisión PRO - Ciclo #{cycle_num}", font=ctk.CTkFont(size=28, weight="bold")).pack(side="left")
+        ctk.CTkButton(header, text="⚙ Cambiar Cámara", width=120, height=35, command=self.show_camera_setup_dialog).pack(side="right", padx=10)
 
-        self.content_container = ctk.CTkFrame(self, fg_color="transparent")
-        self.content_container.pack(fill="both", expand=True, padx=40, pady=(10, 20))
-        self.content_container.grid_columnconfigure(0, weight=1)
-        self.content_container.grid_columnconfigure(1, weight=0)
-        self.content_container.grid_rowconfigure(0, weight=1)
+        self.body = ctk.CTkFrame(self, fg_color="transparent")
+        self.body.pack(fill="both", expand=True, padx=40, pady=10)
+        self.body.grid_columnconfigure(0, weight=4)
+        self.body.grid_columnconfigure(1, weight=5)
 
-        self.timer_column = ctk.CTkFrame(self.content_container, fg_color="transparent")
-        self.timer_column.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
+        # LEFT
+        left_p = ctk.CTkFrame(self.body, fg_color="transparent")
+        left_p.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
+        t_box = ctk.CTkFrame(left_p, corner_radius=20, fg_color=("#ffffff", "#1e293b"))
+        t_box.pack(fill="x", pady=5, ipady=15)
+        self.timer_label = ctk.CTkLabel(t_box, text="00:00.00", font=ctk.CTkFont(size=70, weight="bold", family="Courier New"), text_color="#3498db")
+        self.timer_label.pack(pady=5)
+        self.btn_start = ctk.CTkButton(t_box, text="▶ INICIAR ESTUDIO", font=ctk.CTkFont(size=16, weight="bold"), height=40, command=self.start_timer)
+        self.btn_start.pack()
 
-        model_selector_frame = ctk.CTkFrame(self.timer_column, fg_color="transparent")
-        model_selector_frame.pack(fill="x", pady=(0, 10))
-        ctk.CTkLabel(model_selector_frame, text="Seleccionar Modelo:", font=ctk.CTkFont(weight="bold")).pack(side="left", padx=10)
+        # PANEL DE ENFOQUE (PASO ACTUAL)
+        self.focus_panel = ctk.CTkFrame(left_p, corner_radius=20, fg_color=("#ffffff", "#1e293b"))
+        self.focus_panel.pack(fill="both", expand=True, pady=5)
         
-        self.timer_model_var = tk.StringVar(value=self.app.current_model_name)
-        self.timer_model_menu = ctk.CTkOptionMenu(model_selector_frame, values=list(self.app.models.keys()), 
-                                                variable=self.timer_model_var, command=self.app.change_model_from_menu)
-        self.timer_model_menu.pack(side="left", padx=10)
-
-        pdf_path = self.app.models.get(self.app.current_model_name, {}).get("pdf_guide")
-        if pdf_path and os.path.exists(pdf_path):
-            ctk.CTkButton(model_selector_frame, text="📄 Ver Guía Técnica PDF", 
-                          fg_color="#3498db", hover_color="#2980b9", width=180,
-                          command=lambda: self.app.open_pdf_guide(self.app.current_model_name)).pack(side="left", padx=20)
-
-        self.qc_column = ctk.CTkFrame(self.content_container, corner_radius=15, fg_color=("#ffffff", "#1e293b"))
-
-        timer_frame = ctk.CTkFrame(self.timer_column, corner_radius=20, fg_color=("#ffffff", "#1e293b"))
-        timer_frame.pack(pady=10, fill="x", ipady=20)
+        self.lbl_step_num = ctk.CTkLabel(self.focus_panel, text="Paso 1 de X", font=ctk.CTkFont(size=14, weight="bold"), text_color="gray")
+        self.lbl_step_num.pack(pady=(20, 5))
         
-        self.op_target_lbl = ctk.CTkLabel(timer_frame, text="Preparado para iniciar", font=ctk.CTkFont(size=20, slant="italic"), text_color="#f39c12")
-        self.op_target_lbl.pack(pady=(10, 0))
+        self.lbl_step_title = ctk.CTkLabel(self.focus_panel, text="Esperando Inicio...", font=ctk.CTkFont(size=24, weight="bold"), wraplength=350)
+        self.lbl_step_title.pack(pady=10, padx=20)
         
-        self.timer_label = ctk.CTkLabel(timer_frame, text="00:00.00", font=ctk.CTkFont(size=90, weight="bold", family="Courier New"), text_color="#3498db")
-        self.timer_label.pack(pady=10)
-
-        controls = ctk.CTkFrame(timer_frame, fg_color="transparent")
-        controls.pack()
-
-        self.btn_start = ctk.CTkButton(controls, text="▶ INICIAR CICLO", font=ctk.CTkFont(size=18, weight="bold"),
-                                       height=50, width=250, fg_color="#27ae60", hover_color="#2ecc71",
-                                       command=self.start_timer)
-        self.btn_start.pack(side="left", padx=15)
-
-        self.btn_cancel = ctk.CTkButton(controls, text="⏹ CANCELAR", font=ctk.CTkFont(size=16),
-                                        height=50, width=150, fg_color="#e74c3c", hover_color="#c0392b",
-                                        command=self.reset_timer, state="disabled")
-        self.btn_cancel.pack(side="left", padx=15)
-
-        self.act_frame = ctk.CTkScrollableFrame(self.timer_column)
-        self.act_frame.pack(fill="both", expand=True, pady=(0, 10))
+        self.lbl_step_desc = ctk.CTkLabel(self.focus_panel, text="Presiona el botón de arriba para comenzar el estudio de tiempos.", 
+                                         font=ctk.CTkFont(size=15), wraplength=350, justify="left")
+        self.lbl_step_desc.pack(pady=20, padx=30)
         
-        self.act_widgets = []
-        for i, act_name in enumerate(self.app.ACTIVITIES):
-            f = ctk.CTkFrame(self.act_frame, fg_color=("#ecf0f1", "#0f172a"), corner_radius=10)
-            f.pack(fill="x", pady=5, padx=10)
-            f.grid_columnconfigure(1, weight=1)
+        self.lbl_operator_focus = ctk.CTkLabel(self.focus_panel, text="Operador: -", font=ctk.CTkFont(size=13, slant="italic"))
+        self.lbl_operator_focus.pack(pady=5)
+        
+        # Botones de acción del paso
+        actions_f = ctk.CTkFrame(self.focus_panel, fg_color="transparent")
+        actions_f.pack(pady=20)
+        
+        self.btn_focus_incident = ctk.CTkButton(actions_f, text="⚠️ Reportar Error", fg_color="#e67e22", hover_color="#d35400",
+                                               state="disabled", command=lambda: self.record_incident(self.current_activity_index))
+        self.btn_focus_incident.pack(side="left", padx=10)
+        
+        self.btn_focus_ok = ctk.CTkButton(actions_f, text="SIGUIENTE PASO ✅", fg_color="#2ecc71", hover_color="#27ae60",
+                                         font=ctk.CTkFont(weight="bold"), state="disabled", 
+                                         command=lambda: self.record_split(self.current_activity_index))
+        self.btn_focus_ok.pack(side="left", padx=10)
+
+        # Mantenemos la lógica de inicialización técnica pero oculta si es necesario
+        self.step_uis = []
+        for i, task in enumerate(self.app.ACTIVITIES):
+            self.step_uis.append({"op": self.app.line_config.get(str(i), "N/A"), "incidents": []})
+
+        # RIGHT
+        right_p = ctk.CTkFrame(self.body, fg_color="transparent")
+        right_p.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
+        v_panel = ctk.CTkFrame(right_p, corner_radius=20, fg_color="#000000", border_width=2, border_color="#3498db")
+        v_panel.pack(fill="both", expand=True, pady=5)
+        
+        self.video_display = ctk.CTkLabel(v_panel, text="Esperando cámara...", width=500, height=350)
+        self.video_display.pack(padx=10, pady=10, fill="both", expand=True)
+        self.gesture_status_lbl = ctk.CTkLabel(v_panel, text="NO VINCULADO", font=ctk.CTkFont(size=16, weight="bold"), text_color="#f1c40f")
+        self.gesture_status_lbl.pack(pady=(0, 10))
+        self.trans_box = ctk.CTkFrame(right_p, corner_radius=20, fg_color=("#ffffff", "#1e293b"))
+
+    def detect_motion(self, frame):
+        # Tomar la esquina superior derecha como zona de trigger
+        h, w = frame.shape[:2]
+        zone = frame[20:150, w-150:w-20]
+        gray = cv2.cvtColor(zone, cv2.COLOR_BGR2GRAY)
+        gray = cv2.GaussianBlur(gray, (21, 21), 0)
+
+        trigger = False
+        if self.prev_gray_zone is not None:
+            delta = cv2.absdiff(self.prev_gray_zone, gray)
+            thresh = cv2.threshold(delta, 25, 255, cv2.THRESH_BINARY)[1]
+            motion_level = cv2.countNonZero(thresh)
+            if motion_level > self.motion_threshold:
+                trigger = True
+
+        self.prev_gray_zone = gray
+        # Dibujar recuadro verde para la zona
+        cv2.rectangle(frame, (w-150, 20), (w-20, 150), (0, 255, 0), 2)
+        cv2.putText(frame, "PASA LA MANO AQUI", (w-200, 170), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+        
+        return frame, trigger
+
+    def update_loop(self):
+        if not self.camera_active or self.cap is None: return
+        ret, frame = self.cap.read()
+        if ret:
+            # Espejo si es cámara interna
+            if isinstance(self.camera_source, int): 
+                frame = cv2.flip(frame, 1)
             
-            lbl_title = ctk.CTkLabel(f, text=str(i+1), font=ctk.CTkFont(weight="bold", size=18), width=30)
-            lbl_title.grid(row=0, column=0, padx=10, pady=15)
+            # Detectar movimiento en la zona (Reemplaza Mediapipe para evitar crasheos)
+            frame, moved = self.detect_motion(frame)
+            if moved:
+                cv2.putText(frame, "ACCION DETECTADA!", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 3)
+                self.handle_trigger()
+
+            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            self.gesture_status_lbl.configure(text="VIDEO ACTIVO - PASA LA MANO POR EL RECUADRO", text_color="#2ecc71")
             
-            op = self.app.line_config.get(str(i), "")
-            info_text = f"{act_name}\nResponable: {op}"
-            lbl_info = ctk.CTkLabel(f, text=info_text, justify="left", font=ctk.CTkFont(size=14))
-            lbl_info.grid(row=0, column=1, sticky="w", padx=10)
-            
-            btn_done = ctk.CTkButton(f, text="Finalizar Tarea", state="disabled", width=120, height=35,
-                                     command=lambda idx=i: self.record_split(idx))
-            btn_done.grid(row=0, column=2, padx=15)
-            
-            self.act_widgets.append({"frame": f, "title": lbl_title, "btn": btn_done, "op": op})
+            # Render
+            img = Image.fromarray(rgb)
+            w, h = self.video_display.winfo_width(), self.video_display.winfo_height()
+            if w > 20 and h > 20: 
+                try: img = img.resize((w, h), Image.Resampling.LANCZOS)
+                except: img = img.resize((w, h))
+
+            tk_img = ImageTk.PhotoImage(image=img)
+            self.video_display.configure(image=tk_img, text="")
+            self.video_display.image_ref = tk_img
+        self.after(30, self.update_loop)
+
+    def handle_trigger(self):
+        t = time.time()
+        if hasattr(self, 'lt') and (t - self.lt < 3.0): return
+        self.lt = t
+        if not self.running and not self.waiting_for_operator: self.start_timer()
+        elif self.running and not self.waiting_for_operator: self.record_split(self.current_activity_index)
+        elif self.waiting_for_operator: self.resume()
 
     def start_timer(self):
-        if self.running: return
         self.running = True
-        self.start_time = time.time()
-        self.last_split_time = self.start_time
-        self.current_cycle_splits = []
-        self.current_activity_index = 0
-        
-        self.btn_start.configure(state="disabled", fg_color="gray")
-        self.btn_cancel.configure(state="normal")
-        
-        self.update_clock()
-        self.highlight_activity(0)
+        self.st = time.time()
+        self.at = self.st
+        self.btn_start.configure(state="disabled")
+        self.update_c()
+        self.hl(0)
 
-    def update_clock(self):
-        if self.running:
-            elapsed = time.time() - self.start_time
-            mins, secs = divmod(elapsed, 60)
-            cents = (elapsed % 1) * 100
-            self.timer_label.configure(text=f"{int(mins):02d}:{int(secs):02d}.{int(cents):02d}")
-            self.after(20, self.update_clock)
+    def update_c(self):
+        if self.running and not self.waiting_for_operator:
+            e = time.time() - self.st
+            self.timer_label.configure(text=f"{int(e/60):02d}:{int(e%60):02d}.{int((e%1)*100):02d}")
+            self.after(35, self.update_c)
 
-    def highlight_activity(self, index):
-        for i, data in enumerate(self.act_widgets):
-            if i == index:
-                data["frame"].configure(border_width=2, border_color="#3498db")
-                data["btn"].configure(state="normal", fg_color="#3498db")
-                self.op_target_lbl.configure(text=f"Turno de: {data['op']} | Realizando tarea {i+1}")
-                try:
-                    self.act_frame._parent_canvas.yview_moveto(i / len(self.app.ACTIVITIES))
-                except: pass
+    def hl(self, i):
+        self.current_activity_index = i
+        total = len(self.app.ACTIVITIES)
+        
+        # Actualizar UI de enfoque
+        self.lbl_step_num.configure(text=f"PASO {i+1} DE {total}")
+        self.lbl_step_title.configure(text=self.app.ACTIVITIES[i])
+        
+        # Obtener descripción (o manejar si no hay)
+        desc = self.app.FULL_DESCRIPTIONS[i] if i < len(self.app.FULL_DESCRIPTIONS) else "Sin descripción adicional."
+        self.lbl_step_desc.configure(text=desc)
+        
+        op = self.step_uis[i]["op"]
+        self.lbl_operator_focus.configure(text=f"👷 Resp: {op}")
+        
+        # Activar botones
+        self.btn_focus_ok.configure(state="normal")
+        self.btn_focus_incident.configure(state="normal")
+        
+        # Feedback visual en panel
+        self.focus_panel.configure(border_width=2, border_color="#3498db")
+
+    def record_split(self, i):
+        t = time.time()
+        self.current_cycle_splits.append({
+            "activity": self.app.ACTIVITIES[i],
+            "operator": self.step_uis[i]["op"],
+            "duration": round(t - self.at, 2),
+            "evidence": self.snap(i),
+            "incidents": self.step_uis[i]["incidents"].copy()
+        })
+        self.at = t
+        if i + 1 < len(self.app.ACTIVITIES):
+            if self.step_uis[i]["op"] != self.step_uis[i+1]["op"]:
+                self.trans(self.step_uis[i+1]["op"], i+1)
             else:
-                data["frame"].configure(border_width=0)
-                data["btn"].configure(state="disabled", fg_color="gray")
+                self.current_activity_index = i + 1
+                self.hl(i+1)
+        else: self.fin()
 
-    def record_split(self, index):
-        now = time.time()
-        duration = now - self.last_split_time
-        self.last_split_time = now
-        
-        self.act_widgets[index]["btn"].configure(state="disabled", fg_color="gray")
-
-        self.qc_column.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
-        self.content_container.grid_columnconfigure(1, weight=1)
-        
-        for widget in self.qc_column.winfo_children():
-            widget.destroy()
-
-        ctk.CTkLabel(self.qc_column, text=f"Control Tarea {index+1}", font=ctk.CTkFont(size=20, weight="bold")).pack(pady=(20, 5))
-        ctk.CTkLabel(self.qc_column, text="Problemas (Opcional):", text_color="gray").pack(pady=(0, 10))
-
-        common_errors = [
-             "Doblez incorrecto / asimétrico",
-             "Falta de concentración",
-             "Se saltó instrucción",
-             "Demora externa",
-             "Aplicó demasiada fuerza",
-             "Equivocó el sentido del pliegue",
-             "Dificultad de motricidad",
-             "Duda o pausa excesiva",
-             "Mala postura ergonómica",
-             "Desorden en estación"
-        ]
-
-        scroll_errors = ctk.CTkScrollableFrame(self.qc_column)
-        scroll_errors.pack(fill="both", expand=True, padx=20, pady=5)
-
-        self.error_vars = []
-        for error_text in common_errors:
-            var = ctk.StringVar(value="")
-            chk = ctk.CTkCheckBox(scroll_errors, text=error_text, variable=var, 
-                                  onvalue=error_text, offvalue="")
-            chk.pack(anchor="w", pady=5)
-            self.error_vars.append(var)
-
-        other_frame = ctk.CTkFrame(scroll_errors, fg_color="transparent")
-        other_frame.pack(fill="x", pady=10)
-        self.other_err_var = ctk.StringVar(value="")
-        chk_other = ctk.CTkCheckBox(other_frame, text="Otro:", variable=self.other_err_var, 
-                                    onvalue="Otro:", offvalue="")
-        chk_other.pack(side="left", padx=(0, 5))
-        self.other_entry = ctk.CTkEntry(other_frame, placeholder_text="Escribe detallado...")
-        self.other_entry.pack(side="left", fill="x", expand=True)
-
-        def save_and_continue(status):
-            if status == "Normal":
-                obs_text = "Normal"
-            else:
-                selected_errors = [var.get() for var in self.error_vars if var.get()]
-                if self.other_err_var.get():
-                    custom_err = self.other_entry.get().strip()
-                    if custom_err:
-                        selected_errors.append(f"Otro: {custom_err}")
-                
-                if not selected_errors:
-                    obs_text = "Incidencia sin especificar"
-                else:
-                    obs_text = " | ".join(selected_errors)
-
-            self.current_cycle_splits.append({
-                "activity": self.app.ACTIVITIES[index],
-                "operator": self.app.line_config.get(str(index), "N/A"),
-                "duration": round(duration, 2),
-                "observation": obs_text
+    def record_incident(self, i):
+        desc = simpledialog.askstring("Incidente", "¿Cuál fue el error u observación?", parent=self)
+        if desc:
+            p = self.snap(i, is_error=True)
+            self.step_uis[i]["incidents"].append({
+                "description": desc,
+                "timestamp": datetime.now().strftime("%H:%M:%S"),
+                "photo": p
             })
-            
-            self.qc_column.grid_forget()
-            self.content_container.grid_columnconfigure(1, weight=0)
-            
-            if index < len(self.app.ACTIVITIES) - 1:
-                self.current_activity_index += 1
-                self.highlight_activity(self.current_activity_index)
-                self.last_split_time = time.time()
-            else:
-                self.finish_cycle()
+            messagebox.showinfo("Incidente", "Error registrado con evidencia visual.")
 
-        button_frame = ctk.CTkFrame(self.qc_column, fg_color="transparent")
-        button_frame.pack(fill="x", pady=10)
+    def snap(self, i, is_error=False):
+        if not self.cap: return None
+        ret, f = self.cap.read()
+        if ret:
+            prefix = "error" if is_error else "evid"
+            p = os.path.join(self.media_path, f"{prefix}_{i+1}_{int(time.time())}.jpg")
+            cv2.imwrite(p, f)
+            return p
+        return None
 
-        ctk.CTkButton(button_frame, text="✅ Normal (Sin Errores)", fg_color="#27ae60", hover_color="#2ecc71", 
-                      height=40, font=ctk.CTkFont(weight="bold"),
-                      command=lambda: save_and_continue("Normal")).pack(fill="x", padx=20, pady=5)
-        
-        ctk.CTkButton(button_frame, text="⚠️ Guardar Errores", fg_color="#e67e22", hover_color="#d35400",
-                      height=40, command=lambda: save_and_continue("Error")).pack(fill="x", padx=20, pady=5)
+    def trans(self, op, idx):
+        self.waiting_for_operator = True
+        self.current_activity_index = idx
+        self.trans_box.place(relx=0, rely=0, relwidth=1, relheight=1)
+        for w in self.trans_box.winfo_children(): w.destroy()
+        ctk.CTkLabel(self.trans_box, text="🔄 CAMBIO DE OPERARIO", font=ctk.CTkFont(size=24, weight="bold"), text_color="#f1c40f").pack(pady=40)
+        ctk.CTkLabel(self.trans_box, text=f"Entra a línea: {op}\nPasa la mano por el recuadro para continuar", font=ctk.CTkFont(size=18)).pack(pady=20)
 
-    def finish_cycle(self):
+    def resume(self):
+        self.waiting_for_operator = False
+        self.trans_box.place_forget()
+        self.at = time.time()
+        self.hl(self.current_activity_index)
+        self.update_c()
+
+    def fin(self):
         self.running = False
-        total = time.time() - self.start_time
-        
-        meas = {
-            "cycle_id": len(self.app.data.get("measurements", [])) + 1,
-            "model": self.app.current_model_name,
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "total_time": round(total, 2),
-            "splits": self.current_cycle_splits
-        }
+        if self.cap: self.cap.release()
+        total = round(time.time() - self.st, 2)
+        meas = {"cycle_id": len(self.app.data.get("measurements", [])) + 1, "model": self.app.current_model_name, "total_time": total, "splits": self.current_cycle_splits}
         self.app.data.setdefault("measurements", []).append(meas)
         self.app.save_data()
-        
-        messagebox.showinfo("Ciclo Finalizado", f"Toma de tiempos guardada.\nTiempo total del ciclo: {round(total, 2)}s")
+        messagebox.showinfo("Exito", f"Estudio Guardado Correctamente.\nTiempo total: {total}s")
         self.app.show_dashboard()
 
     def reset_timer(self):
-        self.running = False
-        self.timer_label.configure(text="00:00.00")
-        self.op_target_lbl.configure(text="Preparado para iniciar")
-        self.btn_start.configure(state="normal", fg_color="#27ae60")
-        self.btn_cancel.configure(state="disabled")
-        for data in self.act_widgets:
-            data["frame"].configure(border_width=0)
-            data["btn"].configure(state="disabled", fg_color="gray")
-        
-        if hasattr(self, 'qc_column') and self.qc_column.winfo_exists():
-            self.qc_column.grid_forget()
-            if hasattr(self, 'content_container') and self.content_container.winfo_exists():
-                self.content_container.grid_columnconfigure(1, weight=0)
+        if self.cap: self.cap.release()
+        self.app.show_dashboard()
+
+    def __del__(self):
+        if hasattr(self, 'cap') and self.cap: self.cap.release()
