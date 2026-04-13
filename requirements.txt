@@ -1,0 +1,8 @@
+customtkinter
+fpdf
+matplotlib
+numpy
+opencv-python
+mediapipe
+pillow
+qrcode[pil]
