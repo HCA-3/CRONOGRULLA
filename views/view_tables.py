@@ -79,11 +79,13 @@ class TablesView(ctk.CTkFrame):
         for i in range(display_count):
             if i < len(measurements):
                 m = measurements[i]
-                # Numeración LOCAL al modelo seleccionado
+                # Calcular el total real sumando los splits para corregir discrepancias visuales
+                total_real = sum(float(s.get("duration", 0)) for s in m.get("splits", []))
+                
                 row = [f"Ciclo #{i+1}", m.get("volume", 1)]
                 for s in m["splits"]: row.append(f"{s['duration']}")
                 while len(row) < (num_steps + 2): row.append("-")
-                row.append(f"{m['total_time']}")
+                row.append(f"{round(total_real, 2)}")
                 self.tree.insert("", "end", values=row)
             else:
                 self.tree.insert("", "end", values=[f"Ciclo #{i+1}"] + ["-"]*(num_steps + 1))

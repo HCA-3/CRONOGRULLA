@@ -223,13 +223,46 @@ class PDFManager:
                 pdf.set_text_color(0, 0, 0)
                 pdf.ln(3)
                 
+                # Configuración de cuadrícula (3 imágenes por fila)
+                img_w = 60
+                img_h = 45
+                spacing = 3
+                margin_x = 10
+                
+                col = 0
                 for img_path, act in evid_list:
-                    if pdf.get_y() > 240:
+                    if col == 3: # Nueva fila
+                        pdf.ln(spacing)
+                        col = 0
+                    
+                    if pdf.get_y() > 230: # Salto de página si no cabe la fila
                         pdf.add_page()
-                    pdf.set_font('Arial', 'B', 8)
-                    pdf.cell(60, 6, f"Tarea: {act[:40]}", 0, 1)
-                    pdf.image(img_path, w=50)
-                    pdf.ln(2)
+                        pdf.set_font('Arial', 'B', 11)
+                        pdf.set_fill_color(52, 152, 219)
+                        pdf.set_text_color(255, 255, 255)
+                        pdf.cell(0, 7, f" Evidencia (cont.) - Operador: {op}", 0, 1, 'L', True)
+                        pdf.set_text_color(0, 0, 0)
+                        pdf.ln(5)
+                        col = 0
+
+                    x = margin_x + (col * (img_w + spacing))
+                    y = pdf.get_y()
+                    
+                    # Título de la tarea
+                    pdf.set_xy(x, y)
+                    pdf.set_font('Arial', 'B', 7)
+                    pdf.cell(img_w, 5, f"{act[:35]}", 0, 1, 'C')
+                    
+                    # Imagen
+                    pdf.set_x(x)
+                    pdf.image(img_path, x=x, y=pdf.get_y(), w=img_w, h=img_h)
+                    
+                    col += 1
+                    if col == 3:
+                         pdf.set_y(y + img_h + 10) # Bajar el cursor después de completar la fila
+                
+                if col != 0: # Si quedó una fila incompleta, bajar el cursor
+                     pdf.ln(img_h + 10)
                 pdf.ln(5)
             
             if not op_evidences:
@@ -280,8 +313,10 @@ class PDFManager:
                 if len(m["splits"]) < num_steps:
                     for _ in range(num_steps - len(m["splits"])): pdf.cell(w_op, 7, "-", 1, 0, 'C', fill)
                 
+                # Calcular total exacto para el PDF
+                row_sum = sum(s.get("duration", 0) for s in m["splits"])
                 pdf.set_font('Arial', 'B', 7)
-                pdf.cell(w_tot, 7, f"{m['total_time']}", 1, 1, 'C', fill)
+                pdf.cell(w_tot, 7, f"{round(row_sum, 2)}", 1, 1, 'C', fill)
                 pdf.set_font('Arial', '', 7)
                 fill = not fill
 
@@ -774,9 +809,9 @@ class PDFManager:
 
             pdf.set_font('Arial', 'I', 10)
             ergo_expl = (
-                "Esta seccion evalua las posturas adoptadas por los operarios durante el ciclo de trabajo. "
-                "Utilizando Inteligencia Artificial y vision por computadora, el sistema rastrea los angulos de las "
-                "articulaciones para identificar riesgos de fatiga o lesiones osteomusculares."
+                "Esta seccion evalua las posturas y micro-movimientos (Therbligs) adoptados por los operarios. "
+                "Utilizando IA y vision por computadora, el sistema rastrea los angulos de las articulaciones "
+                "e identifica gestos clave como Coger (Grasp) y Soltar (Release) para optimizar el metodo de trabajo."
             )
             pdf.multi_cell(0, 5, ergo_expl.encode('latin-1', 'replace').decode('latin-1'), 0, 'J')
             pdf.ln(5)
@@ -801,7 +836,8 @@ class PDFManager:
                     if avg_a < 60 or avg_a > 150: status = "Riesgo"
                     
                     risk_counts[status] += 1
-                    ergo_table_data.append((op, task, avg_a, status))
+                    therblig = split.get("therblig", "N/A")
+                    ergo_table_data.append((op, task, avg_a, status, therblig))
 
             # Tabla 10.1: Distribucion de Riesgo Postural
             pdf.set_font('Arial', 'B', 11)
@@ -834,8 +870,8 @@ class PDFManager:
             pdf.set_fill_color(22, 160, 133)
             pdf.set_text_color(255, 255, 255)
             
-            e_headers = ["Operador", "Tarea", "Angulo Codo", "Evaluacion"]
-            e_ws = [45, 60, 45, 40]
+            e_headers = ["Operador", "Tarea", "Angulo", "Therblig", "Evaluacion"]
+            e_ws = [40, 55, 25, 40, 30]
             for i, h in enumerate(e_headers):
                 pdf.cell(e_ws[i], 9, h, 1, 0, 'C', True)
             pdf.ln()
@@ -844,17 +880,21 @@ class PDFManager:
             pdf.set_font('Arial', '', 8)
             fill = False
 
-            for op, task, avg_a, status in ergo_table_data[:20]: # Mostrar hasta 20 registros
-                pdf.cell(e_ws[0], 8, f" {op[:22]}", 1, 0, 'L', fill)
-                pdf.cell(e_ws[1], 8, f" {task[:35]}", 1, 0, 'L', fill)
+            for op, task, avg_a, status, th in ergo_table_data[:25]: # Mostrar hasta 25 registros
+                pdf.cell(e_ws[0], 8, f" {op[:20]}", 1, 0, 'L', fill)
+                pdf.cell(e_ws[1], 8, f" {task[:30]}", 1, 0, 'L', fill)
                 pdf.cell(e_ws[2], 8, f"{int(avg_a)} deg", 1, 0, 'C', fill)
+                
+                # Therblig con color sutil
+                pdf.set_font('Arial', 'I', 7)
+                pdf.cell(e_ws[3], 8, f" {th}", 1, 0, 'L', fill)
                 
                 pdf.set_font('Arial', 'B', 8)
                 if status == "Optimo": pdf.set_text_color(39, 174, 96)
                 elif status == "Precaucion": pdf.set_text_color(211, 84, 0)
                 else: pdf.set_text_color(192, 57, 43)
                 
-                pdf.cell(e_ws[3], 8, status, 1, 1, 'C', fill)
+                pdf.cell(e_ws[4], 8, status, 1, 1, 'C', fill)
                 pdf.set_text_color(0, 0, 0)
                 pdf.set_font('Arial', '', 8)
                 fill = not fill

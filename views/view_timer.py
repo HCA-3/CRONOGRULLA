@@ -231,6 +231,17 @@ class TimerView(ctk.CTkFrame):
         if angle > 180.0: angle = 360-angle
         return angle
 
+    def calculate_distance(self, p1, p2):
+        return np.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
+
+    def detect_therblig(self, hand_lms):
+        # Distancia entre punta de pulgar (4) e índice (8)
+        d = self.calculate_distance(hand_lms.landmark[4], hand_lms.landmark[8])
+        if d < 0.06:
+            return "✊ COGER (G)", (46, 204, 113) # Verde
+        else:
+            return "🖐️ SOLTAR (RL)", (52, 152, 219) # Azul
+
     def process_vision(self, frame):
         ops = self.app.operator_data if self.app.operator_data else [{"name": "Estación 1"}]
         num = len(ops)
@@ -285,21 +296,32 @@ class TimerView(ctk.CTkFrame):
         # Lógica de Trigger por Zonas (usando las manos detectadas)
         zw = (w - 40) // num
         
+        # --- ANÁLISIS DE THERBLIGS (Coger/Soltar) ---
+        therblig_info = "ESPERANDO MANO..."
+        therblig_color = (255, 255, 255)
+        
         # Recopilar puntos de las manos para verificar colisión con las zonas
         hand_points = []
         if results:
             if results.right_hand_landmarks:
                 idx_tip = results.right_hand_landmarks.landmark[8]
                 hand_points.append((int(idx_tip.x * w), int(idx_tip.y * h)))
-            if results.left_hand_landmarks:
+                therblig_info, therblig_color = self.detect_therblig(results.right_hand_landmarks)
+            elif results.left_hand_landmarks:
                 idx_tip = results.left_hand_landmarks.landmark[8]
                 hand_points.append((int(idx_tip.x * w), int(idx_tip.y * h)))
+                therblig_info, therblig_color = self.detect_therblig(results.left_hand_landmarks)
             
             if not hand_points and results.pose_landmarks:
                 for pt_idx in [15, 16]: # Muñecas
                     lm = results.pose_landmarks.landmark[pt_idx]
                     if lm.visibility > 0.5:
                         hand_points.append((int(lm.x * w), int(lm.y * h)))
+        
+        self.current_therblig = therblig_info
+        # Dibujar info de Therblig en pantalla
+        cv2.putText(frame, f"THERBLIG: {therblig_info}", (20, h - 20), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, therblig_color, 2)
         
         # FALLBACK: Si no hay IA o no detecta, usar detección de movimiento simple en las zonas
         use_fallback = (results is None or (not results.pose_landmarks and not results.right_hand_landmarks and not results.left_hand_landmarks))
@@ -447,6 +469,7 @@ class TimerView(ctk.CTkFrame):
                 "activity": self.app.ACTIVITIES[global_task_idx],
                 "operator": name,
                 "evidence": os.path.join(self.media_path, filename) if filename else "",
+                "therblig": getattr(self, "current_therblig", "N/A"),
                 "ergo_summary": {
                     "avg_elbow_r": np.mean([e["elbow_r"] for e in s["ergo_log"] if "elbow_r" in e]) if s["ergo_log"] else 0,
                     "avg_elbow_l": np.mean([e["elbow_l"] for e in s["ergo_log"] if "elbow_l" in e]) if s["ergo_log"] else 0
@@ -500,8 +523,10 @@ class TimerView(ctk.CTkFrame):
             
         for g in range(1, self.total_g + 1):
              cycle = self.current_cycles_data[g]
-             if cycle["total_time"] > 0:
-                 cycle["total_time"] = round(cycle["total_time"], 2)
+             # Recalcular total como suma exacta de splits para consistencia total en reportes
+             cycle_sum = sum(s.get("duration", 0) for s in cycle["splits"])
+             if cycle_sum > 0:
+                 cycle["total_time"] = round(cycle_sum, 2)
                  self.app.data["measurements"].append(cycle)
                  
         self.app.save_data()

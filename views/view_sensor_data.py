@@ -38,12 +38,13 @@ class SensorDataView(ctk.CTkFrame):
                         foreground="white", 
                         font=('Arial', 11, 'bold'))
         
-        cols = ("Operador", "Tarea", "Ángulo Codo D.", "Ángulo Codo I.", "Evaluación Postural")
+        cols = ("Operador", "Tarea", "Ángulo Codo D.", "Ángulo Codo I.", "Therblig", "Evaluación Postural")
         self.tree = ttk.Treeview(self.table_container, columns=cols, show="headings", style="Ergo.Treeview")
         
         for col in cols:
             self.tree.heading(col, text=col)
-            self.tree.column(col, anchor="center", width=150)
+            w_val = 110 if "Ángulo" in col else 140
+            self.tree.column(col, anchor="center", width=w_val)
 
         self.tree.pack(fill="both", expand=True, padx=10, pady=10)
         
@@ -95,5 +96,6 @@ class SensorDataView(ctk.CTkFrame):
                     task[:30],
                     f"{int(angle_r)}°" if angle_r else "-",
                     f"{int(angle_l)}°" if angle_l else "-",
+                    split.get("therblig", "N/A"),
                     status
                 ))
