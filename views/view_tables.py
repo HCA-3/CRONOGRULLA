@@ -16,18 +16,33 @@ class TablesView(ctk.CTkFrame):
         self.main_title = ctk.CTkLabel(header_f, text=f"{self.app.current_model_name} - Matriz de Tiempos", 
                                       font=ctk.CTkFont(size=26, weight="bold"))
         self.main_title.pack(side="left")
-        
-        ctk.CTkButton(header_f, text="Eliminar Último", fg_color="#e74c3c", command=self.delete_last_measurement).pack(side="right")
+        ctk.CTkButton(header_f, text="Eliminar Último", fg_color="#e74c3c", command=self.delete_last_measurement).pack(side="right", padx=5)
+        ctk.CTkButton(header_f, text="📥 Exportar Excel", fg_color="#27ae60", command=self.export_table_excel).pack(side="right", padx=5)
 
         self.table_selector_var = tk.StringVar(value=self.app.current_model_name)
         selector = ctk.CTkSegmentedButton(self, values=list(self.app.models.keys()), 
                                          variable=self.table_selector_var, command=self.update_table_view)
         selector.pack(fill="x", padx=40, pady=(0, 10))
-
+        
         self.table_container = ctk.CTkFrame(self, fg_color="transparent")
         self.table_container.pack(fill="both", expand=True, padx=40, pady=(0, 20))
-        
         self.update_table_view(self.app.current_model_name)
+
+    def export_table_excel(self):
+        from tkinter import filedialog, messagebox
+        import pandas as pd
+        path = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel", "*.xlsx")])
+        if not path: return
+        try:
+            cols = [self.tree.heading(c)["text"] for c in self.tree["columns"]]
+            rows = []
+            for child in self.tree.get_children():
+                rows.append(self.tree.item(child)["values"])
+            df = pd.DataFrame(rows, columns=cols)
+            df.to_excel(path, index=False)
+            messagebox.showinfo("Éxito", "Matriz de tiempos exportada correctamente a Excel.")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo exportar: {e}")
 
     def update_table_view(self, model_name):
         # Actualizar título principal dinámicamente
@@ -40,7 +55,7 @@ class TablesView(ctk.CTkFrame):
         table_f.pack(fill="both", expand=True)
 
         num_steps = len(self.app.models[model_name]["activities"])
-        cols = ["Ciclo"] + [f"P{i+1}" for i in range(num_steps)] + ["TOTAL"]
+        cols = ["Ciclo", "Volumen"] + [f"P{i+1}" for i in range(num_steps)] + ["TOTAL"]
         self.tree = ttk.Treeview(table_f, columns=cols, show="headings", style="Premium.Treeview")
         
         style = ttk.Style()
@@ -51,6 +66,7 @@ class TablesView(ctk.CTkFrame):
         for c in cols:
             self.tree.heading(c, text=c)
             w = 50 if "P" in c and len(c) < 4 else 80
+            if c == "Volumen": w = 60
             self.tree.column(c, width=w, anchor="center")
 
         sb = ttk.Scrollbar(table_f, orient="vertical", command=self.tree.yview)
@@ -64,9 +80,9 @@ class TablesView(ctk.CTkFrame):
             if i < len(measurements):
                 m = measurements[i]
                 # Numeración LOCAL al modelo seleccionado
-                row = [f"Ciclo #{i+1}"]
+                row = [f"Ciclo #{i+1}", m.get("volume", 1)]
                 for s in m["splits"]: row.append(f"{s['duration']}")
-                while len(row) < (num_steps + 1): row.append("-")
+                while len(row) < (num_steps + 2): row.append("-")
                 row.append(f"{m['total_time']}")
                 self.tree.insert("", "end", values=row)
             else:

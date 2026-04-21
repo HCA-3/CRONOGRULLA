@@ -14,6 +14,8 @@ from views.view_tables import TablesView
 from views.view_stats import StatsView
 from views.view_media import MediaGalleryView
 from views.view_trash import TrashView
+from views.view_comparison import ComparisonView
+from views.view_sensor_data import SensorDataView
 from utils.pdf_report import PDFManager
 
 # Configuración de apariencia Premium..
@@ -140,6 +142,8 @@ class CraneFlowApp(ctk.CTk):
             ("📋 Datos y Tabla", self.show_tables),
             ("👥 Equipo y Tareas", self.show_operators_setup),
             ("📸 Evidencia Visual", self.show_media_gallery),
+            ("📡 Datos del Sensor", self.show_sensor_data),
+            ("📊 Comparativa Operarios", self.show_comparison),
             ("🗑️ Papelera", self.show_trash),
             ("📈 Estadísticas", self.show_stats)
         ]
@@ -152,18 +156,20 @@ class CraneFlowApp(ctk.CTk):
             btn.grid(row=i+1, column=0, padx=20, pady=5, sticky="ew")
             self.nav_btns.append(btn)
         
-        # Espaciador para empujar botones de PDF abajo
-        self.sidebar.grid_rowconfigure(len(nav_buttons)+1, weight=1)
+        # Contenedor inferior para botones de exportación (más pegados)
+        self.pdf_frame = ctk.CTkFrame(self.sidebar, fg_color="transparent")
+        self.pdf_frame.grid(row=10, column=0, sticky="ew", padx=20, pady=(10, 20))
+        self.pdf_frame.grid_columnconfigure(0, weight=1)
 
-        self.btn_pdf_instructions = ctk.CTkButton(self.sidebar, text="📘 Exportar Manual Instrucciones", 
+        self.btn_pdf_instructions = ctk.CTkButton(self.pdf_frame, text="📘 Exportar Manual", 
                                      fg_color=("#3498db", "#2980b9"), hover_color=("#2980b9", "#3498db"),
-                                     font=ctk.CTkFont(size=14, weight="bold"), command=self.pdf_manager.generate_instructions_pdf)
-        self.btn_pdf_instructions.grid(row=10, column=0, padx=20, pady=(20, 0), sticky="ew")
+                                     font=ctk.CTkFont(size=13, weight="bold"), command=self.pdf_manager.generate_instructions_pdf)
+        self.btn_pdf_instructions.grid(row=0, column=0, pady=(0, 5), sticky="ew")
 
-        self.btn_pdf = ctk.CTkButton(self.sidebar, text="📄 Exportar Informe PDF", 
+        self.btn_pdf = ctk.CTkButton(self.pdf_frame, text="📄 Exportar Informe PDF", 
                                      fg_color=("#27ae60", "#219653"), hover_color=("#2ecc71", "#27ae60"),
-                                     font=ctk.CTkFont(size=14, weight="bold"), command=self.pdf_manager.generate_pdf)
-        self.btn_pdf.grid(row=11, column=0, padx=20, pady=20, sticky="ew")
+                                     font=ctk.CTkFont(size=13, weight="bold"), command=self.pdf_manager.generate_pdf)
+        self.btn_pdf.grid(row=1, column=0, pady=0, sticky="ew")
 
         # Contenedor Principal
         self.main_frame = ctk.CTkFrame(self, corner_radius=15, fg_color=("#ecf0f1", "#0f172a"))
@@ -228,6 +234,16 @@ class CraneFlowApp(ctk.CTk):
     def show_trash(self):
         self.clear_main_frame()
         self.current_view = TrashView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    def show_comparison(self):
+        self.clear_main_frame()
+        self.current_view = ComparisonView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    def show_sensor_data(self):
+        self.clear_main_frame()
+        self.current_view = SensorDataView(self.main_frame, self)
         self.current_view.pack(fill="both", expand=True)
 
     def open_pdf_guide(self, model_name):
