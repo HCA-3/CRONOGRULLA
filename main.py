@@ -16,6 +16,7 @@ from views.view_media import MediaGalleryView
 from views.view_trash import TrashView
 from views.view_comparison import ComparisonView
 from views.view_sensor_data import SensorDataView
+from views.view_standard_time import StandardTimeView
 from utils.pdf_report import PDFManager
 
 # Configuración de apariencia Premium..
@@ -145,7 +146,8 @@ class CraneFlowApp(ctk.CTk):
             ("📡 Datos del Sensor", self.show_sensor_data),
             ("📊 Comparativa Operarios", self.show_comparison),
             ("🗑️ Papelera", self.show_trash),
-            ("📈 Estadísticas", self.show_stats)
+            ("📈 Estadísticas", self.show_stats),
+            ("⏱️ Tiempo Estándar", self.show_standard_time)
         ]
 
         self.nav_btns = []
@@ -244,6 +246,11 @@ class CraneFlowApp(ctk.CTk):
     def show_sensor_data(self):
         self.clear_main_frame()
         self.current_view = SensorDataView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    def show_standard_time(self):
+        self.clear_main_frame()
+        self.current_view = StandardTimeView(self.main_frame, self)
         self.current_view.pack(fill="both", expand=True)
 
     def open_pdf_guide(self, model_name):

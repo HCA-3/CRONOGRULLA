@@ -39,6 +39,12 @@ class StudySetupDialog(ctk.CTkToplevel):
         self.s_editor = EnvTableEditor(ts, unit_label="Nivel (dB)")
         self.s_editor.pack(fill="both", expand=True, padx=5, pady=5)
         
+        # Checkbox para modo flujo
+        self.flow_mode_var = tk.BooleanVar(value=True)
+        self.flow_cb = ctk.CTkCheckBox(self, text="Modo Flujo Balanceado (Inicios Escalonados)", 
+                                        variable=self.flow_mode_var, font=ctk.CTkFont(size=12))
+        self.flow_cb.pack(pady=5)
+        
         ctk.CTkButton(self, text="▶ COMENZAR ESTUDIO", command=self.submit, fg_color="#2ecc71").pack(pady=10)
         
     def submit(self):
@@ -49,7 +55,8 @@ class StudySetupDialog(ctk.CTkToplevel):
         self.result = {
             "qty": q,
             "lux_data": self.l_editor.get_data(),
-            "db_data": self.s_editor.get_data()
+            "db_data": self.s_editor.get_data(),
+            "flow_mode": self.flow_mode_var.get()
         }
         self.destroy()
 
@@ -379,24 +386,35 @@ class TimerView(ctk.CTkFrame):
             if not dlg.result: return
             res = dlg.result
             self.total_g = res["qty"]
+            self.flow_mode = res.get("flow_mode", False)
             
             ops = self.app.operator_data if self.app.operator_data else [{"name": "Estación 1"}]
             self.op_states = {}
-            for op in ops:
+            for i, op in enumerate(ops):
                 n = op.get("name") if isinstance(op, dict) else str(op)
-                task_indices = [i for i, t in enumerate(self.app.ACTIVITIES) if self.app.line_config.get(str(i)) == n]
-                tasks = [self.app.ACTIVITIES[i] for i in task_indices]
+                task_indices = [idx for idx, t in enumerate(self.app.ACTIVITIES) if self.app.line_config.get(str(idx)) == n]
+                tasks = [self.app.ACTIVITIES[idx] for idx in task_indices]
                 if not tasks: 
                      tasks = ["Tarea Unica"]
                      task_indices = [0]
-                self.op_states[n] = {"g": 1, "idx": 0, "tasks": tasks, "task_indices": task_indices, "start": time.time(), "lt": 0, "done": False, "ergo_log": []}
+                
+                # En modo flujo, solo el primero inicia activo
+                is_active = True if (not self.flow_mode or i == 0) else False
+                
+                self.op_states[n] = {
+                    "g": 1, "idx": 0, "tasks": tasks, "task_indices": task_indices, 
+                    "start": time.time(), "lt": 0, "done": False, "ergo_log": [],
+                    "active": is_active, "op_total_start": time.time() if is_active else None,
+                    "op_total_end": None
+                }
 
             self.current_cycles_data = {
                 g: {
                    "model": self.app.current_model_name,
                    "lux_data": res["lux_data"], "db_data": res["db_data"],
                    "splits": [{"duration": 0.0} for _ in range(len(self.app.ACTIVITIES))],
-                   "total_time": 0.0
+                   "total_time": 0.0,
+                   "is_flow_mode": self.flow_mode
                 }
                 for g in range(1, self.total_g + 1)
             }
@@ -408,10 +426,15 @@ class TimerView(ctk.CTkFrame):
             self.btn_pause.configure(state="normal", text="⏸ PAUSAR", fg_color="#f39c12")
             self.btn_reset.configure(state="normal")
             
-            # Cambiar estados a TRABAJANDO
-            for n in self.op_states:
-                self.op_cards[n]["status_lbl"].configure(text="TRABAJANDO")
-                self.op_cards[n]["status_f"].configure(fg_color="#e67e22")
+            # Cambiar estados a TRABAJANDO o ESPERANDO
+            for i, n in enumerate(self.op_states):
+                if self.op_states[n]["active"]:
+                    self.op_cards[n]["status_lbl"].configure(text="TRABAJANDO")
+                    self.op_cards[n]["status_f"].configure(fg_color="#e67e22")
+                else:
+                    self.op_cards[n]["status_lbl"].configure(text="EN ESPERA")
+                    self.op_cards[n]["status_f"].configure(fg_color="#7f8c8d")
+                    self.op_cards[n]["step"].configure(text="Esperando unidad...")
 
             self.update_clock()
         else:
@@ -481,14 +504,38 @@ class TimerView(ctk.CTkFrame):
         s["lt"] = now
         s["idx"] += 1
         if s["idx"] >= len(s["tasks"]):
+            # Acaba de terminar una grulla completa para este operario
             s["idx"] = 0
+            
+            # Si estamos en modo flujo y es la primera grulla, activamos al siguiente operario
+            if self.flow_mode and s["g"] == 1:
+                ops_list = list(self.op_states.keys())
+                try:
+                    curr_idx = ops_list.index(name)
+                    if curr_idx + 1 < len(ops_list):
+                        next_op = ops_list[curr_idx + 1]
+                        if not self.op_states[next_op]["active"]:
+                            self.op_states[next_op]["active"] = True
+                            self.op_states[next_op]["start"] = now
+                            self.op_states[next_op]["op_total_start"] = now
+                            self.op_cards[next_op]["status_lbl"].configure(text="TRABAJANDO")
+                            self.op_cards[next_op]["status_f"].configure(fg_color="#e67e22")
+                            self.op_cards[next_op]["step"].configure(text=f"Paso 1 (G:1)")
+                except: pass
+
             s["g"] += 1
             if s["g"] > self.total_g:
                 s["done"] = True
+                s["op_total_end"] = now
                 self.op_cards[name]["status_lbl"].configure(text="FINALIZADO")
                 self.op_cards[name]["status_f"].configure(fg_color="#2ecc71")
                 self.op_cards[name]["step"].configure(text="COMPLETADO")
+                
+                # Mostrar tiempo final acumulado de la estación
+                tot_op = s["op_total_end"] - s["op_total_start"]
+                self.op_cards[name]["time"].configure(text=f"{tot_op:.2f}s", text_color="#2ecc71")
                 return
+                
         s["start"] = now
         self.op_cards[name]["step"].configure(text=f"Paso {s['idx']+1} (G:{s['g']})")
 
@@ -498,11 +545,16 @@ class TimerView(ctk.CTkFrame):
         if not self.paused:
             now = time.time()
             for n, s in self.op_states.items():
-                if not s["done"]: 
-                    self.op_cards[n]["time"].configure(text=f"{now - s['start']:.2f}s")
+                if s["active"] and not s["done"]: 
+                    # Mostrar tiempo acumulado del operario en la tarjeta
+                    elapsed_op = now - s["op_total_start"]
+                    self.op_cards[n]["time"].configure(text=f"{elapsed_op:.2f}s")
+                    
                     # Registrar ergonomía periódicamente
                     if hasattr(self, 'last_ergo') and self.last_ergo:
                         s["ergo_log"].append(self.last_ergo)
+                elif not s["active"]:
+                    self.op_cards[n]["time"].configure(text="0.00s")
             
             el = now - self.glob_st
             self.timer_label.configure(text=f"{int(el/60):02d}:{int(el%60):02d}.{int((el%1)*100):02d}")
@@ -518,15 +570,31 @@ class TimerView(ctk.CTkFrame):
         if not self.running: return
         self.running = False
         
+        total_lead_time = time.time() - self.glob_st
+        
+        op_summaries = {}
+        if self.flow_mode:
+            for n, s in self.op_states.items():
+                # Tiempo total de ocupación de la estación
+                if s["op_total_start"] and s["op_total_end"]:
+                    dur = s["op_total_end"] - s["op_total_start"]
+                elif s["op_total_start"]:
+                    dur = time.time() - s["op_total_start"]
+                else:
+                    dur = 0
+                op_summaries[n] = round(dur, 2)
+
         if "measurements" not in self.app.data:
             self.app.data["measurements"] = []
             
         for g in range(1, self.total_g + 1):
              cycle = self.current_cycles_data[g]
-             # Recalcular total como suma exacta de splits para consistencia total en reportes
              cycle_sum = sum(s.get("duration", 0) for s in cycle["splits"])
              if cycle_sum > 0:
                  cycle["total_time"] = round(cycle_sum, 2)
+                 if self.flow_mode:
+                     cycle["global_lead_time"] = round(total_lead_time, 2)
+                     cycle["op_station_times"] = op_summaries
                  self.app.data["measurements"].append(cycle)
                  
         self.app.save_data()
