@@ -90,13 +90,34 @@ class TimerView(ctk.CTkFrame):
             self.mp_holistic = mp.solutions.holistic
             self.holistic = self.mp_holistic.Holistic(
                 static_image_mode=False,
-                model_complexity=1,
+                model_complexity=0,       # Más rápido y ligero
                 smooth_landmarks=True,
-                min_detection_confidence=0.5,
-                min_tracking_confidence=0.5
+                min_detection_confidence=0.3,  # Más permisivo para detectar
+                min_tracking_confidence=0.3    # Más permisivo para seguir
             )
             self.mp_drawing = mp.solutions.drawing_utils
             self.mp_drawing_styles = mp.solutions.drawing_styles
+            
+            # Estilo personalizado para el esqueleto — MÁS VISIBLE para el operario
+            self.pose_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 255, 80),   # Verde neon brillante
+                thickness=4,           # Líneas gruesas
+                circle_radius=6        # Puntos grandes
+            )
+            self.hand_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 200, 255),  # Cyan para las manos
+                thickness=3,
+                circle_radius=5
+            )
+            self.conn_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(50, 255, 50),  # Verde conexiones
+                thickness=3
+            )
+            self.hand_conn_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 180, 255),
+                thickness=2
+            )
+            
             self.after(0, lambda: self.gesture_status_lbl.configure(text="SISTEMA IA LISTO ✅", text_color="#2ecc71"))
         except Exception as e:
             print(f"Error MediaPipe: {e}")
@@ -259,26 +280,63 @@ class TimerView(ctk.CTkFrame):
         if self.holistic:
             try:
                 frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_rgb.flags.writeable = False  # Optimización MediaPipe
                 results = self.holistic.process(frame_rgb)
-            except:
-                pass
+                frame_rgb.flags.writeable = True
+            except Exception as mp_err:
+                print(f"[MediaPipe ERROR] {mp_err}")
         
         trigs = []
         now = time.time()
         
-        # Dibujar landmarks de MediaPipe
-        if results and results.pose_landmarks:
+        # ── DIBUJAR ESQUELETO VISIBLE PARA EL OPERARIO ──────────────────────
+        person_detected = results and results.pose_landmarks
+        
+        if person_detected:
+            # Obtener specs personalizados (con fallback si aún no están listos)
+            lm_spec = getattr(self, 'pose_draw_spec', self.mp_drawing.DrawingSpec(color=(0,255,80), thickness=4, circle_radius=6))
+            cn_spec  = getattr(self, 'conn_draw_spec', self.mp_drawing.DrawingSpec(color=(50,255,50), thickness=3))
+            hd_spec  = getattr(self, 'hand_draw_spec', self.mp_drawing.DrawingSpec(color=(0,200,255), thickness=3, circle_radius=5))
+            hc_spec  = getattr(self, 'hand_conn_spec', self.mp_drawing.DrawingSpec(color=(0,180,255), thickness=2))
+            
+            # Esqueleto de pose completo
             self.mp_drawing.draw_landmarks(
                 frame, results.pose_landmarks, self.mp_holistic.POSE_CONNECTIONS,
-                landmark_drawing_spec=self.mp_drawing_styles.get_default_pose_landmarks_style())
+                landmark_drawing_spec=lm_spec,
+                connection_drawing_spec=cn_spec)
         
         if results and results.left_hand_landmarks:
+            hd_spec = getattr(self, 'hand_draw_spec', self.mp_drawing.DrawingSpec(color=(0,200,255), thickness=3, circle_radius=5))
+            hc_spec = getattr(self, 'hand_conn_spec', self.mp_drawing.DrawingSpec(color=(0,180,255), thickness=2))
             self.mp_drawing.draw_landmarks(
-                frame, results.left_hand_landmarks, self.mp_holistic.HAND_CONNECTIONS)
+                frame, results.left_hand_landmarks, self.mp_holistic.HAND_CONNECTIONS,
+                landmark_drawing_spec=hd_spec, connection_drawing_spec=hc_spec)
             
         if results and results.right_hand_landmarks:
+            hd_spec = getattr(self, 'hand_draw_spec', self.mp_drawing.DrawingSpec(color=(0,200,255), thickness=3, circle_radius=5))
+            hc_spec = getattr(self, 'hand_conn_spec', self.mp_drawing.DrawingSpec(color=(0,180,255), thickness=2))
             self.mp_drawing.draw_landmarks(
-                frame, results.right_hand_landmarks, self.mp_holistic.HAND_CONNECTIONS)
+                frame, results.right_hand_landmarks, self.mp_holistic.HAND_CONNECTIONS,
+                landmark_drawing_spec=hd_spec, connection_drawing_spec=hc_spec)
+
+        # ── BANNER DE ESTADO PARA EL OPERARIO ───────────────────────────────
+        banner_h = 42
+        overlay = frame.copy()
+        if person_detected:
+            cv2.rectangle(overlay, (0, 0), (w, banner_h), (0, 140, 40), -1)  # Verde oscuro
+            cv2.addWeighted(overlay, 0.55, frame, 0.45, 0, frame)
+            cv2.putText(frame, "PERSONA DETECTADA  \u2714",
+                        (12, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.85, (0, 255, 100), 2, cv2.LINE_AA)
+        elif self.holistic:
+            cv2.rectangle(overlay, (0, 0), (w, banner_h), (160, 80, 0), -1)  # Naranja oscuro
+            cv2.addWeighted(overlay, 0.55, frame, 0.45, 0, frame)
+            cv2.putText(frame, "BUSCANDO PERSONA... POSICIONATE FRENTE A LA CAMARA",
+                        (12, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 200, 0), 2, cv2.LINE_AA)
+        else:
+            cv2.rectangle(overlay, (0, 0), (w, banner_h), (120, 0, 0), -1)  # Rojo oscuro
+            cv2.addWeighted(overlay, 0.55, frame, 0.45, 0, frame)
+            cv2.putText(frame, "INICIANDO IA...",
+                        (12, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 80, 80), 2, cv2.LINE_AA)
 
         # --- ANÁLISIS ERGONÓMICO ---
         current_ergo = {}
