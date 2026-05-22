@@ -2,6 +2,11 @@ import customtkinter as ctk
 import numpy as np
 
 class DashboardView(ctk.CTkFrame):
+    def toggle_theme(self):
+        """Toggle between dark and light appearance modes."""
+        current = ctk.get_appearance_mode()
+        new_mode = "Light" if current == "Dark" else "Dark"
+        ctk.set_appearance_mode(new_mode)
     def __init__(self, master, app):
         super().__init__(master, fg_color="transparent")
         self.app = app
@@ -12,6 +17,14 @@ class DashboardView(ctk.CTkFrame):
         header = ctk.CTkLabel(self, text="Panel de Control Principal", 
                               font=ctk.CTkFont(size=28, weight="bold"))
         header.pack(pady=(30, 15), anchor="w", padx=40)
+        # Theme toggle switch
+        theme_switch = ctk.CTkSwitch(self, text="Tema Oscuro", command=self.toggle_theme)
+        # Set initial state based on current mode
+        if ctk.get_appearance_mode() == "Dark":
+            theme_switch.select()
+        else:
+            theme_switch.deselect()
+        theme_switch.pack(pady=(30, 15), anchor="e", padx=40)
 
         cards_frame = ctk.CTkFrame(self, fg_color="transparent")
         cards_frame.pack(fill="x", padx=40, pady=5)
