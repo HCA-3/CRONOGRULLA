@@ -79,49 +79,47 @@ class TimerView(ctk.CTkFrame):
         
         self.build_ui()
         
-        # --- MEDIA PIPE SETUP (Robust Initialization) ---
-        threading.Thread(target=self.init_mediapipe, daemon=True).start()
+        # --- MEDIA PIPE SETUP ---
+        # Se inicializa desde el hilo principal usando after() para evitar
+        # conflictos de threading con tkinter (MediaPipe falla en daemon threads)
+        self.after(300, self.init_mediapipe)
         
         self.show_camera_setup_dialog()
 
     def init_mediapipe(self):
+        """Inicializa MediaPipe en el hilo principal de tkinter."""
         try:
-            self.after(0, lambda: self.gesture_status_lbl.configure(text="INICIALIZANDO IA...", text_color="#f1c40f"))
+            self.gesture_status_lbl.configure(text="INICIALIZANDO IA...", text_color="#f1c40f")
+            self.update_idletasks()  # Forzar actualización del label
+            
             self.mp_holistic = mp.solutions.holistic
-            self.holistic = self.mp_holistic.Holistic(
-                static_image_mode=False,
-                model_complexity=0,       # Más rápido y ligero
-                smooth_landmarks=True,
-                min_detection_confidence=0.3,  # Más permisivo para detectar
-                min_tracking_confidence=0.3    # Más permisivo para seguir
-            )
             self.mp_drawing = mp.solutions.drawing_utils
             self.mp_drawing_styles = mp.solutions.drawing_styles
             
-            # Estilo personalizado para el esqueleto — MÁS VISIBLE para el operario
-            self.pose_draw_spec = self.mp_drawing.DrawingSpec(
-                color=(0, 255, 80),   # Verde neon brillante
-                thickness=4,           # Líneas gruesas
-                circle_radius=6        # Puntos grandes
-            )
-            self.hand_draw_spec = self.mp_drawing.DrawingSpec(
-                color=(0, 200, 255),  # Cyan para las manos
-                thickness=3,
-                circle_radius=5
-            )
-            self.conn_draw_spec = self.mp_drawing.DrawingSpec(
-                color=(50, 255, 50),  # Verde conexiones
-                thickness=3
-            )
-            self.hand_conn_spec = self.mp_drawing.DrawingSpec(
-                color=(0, 180, 255),
-                thickness=2
+            self.holistic = self.mp_holistic.Holistic(
+                static_image_mode=False,
+                model_complexity=0,
+                smooth_landmarks=True,
+                min_detection_confidence=0.3,
+                min_tracking_confidence=0.3
             )
             
-            self.after(0, lambda: self.gesture_status_lbl.configure(text="SISTEMA IA LISTO ✅", text_color="#2ecc71"))
+            # Estilos de dibujo: esqueleto verde neón visible para el operario
+            self.pose_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 255, 80), thickness=4, circle_radius=6)
+            self.conn_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(50, 255, 50), thickness=3)
+            self.hand_draw_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 200, 255), thickness=3, circle_radius=5)
+            self.hand_conn_spec = self.mp_drawing.DrawingSpec(
+                color=(0, 180, 255), thickness=2)
+            
+            self.gesture_status_lbl.configure(text="SISTEMA IA LISTO ✅", text_color="#2ecc71")
+            print("[MediaPipe] Inicializado correctamente en hilo principal.")
+            
         except Exception as e:
-            print(f"Error MediaPipe: {e}")
-            self.after(0, lambda: self.gesture_status_lbl.configure(text="MODO SIMPLE (SIN IA)", text_color="#e74c3c"))
+            print(f"[MediaPipe ERROR] {e}")
+            self.gesture_status_lbl.configure(text="MODO SIMPLE (SIN IA)", text_color="#e74c3c")
 
     def show_camera_setup_dialog(self):
         src_win = ctk.CTkToplevel(self)
@@ -384,9 +382,7 @@ class TimerView(ctk.CTkFrame):
                         hand_points.append((int(lm.x * w), int(lm.y * h)))
         
         self.current_therblig = therblig_info
-        # Dibujar info de Therblig en pantalla
-        cv2.putText(frame, f"THERBLIG: {therblig_info}", (20, h - 20), 
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, therblig_color, 2)
+        # (Texto de Therblig oculto de la cámara por petición del usuario)
         
         # FALLBACK: Si no hay IA o no detecta, usar detección de movimiento simple en las zonas
         use_fallback = (results is None or (not results.pose_landmarks and not results.right_hand_landmarks and not results.left_hand_landmarks))
