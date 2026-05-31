@@ -49,13 +49,66 @@ class StandardTimeView(ctk.CTkFrame):
         ctk.CTkButton(params_p, text="🔄 Recalcular Todo", command=self.refresh_data, 
                       fg_color="#3498db", width=120).grid(row=0, column=5, padx=20)
 
+        self.operator_allowance_vars = {}
+        self.last_operator_list = []
+        self.allowances_frame = ctk.CTkFrame(self, corner_radius=15)
+        self.allowances_frame.pack(fill="x", padx=40, pady=(0, 10))
+        ctk.CTkLabel(self.allowances_frame, text="🧑‍🏭 Suplementos individuales por operario:",
+                     font=ctk.CTkFont(weight="bold")).pack(anchor="w", padx=20, pady=(10, 5))
+        self.allow_inputs = ctk.CTkFrame(self.allowances_frame, fg_color="transparent")
+        self.allow_inputs.pack(fill="x", padx=20, pady=(0, 10))
+        ctk.CTkButton(self.allowances_frame, text="Guardar Suplementos", command=self.save_operator_allowances,
+                      fg_color="#27ae60", width=180).pack(anchor="e", padx=20, pady=(0, 10))
+        
+        self.render_operator_allowance_inputs()
+
         # Contenedor de la Tabla
         self.table_container = ctk.CTkScrollableFrame(self, fg_color="transparent")
         self.table_container.pack(fill="both", expand=True, padx=40, pady=(0, 20))
         
         self.refresh_data()
 
+    def render_operator_allowance_inputs(self):
+        for widget in self.allow_inputs.winfo_children():
+            widget.destroy()
+        self.operator_allowance_vars.clear()
+
+        operators = self.app.operator_data or []
+        if not operators:
+            ctk.CTkLabel(self.allow_inputs, text="No hay operarios configurados. Ve a Equipo y Tareas para agregarlos.",
+                         text_color="gray").pack(anchor="w", pady=10)
+            return
+
+        for op_name in operators:
+            row = ctk.CTkFrame(self.allow_inputs, fg_color="transparent")
+            row.pack(fill="x", pady=4)
+            ctk.CTkLabel(row, text=op_name, width=220, anchor="w").pack(side="left", padx=(0, 10))
+            var = tk.StringVar(value=str(self.app.operator_allowances.get(op_name, self.default_allowance)))
+            entry = ctk.CTkEntry(row, width=80, textvariable=var)
+            entry.pack(side="left")
+            ctk.CTkLabel(row, text="%").pack(side="left", padx=(5, 0))
+            self.operator_allowance_vars[op_name] = var
+
+    def get_operator_allowances(self):
+        allowances = {}
+        for op_name, var in self.operator_allowance_vars.items():
+            try:
+                allowances[op_name] = float(var.get())
+            except ValueError:
+                allowances[op_name] = self.default_allowance
+        return allowances
+
+    def save_operator_allowances(self):
+        self.app.operator_allowances = self.get_operator_allowances()
+        self.app.save_data()
+        messagebox.showinfo("Guardado", "Suplementos individuales guardados correctamente.")
+        self.refresh_data()
+
     def refresh_data(self, *args):
+        if self.app.operator_data != self.last_operator_list:
+            self.render_operator_allowance_inputs()
+            self.last_operator_list = list(self.app.operator_data)
+
         for widget in self.table_container.winfo_children():
             widget.destroy()
             
@@ -69,11 +122,11 @@ class StandardTimeView(ctk.CTkFrame):
             return
 
         # Cabecera de Tabla Premium
-        headers = ["Tarea", "N", "Avg (X)", "Rango (R)", "R/X (%)", "Calif.", "T. Normal", "Suplem.", "T. Estándar"]
+        headers = ["Tarea", "Oper.", "N", "Avg (X)", "Rango (R)", "R/X (%)", "Calif.", "T. Normal", "Suplem.", "T. Estándar"]
         h_frame = ctk.CTkFrame(self.table_container, fg_color="#34495e", height=40)
         h_frame.pack(fill="x", pady=2)
         
-        widths = [180, 40, 80, 80, 80, 60, 80, 60, 100]
+        widths = [180, 120, 40, 80, 80, 80, 60, 80, 70, 100]
         for i, h in enumerate(headers):
             lbl = ctk.CTkLabel(h_frame, text=h, width=widths[i], font=ctk.CTkFont(size=11, weight="bold"), text_color="white")
             lbl.pack(side="left", padx=2)
@@ -84,6 +137,7 @@ class StandardTimeView(ctk.CTkFrame):
         except:
             global_rating, global_allow = 1.0, 0.12
 
+        operator_allowances = self.get_operator_allowances() if self.operator_allowance_vars else self.app.operator_allowances or {}
         total_ts_sum = 0
         
         # Procesar cada actividad
@@ -101,7 +155,9 @@ class StandardTimeView(ctk.CTkFrame):
             rx = (rango / avg * 100) if avg > 0 else 0
             
             tn = avg * global_rating
-            ts = tn * (1 + global_allow)
+            op_name = self.app.line_config.get(str(idx), "N/A")
+            individual_allow_pct = operator_allowances.get(op_name, global_allow * 100)
+            ts = tn * (1 + individual_allow_pct / 100)
             total_ts_sum += ts
             
             # Fila de datos
@@ -114,14 +170,15 @@ class StandardTimeView(ctk.CTkFrame):
                 warning_color = "#e67e22" # Naranja para advertencia Maytag
 
             ctk.CTkLabel(row, text=act[:25], width=widths[0], anchor="w").pack(side="left", padx=5)
-            ctk.CTkLabel(row, text=str(n), width=widths[1], text_color=warning_color).pack(side="left")
-            ctk.CTkLabel(row, text=f"{avg:.2f}s", width=widths[2]).pack(side="left")
-            ctk.CTkLabel(row, text=f"{rango:.2f}s", width=widths[3]).pack(side="left")
-            ctk.CTkLabel(row, text=f"{rx:.1f}%", width=widths[4]).pack(side="left")
-            ctk.CTkLabel(row, text=f"{global_rating*100:.0f}%", width=widths[5]).pack(side="left")
-            ctk.CTkLabel(row, text=f"{tn:.2f}s", width=widths[6], font=ctk.CTkFont(weight="bold")).pack(side="left")
-            ctk.CTkLabel(row, text=f"{global_allow*100:.0f}%", width=widths[7]).pack(side="left")
-            ctk.CTkLabel(row, text=f"{ts:.2f}s", width=widths[8], font=ctk.CTkFont(weight="bold"), text_color="#2ecc71").pack(side="left")
+            ctk.CTkLabel(row, text=op_name, width=widths[1], anchor="w").pack(side="left")
+            ctk.CTkLabel(row, text=str(n), width=widths[2], text_color=warning_color).pack(side="left")
+            ctk.CTkLabel(row, text=f"{avg:.2f}s", width=widths[3]).pack(side="left")
+            ctk.CTkLabel(row, text=f"{rango:.2f}s", width=widths[4]).pack(side="left")
+            ctk.CTkLabel(row, text=f"{rx:.1f}%", width=widths[5]).pack(side="left")
+            ctk.CTkLabel(row, text=f"{global_rating*100:.0f}%", width=widths[6]).pack(side="left")
+            ctk.CTkLabel(row, text=f"{tn:.2f}s", width=widths[7], font=ctk.CTkFont(weight="bold")).pack(side="left")
+            ctk.CTkLabel(row, text=f"{individual_allow_pct:.0f}%", width=widths[8]).pack(side="left")
+            ctk.CTkLabel(row, text=f"{ts:.2f}s", width=widths[9], font=ctk.CTkFont(weight="bold"), text_color="#2ecc71").pack(side="left")
 
         # Resumen Final
         footer = ctk.CTkFrame(self.table_container, fg_color="#2c3e50", height=50, corner_radius=10)

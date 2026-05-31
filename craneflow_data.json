@@ -13211,6 +13211,741 @@
             "total_time": 143.33,
             "_rel_id": 10,
             "volume": 1
+        },
+        {
+            "model": "\"Grulla 5-S\"",
+            "lux_data": [],
+            "db_data": [],
+            "splits": [
+                {
+                    "duration": 13.61,
+                    "activity": "Diagonal y mitad.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G1_P1_1779489505.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 4.17,
+                    "activity": "Pliegues cruzados.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G1_P2_1779489509.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 35.21,
+                    "activity": "Juntar esquinas (Base).",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G1_P3_1779489544.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 14.04,
+                    "activity": "Marcar solapas.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G1_P4_1779489558.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 6.85,
+                    "activity": "Marcar punta superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G1_P5_1779489565.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 10.81,
+                    "activity": "Abrir solapa superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G1_P6_1779489576.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 22.17,
+                    "activity": "Repetir cara posterior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G1_P7_1779489598.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 2.51,
+                    "activity": "Solapas al centro.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G1_P8_1779489601.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 16.23,
+                    "activity": "Repetir lado opuesto.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G1_P9_1779489507.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 47.77,
+                    "activity": "Marcar patas inf.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G1_P10_1779489555.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 14.15,
+                    "activity": "Pliegue invertido.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G1_P11_1779489615.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 15.41,
+                    "activity": "Cabeza y alas.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G1_P12_1779489630.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                }
+            ],
+            "total_time": 202.93,
+            "is_flow_mode": true,
+            "global_lead_time": 358.86,
+            "op_station_times": {
+                "Laura": 239.45,
+                "Diego": 235.29,
+                "David": 248.89
+            }
+        },
+        {
+            "model": "\"Grulla 5-S\"",
+            "lux_data": [],
+            "db_data": [],
+            "splits": [
+                {
+                    "duration": 6.92,
+                    "activity": "Diagonal y mitad.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G2_P1_1779489565.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 4.21,
+                    "activity": "Pliegues cruzados.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G2_P2_1779489569.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 10.03,
+                    "activity": "Juntar esquinas (Base).",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G2_P3_1779489579.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 21.33,
+                    "activity": "Marcar solapas.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G2_P4_1779489601.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 8.75,
+                    "activity": "Marcar punta superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G2_P5_1779489609.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 19.9,
+                    "activity": "Abrir solapa superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G2_P6_1779489629.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 14.96,
+                    "activity": "Repetir cara posterior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G2_P7_1779489644.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 10.68,
+                    "activity": "Solapas al centro.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G2_P8_1779489655.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 10.8,
+                    "activity": "Repetir lado opuesto.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G2_P9_1779489641.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 12.69,
+                    "activity": "Marcar patas inf.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G2_P10_1779489654.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 27.68,
+                    "activity": "Pliegue invertido.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G2_P11_1779489681.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 27.44,
+                    "activity": "Cabeza y alas.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G2_P12_1779489709.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                }
+            ],
+            "total_time": 175.39,
+            "is_flow_mode": true,
+            "global_lead_time": 358.86,
+            "op_station_times": {
+                "Laura": 239.45,
+                "Diego": 235.29,
+                "David": 248.89
+            }
+        },
+        {
+            "model": "\"Grulla 5-S\"",
+            "lux_data": [],
+            "db_data": [],
+            "splits": [
+                {
+                    "duration": 6.16,
+                    "activity": "Diagonal y mitad.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G3_P1_1779489607.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 3.36,
+                    "activity": "Pliegues cruzados.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G3_P2_1779489610.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 7.12,
+                    "activity": "Juntar esquinas (Base).",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G3_P3_1779489617.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 21.47,
+                    "activity": "Marcar solapas.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G3_P4_1779489639.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 18.24,
+                    "activity": "Marcar punta superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G3_P5_1779489673.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 6.44,
+                    "activity": "Abrir solapa superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G3_P6_1779489680.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 14.06,
+                    "activity": "Repetir cara posterior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G3_P7_1779489694.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 8.31,
+                    "activity": "Solapas al centro.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G3_P8_1779489702.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 15.52,
+                    "activity": "Repetir lado opuesto.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G3_P9_1779489724.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 16.63,
+                    "activity": "Marcar patas inf.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G3_P10_1779489741.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 2.91,
+                    "activity": "Pliegue invertido.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G3_P11_1779489744.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 2.8,
+                    "activity": "Cabeza y alas.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G3_P12_1779489747.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                }
+            ],
+            "total_time": 123.02,
+            "is_flow_mode": true,
+            "global_lead_time": 358.86,
+            "op_station_times": {
+                "Laura": 239.45,
+                "Diego": 235.29,
+                "David": 248.89
+            }
+        },
+        {
+            "model": "\"Grulla 5-S\"",
+            "lux_data": [],
+            "db_data": [],
+            "splits": [
+                {
+                    "duration": 5.48,
+                    "activity": "Diagonal y mitad.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G4_P1_1779489644.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 5.21,
+                    "activity": "Pliegues cruzados.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G4_P2_1779489650.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 11.85,
+                    "activity": "Juntar esquinas (Base).",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G4_P3_1779489661.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 28.55,
+                    "activity": "Marcar solapas.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G4_P4_1779489690.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 6.25,
+                    "activity": "Marcar punta superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G4_P5_1779489708.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 50.83,
+                    "activity": "Abrir solapa superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G4_P6_1779489759.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 2.78,
+                    "activity": "Repetir cara posterior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G4_P7_1779489762.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 3.75,
+                    "activity": "Solapas al centro.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G4_P8_1779489766.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 29.22,
+                    "activity": "Repetir lado opuesto.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G4_P9_1779489776.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 27.47,
+                    "activity": "Marcar patas inf.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G4_P10_1779489803.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 3.05,
+                    "activity": "Pliegue invertido.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G4_P11_1779489806.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 4.43,
+                    "activity": "Cabeza y alas.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G4_P12_1779489811.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                }
+            ],
+            "total_time": 178.87,
+            "is_flow_mode": true,
+            "global_lead_time": 358.86,
+            "op_station_times": {
+                "Laura": 239.45,
+                "Diego": 235.29,
+                "David": 248.89
+            }
+        },
+        {
+            "model": "\"Grulla 5-S\"",
+            "lux_data": [],
+            "db_data": [],
+            "splits": [
+                {
+                    "duration": 2.69,
+                    "activity": "Diagonal y mitad.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G5_P1_1779489693.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 4.59,
+                    "activity": "Pliegues cruzados.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G5_P2_1779489697.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 8.09,
+                    "activity": "Juntar esquinas (Base).",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G5_P3_1779489705.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 25.35,
+                    "activity": "Marcar solapas.",
+                    "operator": "Laura",
+                    "evidence": "media_evidencia\\Evidencia_Laura_G5_P4_1779489731.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 4.68,
+                    "activity": "Marcar punta superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G5_P5_1779489770.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 6.27,
+                    "activity": "Abrir solapa superior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G5_P6_1779489777.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 9.83,
+                    "activity": "Repetir cara posterior.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G5_P7_1779489786.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 7.22,
+                    "activity": "Solapas al centro.",
+                    "operator": "Diego",
+                    "evidence": "media_evidencia\\Evidencia_Diego_G5_P8_1779489794.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 18.28,
+                    "activity": "Repetir lado opuesto.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G5_P9_1779489829.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 10.28,
+                    "activity": "Marcar patas inf.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G5_P10_1779489839.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 3.38,
+                    "activity": "Pliegue invertido.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G5_P11_1779489843.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                },
+                {
+                    "duration": 6.75,
+                    "activity": "Cabeza y alas.",
+                    "operator": "David",
+                    "evidence": "media_evidencia\\Evidencia_David_G5_P12_1779489849.jpg",
+                    "therblig": "ESPERANDO MANO...",
+                    "ergo_summary": {
+                        "avg_elbow_r": 0,
+                        "avg_elbow_l": 0
+                    }
+                }
+            ],
+            "total_time": 107.41,
+            "is_flow_mode": true,
+            "global_lead_time": 358.86,
+            "op_station_times": {
+                "Laura": 239.45,
+                "Diego": 235.29,
+                "David": 248.89
+            }
         }
     ],
     "line_config": {
@@ -14932,5 +15667,10 @@
             },
             "_rel_id": 11
         }
-    ]
+    ],
+    "operator_allowances": {
+        "Laura": 24.0,
+        "Diego": 22.0,
+        "David": 22.0
+    }
 }

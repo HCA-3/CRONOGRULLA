@@ -202,7 +202,7 @@ Detecta dos micro-movimientos básicos (Therbligs de Gilbreth):
 
 | Therblig | Símbolo | Condición |
 |---|---|---|
-| **Coger (Grasp)** | G | Distancia pulgar–índice < 0.06 (norm.) |
+| **Tomar (Grasp)** | G | Distancia pulgar–índice < 0.06 (norm.) |
 | **Soltar (Release)** | RL | Distancia pulgar–índice ≥ 0.06 |
 
 ```python

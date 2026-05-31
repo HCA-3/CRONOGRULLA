@@ -1,0 +1,395 @@
+
+==================================================
+ANALYZING: C:\Users\dsant\Desktop\esta\Ejemplo_paper 2.pdf
+==================================================
+Number of pages: 10
+
+--- Metadata ---
+/Author: Jihao Gu; Kun Li; Fei Wang; Yanyan Wei; Zhiliang Wu; Hehe Fan; Meng Wang
+/CreationDate: D:20251201013339+00'00'
+/Creator: arXiv GenPDF (tex2pdf:4177c2c)
+/DOI: https://doi.org/10.48550/arXiv.2507.21977
+/Keywords: Micro-Action Recognition, Action Recognition, Temporal Gradient
+/License: http://creativecommons.org/licenses/by/4.0/
+/ModDate: D:20251201013339+00'00'
+/PTEX.Fullbanner: This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) kpathsea version 6.4.1
+/Producer: pikepdf 8.15.1
+/Subject: -  Human-centered computing  ->  Human computer interaction (HCI).-  Computing methodologies  ->  Activity recognition and understanding.
+/Title: Motion Matters: Motion-guided Modulation Network for Skeleton-based Micro-Action Recognition
+/Trapped: /False
+/arXivID: https://arxiv.org/abs/2507.21977v4
+
+--- Text from Page 1 (First 3000 chars) ---
+Motion Matters: Motion-guided Modulation Network for
+Skeleton-based Micro-Action Recognition
+Jihao Gu
+University College London
+London, United Kingdom
+jihao.gu.23@ucl.ac.uk
+Kun Li∗
+ReLER, CCAI, Zhejiang University
+Hangzhou, China
+kunli.hfut@gmail.com
+Fei Wang
+Hefei University of Technology
+Institute of Artificial Intelligence,
+Hefei Comprehensive National
+Science Center
+Hefei, China
+feiwang@xinsight.com.cn
+Yanyan Wei
+Hefei University of Technology
+Intelligent Interconnected Systems
+Laboratory of Anhui Province
+Hefei, China
+weiyy@hfut.edu.cn
+Zhiliang Wu
+ReLER, CCAI, Zhejiang University
+Hangzhou, China
+wu_zhiliang@zju.edu.cn
+Hehe Fan
+ReLER, CCAI, Zhejiang University
+Hangzhou, China
+hehefan@zju.edu.cn
+Meng Wang
+Hefei University of Technology
+Hefei, China
+eric.mengwang@gmail.com
+Abstract
+Micro-Actions (MAs) are an important form of non-verbal com-
+munication in social interactions, with potential applications in
+human emotional analysis. However, existing methods in Micro-
+Action Recognition often overlook the inherent subtle changes in
+MAs, which limits the accuracy of distinguishing MAs with subtle
+changes. To address this issue, we present a novelMotion-guided
+ModulationNetwork (MMN) that implicitly captures and modu-
+lates subtle motion cues to enhance spatial-temporal representation
+learning. Specifically, we introduce a Motion-guided Skeletal Mod-
+ulation module (MSM) to inject motion cues at the skeletal level,
+acting as a control signal to guide spatial representation modeling.
+In parallel, we design a Motion-guided Temporal Modulation mod-
+ule (MTM) to incorporate motion information at the frame level, fa-
+cilitating the modeling of holistic motion patterns in micro-actions.
+Finally, we propose a motion consistency learning strategy to ag-
+gregate the motion cues from multi-scale features for micro-action
+classification. Experimental results on the Micro-Action 52 and
+iMiGUE datasets demonstrate that MMN achieves state-of-the-art
+∗Corresponding author
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+MM ’25, Dublin, Ireland.
+©2025 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 979-8-4007-2035-2/2025/10
+https://doi.org/10.1145/3746027.3754722
+performance in skeleton-based micro-action recognition, under-
+scoring the importance of explicitly modeling subtle motion cues.
+The code will be available at https://github.com/momiji-bit/MMN.
+CCS Concepts
+•Human-centered computing → Human c
+
+--- Text from Page 2 (First 3000 chars) ---
+MM ’25, October 27–31, 2025, Dublin, Ireland. Jihao Gu et al.
+upper limbs. These videos are sampled from the post-competition re-
+view of athletes, revealing deep emotional states conveyed through
+these micro-gestures. Meanwhile, Balaziaet al. [ 2] presented the
+MPIIGI dataset, which annotated the subtle upper-body behaviors
+in group interactions and highlighted the social behaviors in human
+communications. To explore the whole body micro-actions, Guoet
+al. [19] developed the large-scale Micro-Action 52 (MA-52) dataset
+comprising 20k video samples interviewed from 205 participants,
+distributed in 52 micro-action classes, benchmarking micro-action
+recognition. From the perspective of methodology, traditional ac-
+tion recognition methods, including 2D CNN based [17, 38, 61], 3D
+CNN based [4, 54], GCN-based [45, 64], and Transformer-based [44],
+are selected to evaluate these datasets. However, these methods
+show suboptimal performance due to the challenges posed by the
+subtle and low-intensity nature of micro-actions. Recently, Liet
+al. [27] proposed a novel prototypical ambiguous calibrating net to
+address the ambiguity in micro-actions.
+Despite the above significance, accurately recognizing micro-
+actions remains particularly challenging due to several inherent dif-
+ficulties. We depicted several micro-action examples in Figure 1 (a).
+1) Subtle motion amplitudes.Micro-actions inherently exhibit
+low-amplitude movements, making them hard to distinguish from
+background movements.2) High inter-class similarity.Micro-
+actions usually involve only minor motion differences, leading to
+visually ambiguous and overlapping representations. For example,
+“scratching or touching shoulder” and “scratching or touching neck”
+are only different in the touching region.3) Notable intra-class
+variability.Due to individual differences in body shape, appear-
+ance, and other physical traits, the same micro-action will manifest
+in noticeably different ways across subjects.
+Intuitively, capturing subtle temporal motions is key to effective
+micro-action recognition. Compared to the RGB modality, skeleton
+sequences provide a compact yet expressive representation that
+is inherently robust to appearance noise and well-suited for mod-
+eling fine-grained body motion [ 8, 13, 56, 57, 64]. Motivated by
+this, we attempt to model subtle temporal motions within skele-
+ton sequences, enabling the network to effectively capture and
+emphasize subtle yet discriminative motion patterns. To this end,
+we propose a novel Motion-guided Modulation Network (MMN),
+specifically designed to amplify subtle motion cues critical for dis-
+tinguishing micro-actions. As shown in Figure 1 (b), we decouple
+motion patterns into skeletal and temporal branches, facilitating
+more structured spatial-temporal skeleton feature representation.
+At the skeletal level, key joints are adaptively enhanced, while at
+the temporal level, informative frames are emphasized to capture
+meaningful motion patterns.
+The overvie
+
+--- Headings Search and Structure ---
+
+--- References Section (Snippet) ---
+References
+[1] Hillel Aviezer, Yaacov Trope, and Alexander Todorov. 2012. Body cues, not
+facial expressions, discriminate between intense positive and negative emotions.
+Science338, 6111 (2012), 1225–1229.
+[2] Michal Balazia, Philipp Müller, Ákos Levente Tánczos, August von Liechtenstein,
+and Francois Bremond. 2022. Bodily behaviors in social interaction: Novel annota-
+tions and state-of-the-art evaluation. InProceedings of the 30th ACM International
+Conference on Multimedia. 70–79.
+[3] Gedas Bertasius, Heng Wang, and Lorenzo Torresani. 2021. Is space-time attention
+all you need for video understanding?. InProceedings of International Conference
+on Machine Learning. 813–824.
+[4] Joao Carreira and Andrew Zisserman. 2017. Quo vadis, action recognition? a new
+model and the kinetics dataset. InProceedings of the IEEE Conference on Computer
+Vision and Pattern Recognition. 6299–6308.
+[5] Guoliang Chen, Fei Wang, Kun Li, Zhiliang Wu, Hehe Fan, Yi Yang, Meng Wang,
+and Dan Guo. 2024. Prototype learning for micro-gesture classification.arXiv
+preprint arXiv:2408.03097(2024).
+[6] Haoyu Chen, Björn W Schuller, Ehsan Adeli, and Guoying Zhao. 2024. The
+2nd Challenge on Micro-gesture Analysis for Hidden Emotion Understanding
+(MiGA) 2024: Dataset and Results. InMiGA 2024: Proceedings of IJCAI 2024 Work-
+shop&Challenge on Micro-gesture Analysis for Hidden Emotion Understanding
+(MiGA 2024) co-located with 33rd International Joint Conference on Artificial Intel-
+ligence (IJCAI 2024). RWTH Aachen.
+[7] Haoyu Chen, Henglin Shi, Xin Liu, Xiaobai Li, and Guoying Zhao. 2023. SMG: A
+micro-gesture dataset towards spontaneous body gestures for emotional stress
+state analysis.International Journal of Computer Vision131, 6 (2023), 1346–1366.
+[8] Yuxin Chen, Ziqi Zhang, Chunfeng Yuan, Bing Li, Ying Deng, and Weiming Hu.
+2021. Channel-wise topology refinement graph convolution for skeleton-based
+action recognition. InProceedings of the IEEE/CVF International Conference on
+Computer Vision. 13359–133
+
+--- Text from Last Page (First 1500 chars) ---
+MM ’25, October 27–31, 2025, Dublin, Ireland. Jihao Gu et al.
+[40] Jun Liu, Gang Wang, Ling-Yu Duan, Kamila Abdiyeva, and Alex C Kot. 2017.
+Skeleton-based human action recognition with global context-aware attention
+LSTM networks.IEEE Transactions on Image Processing27, 4 (2017), 1586–1599.
+[41] Pengyu Liu, Kun Li, Fei Wang, Yanyan Wei, Junhui She, and Dan Guo. 2025. On-
+line Micro-gesture Recognition Using Data Augmentation and Spatial-Temporal
+Attention.arXiv preprint arXiv:2507.09512(2025).
+[42] Pengyu Liu, Fei Wang, Kun Li, Guoliang Chen, Yanyan Wei, Shengeng Tang,
+Zhiliang Wu, and Dan Guo. 2024. Micro-gesture Online Recognition using
+Learnable Query Points.arXiv preprint arXiv:2407.04490(2024).
+[43] Xin Liu, Henglin Shi, Haoyu Chen, Zitong Yu, Xiaobai Li, and Guoying Zhao.
+2021. imigue: An identity-free video dataset for micro-gesture understanding
+and emotion analysis. InProceedings of the IEEE/CVF Conference on Computer
+Vision and Pattern Recognition. 10631–10642.
+[44] Ze Liu, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu.
+2022. Video swin transformer. InProceedings of the IEEE Conference on Computer
+Vision and Pattern Recognition. 3202–3211.
+[45] Ziyu Liu, Hongwen Zhang, Zhenghao Chen, Zhiyong Wang, and Wanli Ouyang.
+2020. Disentangling and unifying graph convolutions for skeleton-based action
+recognition. InProceedings of the IEEE/CVF Conference on Computer Vision and
+Pattern Recognition. 143–152.
+[46] Ilya Loshchilov and Frank Hutter. 2017. Dec
+
+==================================================
+ANALYZING: C:\Users\dsant\Desktop\esta\Therbligs in Action_ Video Understanding Through Motion Primitives.pdf
+==================================================
+Number of pages: 9
+
+--- Metadata ---
+/CreationDate: D:20260515204727
+/Creator: PDFium
+/Producer: PDFium
+
+--- Text from Page 1 (First 3000 chars) ---
+Therbligs in Action: Video Understanding through Motion Primitives
+Eadom Dessalene, Michael Maynord, Cornelia Ferm¨uller, Yiannis Aloimonos
+University of Maryland, College Park
+College Park, MD 20742, USA
+{edessale,maynord,fermulcm,jyaloimo@umd.edu}
+Abstract
+In this paper we introduce a rule-based, compositional,
+and hierarchical modeling of action using Therbligs as our
+atoms. Introducing these atoms provides us with a con-
+sistent, expressive, contact-centered representation of ac-
+tion. Over the atoms we introduce a differentiable method of
+rule-based reasoning to regularize for logical consistency.
+Our approach is complementary to other approaches in that
+the Therblig-based representations produced by our archi-
+tecture augment rather than replace existing architectures’
+representations. We release the first Therblig-centered an-
+notations over two popular video datasets - EPIC Kitchens
+100 and 50-Salads. We also broadly demonstrate bene-
+fits to adopting Therblig representations through evalua-
+tion on the following tasks: action segmentation, action
+anticipation, and action recognition - observing an aver-
+age 10.5%/7.53%/6.5% relative improvement, respectively,
+over EPIC Kitchens and an average 8.9%/6.63%/4.8% rel-
+ative improvement, respectively, over 50 Salads. Code and
+data will be made publicly available.
+1. Introduction
+We propose the use of Therbligs - a low-level mutu-
+ally exclusive contact demarcated set of sub-actions. These
+Therbligs are consistent in that a given action segment has
+only a single Therblig representation, and Therbligs are ex-
+pressive in that they capture the meaningful physical as-
+pects of action relevant to action modeling. Therbligs were
+introduced in the early 20th century as a set of18 elemental
+motions used to analyze complex movement - see the Sup-
+plementary Materials for a brief historical background. We
+adopt 7 Therbligs pertaining to those involving the manipu-
+lation of objects. See Figure 1 for our Therblig set.
+The benefits of our Therblig-centered framework in-
+clude: compositionality & hierarchy; rule-based reasoning;
+resolution of semantic ambiguity; contact-centered preci-
+sion of temporal boundaries of action.
+Contact transitions demarcate Therblig boundaries, giv-
+ing Therbligs a consistency which methods relying on anno-
+tators’ intuited demarcations lack1. Between points of con-
+tact exist contact states represented by a binary class (con-
+tact, no contact) for each object present, which are wholly
+captured by Therbligs. As objects in contact are the pri-
+mary objects of interaction and define the space of possible
+actions, they provide meaningful information for the mod-
+eling of action.
+Therblig atoms are then composable into higher entities,
+including full actions. These actions are in turn compos-
+able into sequences constituting activities. We then have
+the hierarchy of representation illustrated in Figure 2. At
+the lowest, and instantaneous, level are points of contact,
+1See [1] for 
+
+--- Text from Page 2 (First 3000 chars) ---
+Figure 2. We introduce the use of Therbligs (ti) in video understanding as a consistent, expressive, symbolic representation of sub-action.
+Points of Contact (indicated by the divider dashes) are necessarily associated with Therbligs and/or their boundaries. Because of the
+unambiguity of Points of Contact, Therblig boundaries gain precision and are non-overlapping. On top of Therblig atoms we construct a
+framework for Rule Enforcement, enforcing greater logical consistency through commonsense rules. This rule-based framework allows
+for the easy introduction of long-term constraints. Therblig atoms are then composable into actions (ai), which are in turn composable into
+activities.
+between which exist Therbligs with temporal extension, on
+top of which exist action, permutations of which constitute
+longer activities.
+Architectures built upon Therbligs for the modeling of
+action gain temporal precision through points of contact as
+well as meaningful information captured by contact states.
+Therbligs also exhibit semantic mutual exclusivity in that
+there is one and only one Therblig interpretation of a se-
+quence, as opposed to the many interpretations when action
+labels are intuited 2, leading to semantic ambiguity. As a
+consequence of Therbligs, semantic ambiguity at the action-
+level is constrained by the deeper grounding of action labels
+in explicit action dynamics (see Figure 2).
+Unlike higher level actions, Therbligs enable the im-
+posing of a contact-based logic defining preconditions and
+postconditions in the form of states of contact before and
+after Therbligs. For example, an object being moved must
+be preceded by grasp and proceeded by a release. The rules
+of this logic interface at the Therblig level of the hierarchy.
+These rules allow for biasing towards consistency between
+contact states and Therblig predictions within a loss term
+(see Section 3.2.2), and provide constraints over possible
+action sequences (see Section 3.2.1).
+In producing sub-action level symbolic representations,
+our proposed hierarchical architecture is comprised of two
+main components; the Therblig-Model, which maps video
+to Therbligs; and, the Action-Model, which maps video
+and Therbligs to actions. The Therblig-Model is optimized
+over a loss including structure-aware terms for contact con-
+sistency and Therblig consistency by incorporating differ-
+entiable reasoning. Figure 3 illustrates our architecture.
+2Some additional structure is needed for complete mutual exclusivity -
+see the Supplementary Materials for discussion on this structure.
+This architecture is complementary to, rather than in com-
+petition with, existing architectures for action modeling -
+Therblig representations can be easily integrated through
+concatenation with existing feature representations. We
+demonstrate this with two state-of-the-art approaches to ac-
+tion segmentation - MSTCN++ [15] and ASFormer [22]
+and four popular approaches to action recognition - I3D [5],
+ViViT [2], TimeSFormer [3], 
+
+--- Headings Search and Structure ---
+
+--- References Section (Snippet) ---
+References
+[1] Humam Alwassel, Fabian Caba Heilbron, Victor Escorcia,
+and Bernard Ghanem. Diagnosing error in temporal action
+detectors. In Proceedings of the European Conference on
+Computer Vision (ECCV), pages 256–272, 2018.
+[2] Anurag Arnab, Mostafa Dehghani, Georg Heigold, Chen
+Sun, Mario Lu ˇci´c, and Cordelia Schmid. Vivit: A video
+vision transformer. In Proceedings of the IEEE/CVF Inter-
+national Conference on Computer Vision, pages 6836–6846,
+2021.
+[3] Gedas Bertasius, Heng Wang, and Lorenzo Torresani. Is
+space-time attention all you need for video understanding?
+In ICML, volume 2, page 4, 2021.
+[4] Zhe Cao, Ilija Radosavovic, Angjoo Kanazawa, and Jitendra
+Malik. Reconstructing hand-object interactions in the wild.
+In Proceedings of the IEEE/CVF International Conference
+on Computer Vision, pages 12417–12426, 2021.
+[5] Joao Carreira and Andrew Zisserman. Quo vadis, action
+recognition? a new model and the kinetics dataset. In pro-
+ceedings of the IEEE Conference on Computer Vision and
+Pattern Recognition, pages 6299–6308, 2017.
+[6] Eadom Dessalene, Chinmaya Devaraj, Michael Maynord,
+Cornelia Fermuller, and Yiannis Aloimonos. Forecasting ac-
+tion through contact representations from first person video.
+IEEE Transactions on Pattern Analysis and Machine Intelli-
+gence, 2021.
+[7] Eadom Dessalene, Michael Maynord, Chinmaya Devaraj,
+Cornelia Fermuller, and Yiannis Aloimonos. Egocentric ob-
+ject manipulation graphs. arXiv preprint arXiv:2006.03201,
+2020.
+[8] Yifei Huang, Yusuke Sugano, and Yoichi Sato. Improving
+action segmentation via graph-based temporal reasoning. In
+Proceedings of the IEEE/CVF Conference on Computer Vi-
+sion and Pattern Recognition, pages 14024–14034, 2020.
+[9] Ziyuan Huang, Zhiwu Qing, Xiang Wang, Yutong Feng, Shi-
+wei Zhang, Jianwen Jiang, Zhurong Xia, Mingqian Tang,
+Nong Sang, and Marcelo H Ang Jr. Towards training
+stronger video vision transformers for epic-kitchens-100 ac-
+tion recognition. arXiv preprint arXiv:2106.05058, 2021.
+[10] Yuchi I
+
+--- Text from Last Page (First 1500 chars) ---
+References
+[1] Humam Alwassel, Fabian Caba Heilbron, Victor Escorcia,
+and Bernard Ghanem. Diagnosing error in temporal action
+detectors. In Proceedings of the European Conference on
+Computer Vision (ECCV), pages 256–272, 2018.
+[2] Anurag Arnab, Mostafa Dehghani, Georg Heigold, Chen
+Sun, Mario Lu ˇci´c, and Cordelia Schmid. Vivit: A video
+vision transformer. In Proceedings of the IEEE/CVF Inter-
+national Conference on Computer Vision, pages 6836–6846,
+2021.
+[3] Gedas Bertasius, Heng Wang, and Lorenzo Torresani. Is
+space-time attention all you need for video understanding?
+In ICML, volume 2, page 4, 2021.
+[4] Zhe Cao, Ilija Radosavovic, Angjoo Kanazawa, and Jitendra
+Malik. Reconstructing hand-object interactions in the wild.
+In Proceedings of the IEEE/CVF International Conference
+on Computer Vision, pages 12417–12426, 2021.
+[5] Joao Carreira and Andrew Zisserman. Quo vadis, action
+recognition? a new model and the kinetics dataset. In pro-
+ceedings of the IEEE Conference on Computer Vision and
+Pattern Recognition, pages 6299–6308, 2017.
+[6] Eadom Dessalene, Chinmaya Devaraj, Michael Maynord,
+Cornelia Fermuller, and Yiannis Aloimonos. Forecasting ac-
+tion through contact representations from first person video.
+IEEE Transactions on Pattern Analysis and Machine Intelli-
+gence, 2021.
+[7] Eadom Dessalene, Michael Maynord, Chinmaya Devaraj,
+Cornelia Fermuller, and Yiannis Aloimonos. Egocentric ob-
+ject manipulation graphs. arXiv preprint arXiv:2006.03201,
+2020.
+[8] Yifei Huang, Yusuk

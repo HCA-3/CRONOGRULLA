@@ -19,7 +19,9 @@ class ComparisonView(ctk.CTkFrame):
                       font=ctk.CTkFont(size=26, weight="bold")).pack(side="left")
         
         ctk.CTkButton(header_f, text="🔄 Actualizar Datos", fg_color="#3498db", 
-                      command=self.update_comparison).pack(side="right", padx=5)
+                  command=self.update_comparison).pack(side="right", padx=5)
+        ctk.CTkButton(header_f, text="ℹ️ Fórmulas", fg_color=("#95a5a6", "#6b7b80"),
+                  command=self.show_formulas).pack(side="right", padx=5)
 
         # Contenedor de la tabla
         self.table_container = ctk.CTkFrame(self, corner_radius=15, fg_color=("#ffffff", "#1e293b"))
@@ -52,6 +54,49 @@ class ComparisonView(ctk.CTkFrame):
         self.summary_lbl.pack(pady=10)
 
         self.update_comparison()
+
+    def show_formulas(self):
+        """Muestra un modal explicando las fórmulas usadas para calcular los porcentajes."""
+        dlg = ctk.CTkToplevel(self)
+        dlg.title("ℹ️ Fórmulas — Comparativa Operarios")
+        dlg.geometry("760x520")
+        dlg.resizable(True, True)
+        dlg.grab_set()
+
+        header = ctk.CTkFrame(dlg, fg_color=("#1a0533", "#1a0533"))
+        header.pack(fill="x")
+        ctk.CTkLabel(header, text="Fórmulas y origen de datos", font=ctk.CTkFont(size=16, weight="bold"),
+                     text_color="#ffffff").pack(side="left", padx=16, pady=12)
+
+        scroll = ctk.CTkScrollableFrame(dlg, corner_radius=0)
+        scroll.pack(fill="both", expand=True, padx=12, pady=12)
+
+        text = (
+            "Origen de datos:\n"
+            "- Se usan las mediciones guardadas en 'measurements' → cada 'measurement' contiene 'splits'.\n"
+            "- Para cada split se toma 'operator' y 'duration' (segundos).\n\n"
+            "Cálculo mostrado en la tabla:\n"
+            "- Ciclos: número de duraciones registradas para el operario.\n"
+            "- T. Promedio: media aritmética de las duraciones → avg = mean(times).\n"
+            "- T. Mínimo / Máximo: min(times) / max(times).\n\n"
+            "Cálculo del porcentaje (Eficiencia):\n"
+            "- Se identifica el mejor promedio (el más bajo): best_avg = min({avg_i}).\n"
+            "- Para cada operario: efficiency = (best_avg / avg) * 100  (si avg>0).\n"
+            "  Ejemplo: si best_avg=8s y avg=10s → efficiency = (8/10)*100 = 80%.\n\n"
+            "Clasificación por estado:\n"
+            "- efficiency >= 90 → '⭐ Excelente'\n"
+            "- efficiency >= 75 → '✅ Óptimo'\n"
+            "- else → '⚠️ Mejorable'\n\n"
+            "Notas y alternativas recomendadas:\n"
+            "- Asegúrate que 'duration' esté en segundos y sea mayor que 0, valores 0 distorsionan el cálculo.\n"
+            "- Actualmente la referencia es el operario más rápido. Si prefieres otra referencia, se puede cambiar por:\n"
+            "  • un tiempo estándar configurable (T_est): efficiency = (T_est / avg)*100\n"
+            "  • la mediana de promedios: best_avg = median({avg_i})\n"
+            "  • o el promedio global: best_avg = min(mean_all) según la métrica deseada.\n\n"
+            "¿Quieres que cambie la referencia a mediana o a un tiempo estándar configurable?"
+        )
+
+        ctk.CTkLabel(scroll, text=text, justify="left", wraplength=700, font=ctk.CTkFont(size=12)).pack(padx=8, pady=8)
 
     def update_comparison(self):
         # Limpiar tabla

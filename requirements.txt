@@ -6,3 +6,5 @@ opencv-python
 mediapipe
 pillow
 qrcode[pil]
+scikit-learn
+pandas
