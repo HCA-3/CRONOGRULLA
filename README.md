@@ -1,51 +1,122 @@
-# CronoGrulla - Estudio de Métodos Aplicado
+# 🦢 CronoGrulla — Suite de Estudio de Métodos, Ergonomía e IA
 
-CronoGrulla es una aplicación de escritorio diseñada para facilitar el estudio de tiempos, movimientos y balanceo de líneas en procesos de ensamblaje o manufactura (como el plegado de grullas de origami). 
+**CronoGrulla** es una plataforma integral de escritorio para ingeniería de métodos, medición del trabajo, análisis biomecánico en 3D, cronometraje asistido por Visión Artificial y balanceo de líneas en ensamblajes industriales (aplicado al proceso de manufactura de grullas de origami).
 
-El código original monolítico de ~1400 líneas fue refactorizado y separado en distintas clases dentro de múltiples módulos para lograr una arquitectura mucho más limpia, mantenible y escalable, sin perder ninguna de sus funciones.
+---
 
-## Estructura del Código (Refactorizada)
+## 📁 Estructura del Repositorio Organizada
 
-La aplicación ha sido reescrita en los siguientes archivos y carpetas (arquitectura Modular UI / MVC):
+El proyecto sigue una arquitectura modular y profesional organizada por responsabilidades:
 
-- `main.py`: Punto de entrada que administra el estado central, persistencia y la navegación principal entre vistas. Ahora incluye una **Barra Lateral Colapsable** para maximizar el área de trabajo.
-- `utils/pdf_report.py`: Lógica avanzada para la generación de reportes y manuales industriales en PDF.
-- `views/view_dashboard.py`: Interfaz principal con tarjetas estadísticas de rendimiento.
-- `views/view_models.py`: Gestor de modelos de origami, instrucciones y carga de PDFs guía.
-- `views/view_operators.py`: Configuración de equipo de trabajo y balanceo de carga entre estaciones.
-- `views/view_timer.py`: **Módulo Vision Pro 6.0**. Incorpora cronometraje manos libres mediante detección de movimiento en zona, "Modo Enfoque" centrado en el paso actual con descripción detallada, y captura automática de evidencia fotográfica.
-- `views/view_media.py`: **Galería de Evidencia Visual**. Nueva sección que consolida todas las fotografías tomadas en los estudios, permitiendo auditar errores de operarios con pruebas visuales claras.
-- `views/view_tables.py`: Matrices de tiempos recolectados por ciclos.
-- `views/view_stats.py`: Gráficos dinámicos para análisis de cuellos de botella y promedios.
-
-## Cómo Ejecutar (Ejecutable e Instalador)
-
-Para facilitar su uso sin necesidad de Python ni consola de comandos, hemos creado un ejecutable y un instalador para Windows.
-
-### 1. Opción de Instalador Automático
-Puedes distribuir el archivo `Instalador_CronoGrulla.zip` ubicado en la carpeta `dist`. Dile a los usuarios que:
-1. Extraigan el archivo zip (`Clic derecho -> Extraer todo...`).
-2. Hagan doble clic sobre `install.bat`.
-3. ¡Listo! El instalador creará un acceso directo de CronoGrulla directamente en su Escritorio, enlazado de forma oculta y segura.
-
-### 2. Opción de Ejecutable (Archivo Único)
-Si prefieres no instalar nada, puedes utilizar directamente el archivo `.exe`:
-1. Ve a la carpeta `dist` en los archivos originales.
-2. Copia el archivo `CronoGrulla.exe` a tu Escritorio o donde prefieras.
-3. Ábrelo con doble clic.
-
-> **⚠️ Nota de Datos:** Si ya tenías datos guardados sobre tus operarios, tiempos y modelos, no olvides colocar el archivo `craneflow_data.json` en la misma ubicación donde pegues o instales tu ejecutable para que retome tus datos anteriores. De otra forma, el programa iniciará limpio.
-
-## Cómo Ejecutar (Desde Código Fuente)
-
-Si eres desarrollador, asegúrate de tener instaladas las dependencias:
-```bash
-pip install -r requirements.txt
+```text
+CRONOGRULLA/
+├── main.py                     # Punto de entrada principal y gestor central de vistas
+├── iniciar.bat                 # Lanzador rápido en Windows (.venv)
+├── requirements.txt            # Dependencias del proyecto
+├── README.md                   # Documentación general y arquitectura
+├── craneflow_data.json         # Base de datos persistente (mediciones y estudios)
+├── CronoGrulla.spec            # Configuración de compilación PyInstaller
+├── .gitignore                  # Exclusiones de Git (limpio, sin bytecode)
+│
+├── views/                      # Módulos de Interfaz Gráfica (CustomTkinter)
+│   ├── view_dashboard.py       # Panel de control e indicadores globales
+│   ├── view_lesiones_3d.py     # Modelo 3D Holográfico de Lesiones Ocupacionales (Astra AI)
+│   ├── view_atlas_biomecanico.py # Alias retrocompatible de la vista 3D
+│   ├── view_timer.py           # Cronometraje con IA MediaPipe y Therbligs
+│   ├── view_models.py          # Gestión de modelos de plegado y PDFs
+│   ├── view_operators.py       # Configuración de operarios y balanceo
+│   ├── view_tables.py          # Matrices de tiempos observados por ciclo
+│   ├── view_stats.py           # Análisis estadístico y cuellos de botella
+│   ├── view_sensor_data.py     # Telemetría articular y diagnóstico biomecánico
+│   ├── view_standard_time.py   # Cálculo de suplementos y Tiempo Estándar
+│   ├── view_comparison.py      # Comparación de operarios y métodos
+│   ├── view_media.py           # Galería de evidencia fotográfica
+│   ├── view_objectives.py      # Metas de producción y eficiencia
+│   ├── view_trash.py           # Papelera de reciclaje y recuperación
+│   └── env_table.py            # Editor de factores ambientales
+│
+├── utils/                      # Utilidades del Sistema
+│   ├── pdf_report.py           # Motor de generación de reportes ejecutivos en PDF
+│   ├── excel_loader.py         # Importador / exportador de hojas de cálculo
+│   └── __init__.py
+│
+├── models/                     # Modelos de Machine Learning
+│   └── therblig_svm_model.pkl  # Clasificador SVM (RBF) para micromovimientos Therblig
+│
+├── assets/                     # Recursos Gráficos
+│   └── mannequin/              # Siluetas y texturas de referencia anatómica
+│
+├── guias_pdf/                  # Guías de Plegado Oficiales (Modelos de Origami)
+│   ├── Grulla_Clásica.pdf
+│   ├── Grulla_Tipo_I__Laura.pdf
+│   └── _Grulla_5_S_.pdf
+│
+├── Documentacion/              # Documentación Académica y Material de Soporte
+│   ├── informes/               # Informes formales, código y artículos
+│   │   ├── Informe Final Métodos.docx
+│   │   ├── Codigo.docx
+│   │   ├── DOCUMENTACION_CRONOGRULLA.docx
+│   │   └── DOCUMENTACION_CRONOGRULLA.md
+│   ├── guias_estudio/          # Guías de la asignatura y productividad
+│   │   ├── Guía_Medición_de_la_productividad.pdf
+│   │   └── l10_estudio_de_movimientos.pdf
+│   ├── plantillas/             # Formatos de diagramas y plantillas Excel
+│   │   ├── Plantilla de Diagrama Bimanual.jpg
+│   │   └── Ejemplo de cálculo de Tiempo Estándar.xlsx
+│   └── reportes_muestra/       # Informes PDF de ejemplo generados por el sistema
+│       ├── Reporte_Grullas_20260310_1330.pdf
+│       ├── Reporte_Metodos_Unificado.pdf
+│       └── test_generated_report.pdf
+│
+├── scripts/                    # Scripts de Análisis, Gráficas y Diagnóstico
+│   ├── generate_academic_plot.py # Gráficos para artículo académico
+│   ├── generate_bar_chart.py     # Gráficos de barras comparativos
+│   ├── generate_biomechanics.py  # Visualizaciones biomecánicas
+│   ├── generate_fatigue_plot.py  # Curvas de fatiga acumulada
+│   ├── test_cam.py               # Diagnóstico de cámaras web
+│   ├── test_mediapipe.py         # Verificación de MediaPipe Hands/Pose
+│   ├── debug_pdf.py              # Pruebas de renderizado de reportes
+│   └── generar_word_doc.py       # Conversor de documentación técnica a Word
+│
+├── backups/                    # Copias de Seguridad y Versiones Históricas
+│   ├── craneflow_data.json.bak
+│   ├── main_backup.py
+│   └── programa_legacy/
+│
+├── Imagenes/                   # Registro Fotográfico de las Tomas de Tiempos
+└── media_evidencia/            # Capturas de imagen durante los ciclos de cronometraje
 ```
 
-Simplemente ejecuta:
-```bash
-python main.py
-```
+---
 
-Sus archivos de datos y guías adjuntas se mantendrán sincronizados en la misma ubicación que el ejecutable o script principal.
+## 🚀 Cómo Ejecutar la Aplicación
+
+### Desde el Entorno Virtual (Recomendado)
+1. Instalar dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Ejecutar la aplicación:
+   ```bash
+   python main.py
+   ```
+   *O hacer doble clic en `iniciar.bat` en Windows.*
+
+---
+
+## 🧠 Características Principales
+
+1. **Modelo 3D Holográfico de Lesiones (Estilo Astra AI)**:
+   * Visualización interactiva en 360° del tronco superior (waist-up) con anillos vectoriales de contorno y profundidad calculada mediante el algoritmo del pintor.
+   * Modelos anatómicos diferenciados para **Mujer ♀** y **Hombre ♂**.
+   * Manos anatómicas con **5 dedos articulados** independientes y pinza digital activa sobre la cresta de plegado.
+   * Cinemática fisiológica completa: respiración viva (16 rpm), plegado coordinado (hombro, codo, muñeca, mano y dedos) y modo de articulación por zona seleccionada.
+   * Panel de proyección clínica a corto y largo plazo (1 mes a 5 años) con diagnósticos CIE-10 (Túnel Carpiano, Epicondilitis, Manguito Rotador, Dedo en Resorte, etc.).
+   * Panel redimensionable dinámicamente (hasta 92% de ancho) con scroll suave y botones de ampliación rápida.
+
+2. **Cronometraje Bimanual con Visión Artificial (MediaPipe)**:
+   * Detección automática de manos, ángulos de codo y muñeca en tiempo real.
+   * Clasificación automática de micromovimientos Therblig (`TOMAR G`, `SOLTAR RL`, `SOSTENER H`, etc.) mediante Support Vector Machines (SVM).
+
+3. **Generación de Reportes Ejecutivos**:
+   * Exportación instantánea a PDF de informes consolidados de ingeniería de métodos con diagramas bimanuales, tablas de suplementos, análisis de fatiga y recomendaciones ergonómicas.

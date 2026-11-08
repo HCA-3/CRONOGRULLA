@@ -1,23 +1,30 @@
-# Archivos de Python
+# Python Bytecode y Caché
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
-*.pyo
-*.pyd
 
-# Entorno Virtual
+# Entornos Virtuales
+.venv/
 venv/
+env/
+ENV/
 .env
 
-# PyInstaller y Compilación
+# PyInstaller, Builds y Distribución
 build/
 dist/
 *.spec
 
-# Archivos de Datos y Evidencia (Opcional, se recomienda ignorarlos para no saturar el repo)
-media_evidencia/
-craneflow_data.json
-*.pdf
+# Logs del sistema
+*.log
+task_run.log
 
-# Configuración del IDE
+# Datos de Evidencia y Copias de Seguridad
+media_evidencia/
+backups/
+
+# Configuración de IDEs
 .vscode/
 .idea/
+*.swp

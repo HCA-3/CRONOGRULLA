@@ -194,22 +194,21 @@ class TimerView(ctk.CTkFrame):
             import sklearn
             
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            model_path = os.path.join(base_dir, "scratch", "therblig_svm_model.pkl")
+            model_candidates = [
+                os.path.join(base_dir, "models", "therblig_svm_model.pkl"),
+                os.path.join("models", "therblig_svm_model.pkl"),
+                os.path.join(base_dir, "scratch", "therblig_svm_model.pkl"),
+                os.path.join("scratch", "therblig_svm_model.pkl")
+            ]
+            model_path = next((p for p in model_candidates if os.path.exists(p)), None)
             
-            if os.path.exists(model_path):
+            if model_path:
                 with open(model_path, "rb") as f:
                     self.ml_model = pickle.load(f)
                 self.use_ml = True
                 print(f"[TimerView] Modelo de Machine Learning SVM cargado exitosamente desde {model_path}.")
             else:
-                alt_path = os.path.join("scratch", "therblig_svm_model.pkl")
-                if os.path.exists(alt_path):
-                    with open(alt_path, "rb") as f:
-                        self.ml_model = pickle.load(f)
-                    self.use_ml = True
-                    print(f"[TimerView] Modelo de Machine Learning SVM cargado exitosamente desde {alt_path}.")
-                else:
-                    print("[TimerView Warning] No se encontró el archivo de modelo 'therblig_svm_model.pkl' en scratch/. Se usará el heurístico multivariable.")
+                print("[TimerView Warning] No se encontró el archivo de modelo 'therblig_svm_model.pkl' en models/ ni scratch/. Se usará el heurístico multivariable.")
         except Exception as e:
             print(f"[TimerView Warning] No se pudo cargar el modelo de Machine Learning: {e}. Se usará el heurístico multivariable.")
             self.use_ml = False

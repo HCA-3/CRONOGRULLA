@@ -434,7 +434,7 @@ class AIInfoDialog(ctk.CTkToplevel):
              "clasificador heurístico multivariable (umbral calibrado en extensión promedio de dedos ≥ 1.38).")
         badge(s2, "Tipo de modelo:",  "SVM — kernel RBF (SVC)",           "#1e8449")
         badge(s2, "Vector entrada:",  "63 features (21 lm × x,y,z)",      "#1e8449")
-        badge(s2, "Archivo modelo:",  "scratch/therblig_svm_model.pkl",    "#1e8449")
+        badge(s2, "Archivo modelo:",  "models/therblig_svm_model.pkl",     "#1e8449")
         badge(s2, "Fallback:",        "Heurístico de extensión de dedos",  "#1e8449")
         ctk.CTkFrame(s2, height=8, fg_color="transparent").pack()
 
