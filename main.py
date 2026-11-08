@@ -20,6 +20,7 @@ from views.view_sensor_data import SensorDataView
 from views.view_standard_time import StandardTimeView
 from utils.pdf_report import PDFManager
 from views.view_objectives import ObjectivesView
+from views.view_lesiones_3d import ModeloLesiones3DView
 
 
 # Configuración de apariencia Premium..
@@ -91,6 +92,7 @@ class CraneFlowApp(ctk.CTk):
         self.current_view = None
         
         self.setup_ui()
+        self.protocol("WM_DELETE_WINDOW", self.on_close)
         
         # Lógica de inicio
         if not self.operator_data or not self.line_config:
@@ -170,6 +172,7 @@ class CraneFlowApp(ctk.CTk):
             ("👥 Equipo y Tareas", self.show_operators_setup),
             ("📸 Evidencia Visual", self.show_media_gallery),
             ("📡 Datos del Sensor", self.show_sensor_data),
+            ("🦴 Modelo 3D de Lesiones", self.show_lesiones_3d),
             ("📊 Comparativa Operarios", self.show_comparison),
             ("🗑️ Papelera", self.show_trash),
             ("📈 Estadísticas", self.show_stats),
@@ -247,6 +250,14 @@ class CraneFlowApp(ctk.CTk):
             self.btn_toggle.place(x=240, y=10)
             self.sidebar_expanded = True
 
+    def on_close(self):
+        if hasattr(self, 'current_view') and self.current_view and hasattr(self.current_view, 'destroy'):
+            try:
+                self.current_view.destroy()
+            except Exception:
+                pass
+        self.destroy()
+
     def clear_main_frame(self):
         for widget in self.main_frame.winfo_children():
             widget.destroy()
@@ -305,6 +316,14 @@ class CraneFlowApp(ctk.CTk):
         self.clear_main_frame()
         self.current_view = SensorDataView(self.main_frame, self)
         self.current_view.pack(fill="both", expand=True)
+
+    def show_lesiones_3d(self):
+        self.clear_main_frame()
+        self.current_view = ModeloLesiones3DView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
+
+    # Alias de compatibilidad
+    show_atlas_biomecanico = show_lesiones_3d
 
     def show_standard_time(self):
         self.clear_main_frame()

@@ -1,0 +1,304 @@
+Created At: 2026-11-07T19:02:09-05:00
+Completed At: 2026-11-07T19:02:10-05:00
+Showing lines 450-750 of 1121
+450:         
+451:         self.lbl_diag_desc = ctk.CTkLabel(prognosis_f, text="Descripción clínica detallada...", 
+452:                                           font=ctk.CTkFont(size=11), text_color=("#475569", "#cbd5e1"), 
+453:                                           anchor="w", justify="left", wraplength=550)
+454:         self.lbl_diag_desc.pack(fill="x", padx=10, pady=(2, 8))
+455: 
+456:         # Escala de Dolor Proyectado
+457:         eva_f = ctk.CTkFrame(prognosis_f, fg_color="transparent")
+458:         eva_f.pack(fill="x", padx=10, pady=(0, 8))
+459:         ctk.CTkLabel(eva_f, text="Nivel Dolor Proyectado (EVA):", font=ctk.CTkFont(size=11, weight="bold")).pack(side="left")
+460:         self.lbl_eva = ctk.CTkLabel(eva_f, text="7 / 10 (Severo)", font=ctk.CTkFont(size=11, weight="bold"), text_color="#e74c3c")
+461:         self.lbl_eva.pack(side="right")
+462: 
+463:         # 4. Medidas Correctivas de Ingeniería de Métodos
+464:         recom_card = ctk.CTkFrame(right_box, fg_color=("#f1f5f9", "#0f172a"), corner_radius=10)
+465:         recom_card.pack(fill="x", padx=10, pady=(4, 10))
+466:         
+467:         ctk.CTkLabel(recom_card, text="🛡️ Intervenciones Ergonómicas Preventivas:", 
+468:                      font=ctk.CTkFont(size=12, weight="bold"), text_color="#2ecc71").pack(anchor="w", padx=10, pady=(8, 4))
+469:         
+470:         self.lbl_recom_text = ctk.CTkLabel(recom_card, text="", font=ctk.CTkFont(size=11), 
+471:                                            text_color=("#334155", "#94a3b8"), justify="left", wraplength=550)
+472:         self.lbl_recom_text.pack(fill="x", padx=10, pady=(0, 10))
+473: 
+474:         self.update_diagnostic_panel()
+475: 
+476:     # ── MÉTODOS DE REDIMENSIONAMIENTO DEL PANEL CLÍNICO ───────────────────────
+477:     def on_splitter_press(self, event):
+478:         self.splitter_start_x = event.x_root
+479: 
+480:     def on_splitter_drag(self, event):
+481:         total_w = self.content_f.winfo_width()
+482:         if total_w < 350: return
+483:         
+484:         mouse_x = event.x_root - self.content_f.winfo_rootx()
+485:         left_pct = int(max(15, min(85, (mouse_x / float(total_w)) * 100)))
+486:         right_pct = 100 - left_pct
+487:         
+488:         self.set_split_percent(right_pct)
+489: 
+490:     def set_split_percent(self, right_pct):
+491:         """Ajusta el porcentaje de ancho del panel de diagnóstico (ej. 50, 70, 85)."""
+492:         self.right_weight = max(15, min(85, right_pct))
+493:         self.left_weight = 100 - self.right_weight
+494:         
+495:         self.content_f.grid_columnconfigure(0, weight=self.left_weight)
+496:         self.content_f.grid_columnconfigure(2, weight=self.right_weight)
+497:         self.update_idletasks()
+498:         self.draw_mannequin_3d()
+499:         self._update_expand_button_state()
+500: 
+501:     def toggle_panel_expand(self):
+502:         """Alterna entre vista equilibrada (50%) y vista ampliada (70%)."""
+503:         if self.right_weight < 65:
+504:             self.set_split_percent(70)
+505:         else:
+506:             self.set_split_percent(50)
+507: 
+508:     def _update_expand_button_state(self):
+509:         if hasattr(self, 'btn_expand_panel') and self.btn_expand_panel.winfo_exists():
+510:             if self.right_weight >= 65:
+511:                 self.btn_expand_panel.configure(text=f"◱ Reducir Panel (50%)", fg_color="#f59e0b", hover_color="#d97706")
+512:             else:
+513:                 self.btn_expand_panel.configure(text=f"⛶ Ampliar Panel (70%)", fg_color="#2563eb", hover_color="#1d4ed8")
+514: 
+515:     def on_right_box_configure(self, event):
+516:         """Ajusta dinámicamente el salto de línea de los textos al cambiar el ancho del panel."""
+517:         avail_w = max(280, event.width - 55)
+518:         for lbl in [self.lbl_zone_name, self.lbl_zone_tissue, self.lbl_diag_cie, 
+519:                     self.lbl_diag_desc, self.lbl_recom_text]:
+520:             if hasattr(self, lbl._name) or lbl.winfo_exists():
+521:                 try:
+522:                     lbl.configure(wraplength=avail_w)
+523:                 except Exception:
+524:                     pass
+525: 
+526:     # ── MÉTODOS DE HORIZONTE TEMPORAL EN 2 FILAS ──────────────────────────────
+527:     def on_short_horizon_selected(self, val):
+528:         if val:
+529:             if hasattr(self, 'seg_time_long'):
+530:                 self.seg_time_long.set("")
+531:             self.on_horizon_changed(val)
+532: 
+533:     def on_long_horizon_selected(self, val):
+534:         if val:
+535:             if hasattr(self, 'seg_time_short'):
+536:                 self.seg_time_short.set("")
+537:             self.on_horizon_changed(val)
+538: 
+539:     def _sync_horizon_buttons(self, val):
+540:         if val in ["1 Mes", "3 Meses", "6 Meses"]:
+541:             if hasattr(self, 'seg_time_short'): self.seg_time_short.set(val)
+542:             if hasattr(self, 'seg_time_long'): self.seg_time_long.set("")
+543:         else:
+544:             if hasattr(self, 'seg_time_short'): self.seg_time_short.set("")
+545:             if hasattr(self, 'seg_time_long'): self.seg_time_long.set(val)
+546: 
+547:     # ── MÉTODOS DE CONTROL Y ROTACIÓN 360° ─────────────────────────────────────
+548:     def set_angles(self, yaw_deg, pitch_deg):
+549:         self.yaw = math.radians(yaw_deg)
+550:         self.pitch = math.radians(pitch_deg)
+551:         self.draw_mannequin_3d()
+552: 
+553:     def toggle_autorotate(self):
+554:         self.auto_rotate = not self.auto_rotate
+555:         if self.auto_rotate:
+556:             self.btn_autorotate.configure(text="⏸ Pausar", fg_color="#ef4444")
+557:             self._run_autorotate()
+558:         else:
+559:             self.btn_autorotate.configure(text="▶ Giro 360°", fg_color="#6366f1")
+560:             if self.auto_rotate_id:
+561:                 self.after_cancel(self.auto_rotate_id)
+562:                 self.auto_rotate_id = None
+563: 
+564:     def _run_autorotate(self):
+565:         if not self.auto_rotate: return
+566:         self.yaw = (self.yaw + math.radians(2.0)) % (2 * math.pi)
+567:         self.draw_mannequin_3d()
+568:         self.auto_rotate_id = self.after(35, self._run_autorotate)
+569: 
+570:     def on_gender_toggled(self, val):
+571:         self.selected_gender.set("Femenino" if "Mujer" in val else "Masculino")
+572:         self.refresh_metrics()
+573:         self.draw_mannequin_3d()
+574:         self.update_diagnostic_panel()
+575: 
+576:     def on_param_changed(self, _=None):
+577:         op = self.selected_operator.get().lower()
+578:         if op != "todos":
+579:             if any(f in op for f in ["laura", "maria", "ana", "paula", "sofia", "diana"]):
+580:                 self.selected_gender.set("Femenino")
+581:                 self.btn_gender.set("Mujer ♀")
+582:             elif any(m in op for m in ["diego", "david", "carlos", "juan", "pedro"]):
+583:                 self.selected_gender.set("Masculino")
+584:                 self.btn_gender.set("Hombre ♂")
+585:                 
+586:         self.refresh_metrics()
+587:         self.draw_mannequin_3d()
+588:         self.update_diagnostic_panel()
+589: 
+590:     def on_horizon_changed(self, val):
+591:         self.selected_horizon.set(val)
+592:         self._sync_horizon_buttons(val)
+593:         self.draw_mannequin_3d()
+594:         self.update_diagnostic_panel()
+595: 
+596:     def zoom_in(self):
+597:         self.zoom_level = min(3.0, self.zoom_level * 1.2)
+598:         self.draw_mannequin_3d()
+599: 
+600:     def zoom_out(self):
+601:         self.zoom_level = max(0.5, self.zoom_level / 1.2)
+602:         self.draw_mannequin_3d()
+603: 
+604:     def reset_view_3d(self):
+605:         self.yaw = math.radians(0)
+606:         self.pitch = math.radians(0)
+607:         self.zoom_level = 1.05
+608:         self.pan_x = 0
+609:         self.pan_y = 0
+610:         self.draw_mannequin_3d()
+611: 
+612:     def on_canvas_press(self, event):
+613:         self.drag_start_x = event.x
+614:         self.drag_start_y = event.y
+615:         self.is_dragging = False
+616: 
+617:     def on_canvas_drag(self, event):
+618:         dx = event.x - self.drag_start_x
+619:         dy = event.y - self.drag_start_y
+620:         if abs(dx) > 1 or abs(dy) > 1:
+621:             self.is_dragging = True
+622:             # Arrastre horizontal -> Rotación en Yaw (360°)
+623:             self.yaw = (self.yaw + dx * 0.012) % (2 * math.pi)
+624:             # Arrastre vertical -> Inclinación en Pitch (-65° a +65°)
+625:             self.pitch = max(math.radians(-65), min(math.radians(65), self.pitch - dy * 0.01))
+626:             self.drag_start_x = event.x
+627:             self.drag_start_y = event.y
+628:             self.draw_mannequin_3d()
+629: 
+630:     def on_canvas_release(self, event):
+631:         if not self.is_dragging:
+632:             clicked_zone = self.detect_hotspot_click(event.x, event.y)
+633:             if clicked_zone:
+634:                 self.selected_zone.set(clicked_zone)
+635:                 self.draw_mannequin_3d()
+636:                 self.update_diagnostic_panel()
+637: 
+638:     def on_canvas_wheel(self, event):
+639:         factor = 1.15 if event.delta > 0 else 0.85
+640:         self.zoom_level = max(0.5, min(3.0, self.zoom_level * factor))
+641:         self.draw_mannequin_3d()
+642: 
+643:     # ── MOTOR DE TRANSFORMACIÓN Y PROYECCIÓN 3D ────────────────────────────────
+644:     def rotate_point_3d(self, x, y, z):
+645:         """Rota un punto (x, y, z) en espacio euclidiano según Yaw y Pitch."""
+646:         # 1. Rotación alrededor del eje Y (Yaw)
+647:         cos_y = math.cos(self.yaw)
+648:         sin_y = math.sin(self.yaw)
+649:         x1 = x * cos_y - z * sin_y
+650:         z1 = x * sin_y + z * cos_y
+651:         
+652:         # 2. Rotación alrededor del eje X (Pitch)
+653:         cos_p = math.cos(self.pitch)
+654:         sin_p = math.sin(self.pitch)
+655:         y2 = y * cos_p - z1 * sin_p
+656:         z2 = y * sin_p + z1 * cos_p
+657:         
+658:         return x1, y2, z2
+659: 
+660:     def project_3d(self, x, y, z, cx, cy, fov=650):
+661:         """Aplica perspectiva 3D y transforma a coordenadas de pantalla (u, v, z)."""
+662:         rx, ry, rz = self.rotate_point_3d(x, y, z)
+663:         scale = (fov / (fov + rz)) * self.zoom_level
+664:         u = cx + rx * scale + self.pan_x
+665:         v = cy + ry * scale + self.pan_y
+666:         return u, v, rz
+667: 
+668:     # ── DIBUJO DEL MANIQUÍ ANATÓMICO 3D (HOMBRE / MUJER) ─────────────────────
+669:     def draw_mannequin_3d(self):
+670:         c = self.canvas
+671:         c.delete("all")
+672:         
+673:         w = c.winfo_width() or self.canvas_w
+674:         h = c.winfo_height() or self.canvas_h
+675:         cx = w / 2.0
+676:         cy = (h / 2.0) + 15
+677:         
+678:         gender = self.selected_gender.get()
+679:         is_female = (gender == "Femenino")
+680: 
+681:         # 1. Rejilla de Fondo 3D y Brújula de Orientación
+682:         self._draw_background_grid(c, w, h)
+683:         self._draw_compass_3d(c, 45, h - 45)
+684: 
+685:         # 2. Definición Geométrica del Maniquí Anatómico (Tronco Superior Waist-Up)
+686:         # Parámetros antropométricos mujer vs hombre
+687:         sh_w = 98.0 if is_female else 125.0       # Ancho de hombros
+688:         sh_drop = 65.0                            # Altura de hombro
+689:         waist_w = 48.0 if is_female else 68.0     # Cintura
+690:         hip_w = 78.0 if is_female else 74.0       # Cadera superior
+691:         neck_r = 16.0 if is_female else 22.0      # Radio cuello
+692:         bust_z = 32.0 if is_female else 16.0      # Proyección de busto / pectorales
+693: 
+694:         # Anillos transversales del torso (Y, Radio X, Radio Z, Offset Z)
+695:         torso_rings_def = [
+696:             # Base cuello
+697:             (-85, neck_r * 1.5, neck_r * 1.3, -4),
+698:             # Clavícula / Hombros
+699:             (-65, sh_w * 0.75, 34, 0),
+700:             # Pectoral / Busto alto
+701:             (-35, 74 if is_female else 92, 42, bust_z * 0.8),
+702:             # Busto medio / Costillas
+703:             (-5, 68 if is_female else 86, 38, bust_z),
+704:             # Bajo busto / Diafragma
+705:             (25, 58 if is_female else 78, 34, 4),
+706:             # Cintura
+707:             (65, waist_w, 28 if is_female else 34, 0),
+708:             # Ombligo / Abdomen bajo
+709:             (95, waist_w + 12, 32 if is_female else 36, 0),
+710:             # Cresta ilíaca / Base del tronco
+711:             (130, hip_w, 36 if is_female else 40, -2)
+712:         ]
+713: 
+714:         # Elementos 3D a renderizar (Se ordenarán por profundidad Z para oclusión)
+715:         render_queue = []
+716: 
+717:         # ── A. Anillos de sección del torso ──────────────────────────────────
+718:         for y_lvl, rx, rz, off_z in torso_rings_def:
+719:             pts_ring = []
+720:             num_pts = 16
+721:             for i in range(num_pts):
+722:                 theta = 2 * math.pi * i / num_pts
+723:                 px = rx * math.cos(theta)
+724:                 pz = rz * math.sin(theta) + off_z
+725:                 pts_ring.append((px, y_lvl, pz))
+726:             
+727:             # Guardar anillo para render con profundidad promedio
+728:             avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in pts_ring])
+729:             render_queue.append({
+730:                 "type": "ring",
+731:                 "points": pts_ring,
+732:                 "z": avg_z,
+733:                 "color": "#1e3a5f" if avg_z < 0 else "#38bdf8",
+734:                 "width": 1 if avg_z < 0 else 2
+735:             })
+736: 
+737:         # ── B. Contornos de Busto (Mujer) o Pectorales (Hombre) ───────────────
+738:         if is_female:
+739:             # Contorno de senos en 3D
+740:             for side in [-1, 1]:
+741:                 bx = side * 28.0
+742:                 by = -20.0
+743:                 bz = 38.0
+744:                 pts_bust = []
+745:                 for a in np.linspace(0, 2*math.pi, 12):
+746:                     pts_bust.append((bx + 16*math.cos(a), by + 16*math.sin(a), bz + 10*math.sin(a)))
+747:                 avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in pts_bust])
+748:                 render_queue.append({
+749:                     "type": "polygon",
+750:                     "points": pts_bust,

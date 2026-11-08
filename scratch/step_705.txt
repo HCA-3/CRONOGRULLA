@@ -1,0 +1,174 @@
+Created At: 2026-11-07T19:02:17-05:00
+Completed At: 2026-11-07T19:02:17-05:00
+Showing lines 951-1121 of 1121
+951: 
+952:             elif t == "line_strip":
+953:                 proj_pts = []
+954:                 for pt in item["points"]:
+955:                     u, v, _ = self.project_3d(*pt, cx, cy)
+956:                     proj_pts.extend([u, v])
+957:                 if len(proj_pts) >= 4:
+958:                     dash = item.get("dash")
+959:                     c.create_line(proj_pts, fill=item["color"], width=item["width"], dash=dash, smooth=True)
+960: 
+961:             elif t == "segment":
+962:                 u1, v1, _ = self.project_3d(*item["p1"], cx, cy)
+963:                 u2, v2, _ = self.project_3d(*item["p2"], cx, cy)
+964:                 c.create_line(u1, v1, u2, v2, fill=item["color"], width=item["width"], capstyle="round")
+965: 
+966:             elif t == "hotspot":
+967:                 u, v, hr, rz = item["u"], item["v"], item["r"], item["z"]
+968:                 col = item["color"]
+969:                 
+970:                 # Ajustar brillo / tamaño por profundidad (más pequeño y tenue al fondo)
+971:                 depth_alpha = max(0.4, min(1.0, (rz + 200) / 400))
+972:                 eff_r = hr * depth_alpha
+973: 
+974:                 # Anillos concéntricos de calor térmico
+975:                 c.create_oval(u - eff_r*1.5, v - eff_r*1.5, u + eff_r*1.5, v + eff_r*1.5,
+976:                               outline=col, fill="", width=1, dash=(3, 3))
+977:                 c.create_oval(u - eff_r*1.0, v - eff_r*1.0, u + eff_r*1.0, v + eff_r*1.0,
+978:                               outline=col, fill="", width=2)
+979:                 c.create_oval(u - eff_r*0.5, v - eff_r*0.5, u + eff_r*0.5, v + eff_r*0.5,
+980:                               outline="", fill=col)
+981: 
+982:                 # Resaltado de inspección activa
+983:                 if item["active"]:
+984:                     c.create_oval(u - eff_r*1.9, v - eff_r*1.9, u + eff_r*1.9, v + eff_r*1.9,
+985:                                   outline="#ffffff", width=2)
+986:                     c.create_text(u, v - eff_r*2.2, text="▶ INSPECCIÓN", fill="#ffffff",
+987:                                   font=("Helvetica", 9, "bold"))
+988: 
+989:         # ── 4. BADGES DE INFORMACIÓN 3D Y ESTADO DE ROTACIÓN ──────────────────
+990:         yaw_deg = int(math.degrees(self.yaw)) % 360
+991:         pitch_deg = int(math.degrees(self.pitch))
+992:         
+993:         view_label = "VISTA FRONTAL" if (yaw_deg < 45 or yaw_deg >= 315) else \
+994:                      "PERFIL DERECHO" if (45 <= yaw_deg < 135) else \
+995:                      "VISTA POSTERIOR (ESPALDA)" if (135 <= yaw_deg < 225) else \
+996:                      "PERFIL IZQUIERDO"
+997:                      
+998:         c.create_text(20, 20, anchor="w", 
+999:                       text=f"🔭 {view_label}  |  Yaw: {yaw_deg}°  Pitch: {pitch_deg}°",
+1000:                       fill="#38bdf8", font=("Helvetica", 11, "bold"))
+1001:                       
+1002:         c.create_text(20, h - 20, anchor="w", 
+1003:                       text=f"Maniquí: {'Mujer ♀' if is_female else 'Hombre ♂'}  |  Zoom: {int(self.zoom_level*100)}%  |  Operario: {self.selected_operator.get()}",
+1004:                       fill="#94a3b8", font=("Helvetica", 10))
+1005: 
+1006:     def _draw_background_grid(self, c, w, h):
+1007:         for x in range(0, w, 40):
+1008:             c.create_line(x, 0, x, h, fill="#0c1626", width=1)
+1009:         for y in range(0, h, 40):
+1010:             c.create_line(0, y, w, y, fill="#0c1626", width=1)
+1011: 
+1012:     def _draw_compass_3d(self, c, cx, cy):
+1013:         """Dibuja una pequeña brújula 3D que indica hacia dónde mira el maniquí."""
+1014:         r = 22
+1015:         c.create_oval(cx - r, cy - r, cx + r, cy + r, outline="#1e293b", fill="#0b1320", width=1)
+1016:         # Vector mirando hacia el frente del maniquí
+1017:         dir_x = math.sin(self.yaw) * r * 0.85
+1018:         dir_z = -math.cos(self.yaw) * r * 0.85
+1019:         c.create_line(cx, cy, cx + dir_x, cy + dir_z, fill="#38bdf8", width=2, arrow="last")
+1020:         c.create_text(cx, cy + r + 10, text="360°", fill="#64748b", font=("Helvetica", 8))
+1021: 
+1022:     def _get_time_multiplier(self):
+1023:         months = self.HORIZON_MONTHS.get(self.selected_horizon.get(), 12)
+1024:         if months <= 1: return 0.55
+1025:         elif months <= 3: return 0.70
+1026:         elif months <= 6: return 0.85
+1027:         elif months <= 12: return 1.00
+1028:         elif months <= 24: return 1.15
+1029:         elif months <= 36: return 1.30
+1030:         else: return 1.45
+1031: 
+1032:     def _get_heat_color(self, val):
+1033:         if val < 0.40: return "#2ecc71"
+1034:         elif val < 0.65: return "#f1c40f"
+1035:         elif val < 0.82: return "#e67e22"
+1036:         elif val < 0.92: return "#e74c3c"
+1037:         else: return "#991b1b"
+1038: 
+1039:     def detect_hotspot_click(self, x, y):
+1040:         """Busca el hotspot más cercano a las coordenadas de pantalla."""
+1041:         closest_key = None
+1042:         min_dist = 9999
+1043:         for z_key, (hx, hy, hr, rz) in getattr(self, 'projected_hotspots', {}).items():
+1044:             dist = math.sqrt((x - hx)**2 + (y - hy)**2)
+1045:             if dist <= hr * 1.8 and dist < min_dist:
+1046:                 min_dist = dist
+1047:                 closest_key = z_key
+1048:         return closest_key
+1049: 
+1050:     # ── ACTUALIZACIÓN DEL PANEL DE DIAGNÓSTICO Y PROYECCIÓN TEMPORAL ──────────
+1051:     def update_diagnostic_panel(self):
+1052:         z_key = self.selected_zone.get()
+1053:         data = self.PATHOLOGIES_DB.get(z_key, self.PATHOLOGIES_DB["muñeca_r"])
+1054:         months = self.HORIZON_MONTHS.get(self.selected_horizon.get(), 12)
+1055:         gender = self.selected_gender.get()
+1056: 
+1057:         self.lbl_zone_name.configure(text=data["name"].upper())
+1058:         self.lbl_zone_tissue.configure(text=f"Estructuras afectadas: {data['tissue']}")
+1059: 
+1060:         if "codo" in z_key:
+1061:             ang = self.metrics["avg_elbow_r"] if "r" in z_key else self.metrics["avg_elbow_l"]
+1062:             self.lbl_zone_angle.configure(text=f"{ang:.1f}° ({'Flexión excesiva' if ang < 80 else 'Rango aceptable' if ang <= 130 else 'Extensión forzada'})")
+1063:             self.lbl_zone_therblig.configure(text="Tensión isométrica y compresión")
+1064:             self.lbl_zone_gender.configure(text="+15% momento palanca en hombres" if gender == "Masculino" else "Ángulo cubital valgo +3° en mujeres")
+1065:         elif "muñeca" in z_key:
+1066:             self.lbl_zone_angle.configure(text="Presión palmar activa en marcas")
+1067:             tomar_pct = int((self.metrics["tomar_count"] / max(1, self.metrics["total_therbligs"])) * 100)
+1068:             self.lbl_zone_therblig.configure(text=f"✊ TOMAR (G) {tomar_pct}%")
+1069:             self.lbl_zone_gender.configure(text="+25% vulnerabilidad en túnel carpiano femenino" if gender == "Femenino" else "Mayor rigidez tendinosa en hombres")
+1070:         elif "cuello" in z_key:
+1071:             self.lbl_zone_angle.configure(text="Flexión cervical ~32° hacia mesa")
+1072:             self.lbl_zone_therblig.configure(text=f"Iluminación: {int(self.metrics['avg_lux'])} lx")
+1073:             self.lbl_zone_gender.configure(text="+20% fatiga miofascial trapecio femenino" if gender == "Femenino" else "Mayor carga discal axial en hombres")
+1074:         else:
+1075:             self.lbl_zone_angle.configure(text="Postura de trabajo fija")
+1076:             self.lbl_zone_therblig.configure(text=f"Ruido ambiental: {self.metrics['avg_db']:.1f} dB")
+1077:             self.lbl_zone_gender.configure(text="Sobrecarga estática sostenida")
+1078: 
+1079:         stages = data["stages"]
+1080:         sorted_keys = sorted(stages.keys())
+1081:         active_key = sorted_keys[0]
+1082:         for k in sorted_keys:
+1083:             if months >= k:
+1084:                 active_key = k
+1085:             else:
+1086:                 break
+1087:                 
+1088:         stage_info = stages[active_key]
+1089:         self.lbl_diag_cie.configure(text=stage_info["cie"], text_color=stage_info["color"])
+1090:         self.lbl_diag_desc.configure(text=stage_info["desc"])
+1091:         self.lbl_eva.configure(text=f"{stage_info['eva']} — Nivel {stage_info['risk']}", text_color=stage_info["color"])
+1092: 
+1093:         base_imp = self.zone_impacts.get(z_key, 0.5)
+1094:         time_mult = self._get_time_multiplier()
+1095:         calc_score = int(min(98, max(12, base_imp * time_mult * 80)))
+1096:         
+1097:         score_color = self._get_heat_color(calc_score / 100.0)
+1098:         risk_str = "Bajo Riesgo" if calc_score < 40 else "Riesgo Moderado" if calc_score < 65 else "Riesgo Alto" if calc_score < 85 else "Riesgo Crítico / Incapacitante"
+1099:         self.lbl_global_score.configure(text=f"{calc_score}% ({risk_str})", text_color=score_color)
+1100:         self.prog_bar.configure(progress_color=score_color)
+1101:         self.prog_bar.set(calc_score / 100.0)
+1102: 
+1103:         recoms = [
+1104:             f"1. Altura de mesa: regular la superficie para que los codos queden a 90°-105° sin elevar hombros.",
+1105:             f"2. Rotación de estación: limitar el plegado continuo a máximo 50 minutos con 10 minutos de tareas de empaque/inspección.",
+1106:             f"3. Pausas activas obligatorias: realizar extensiones pasivas de muñeca y rotaciones escapulares cada 60 minutos.",
+1107:             f"4. Ergonomía visual: mantener iluminación focalizada > 500 lux para reducir la flexión anterior del cuello.",
+1108:             f"5. Rediseño de pliegues: usar plegadores plásticos de hueso (bone folders) para evitar presión directa con la yema de los dedos."
+1109:         ]
+1110:         self.lbl_recom_text.configure(text="\n".join(recoms))
+1111: 
+1112:     def destroy(self):
+1113:         """Detiene cualquier hilo o ciclo de rotación continua al salir."""
+1114:         if hasattr(self, 'auto_rotate_id') and self.auto_rotate_id:
+1115:             try:
+1116:                 self.after_cancel(self.auto_rotate_id)
+1117:             except Exception:
+1118:                 pass
+1119:             self.auto_rotate_id = None
+1120:         super().destroy()
+1121: 

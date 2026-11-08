@@ -78,18 +78,22 @@ END_GRULLA_KEYS = [
 def _detect_therblig(task_name: str):
     """Detecta el Therblig más probable a partir del nombre de la tarea."""
     t = (task_name or "").lower()
+    # 1. Comprobar perfil de pasos de origami (ERGO_BY_STEP)
+    for key, vals in ERGO_BY_STEP.items():
+        if key in t:
+            return vals[2]
+    # 2. Palabras clave explícitas de Therbligs
     for kw, label in THERBLIG_KEYWORDS:
         if kw in t:
             return label
-    # Fallback: mantener palabra original si ya contiene un Therblig conocido
-    # o devolver TOMAR/SOLTAR según si aparece 'soltar'
-    if "soltar" in t or "dejar" in t:
-        return "✋ SOLTAR"
-    if "tomar" in t or "agarr" in t or "coger" in t:
-        return "✊ TOMAR"
+    # 3. Heurísticos de acción
+    if "soltar" in t or "dejar" in t or "abrir" in t or "alas" in t or "ajust" in t:
+        return "🖐️ SOLTAR (RL)"
+    if "tomar" in t or "agarr" in t or "coger" in t or "doblar" in t or "marcar" in t or "pliegue" in t:
+        return "✊ TOMAR (G)"
     if "levantar" in t or "subir" in t or "elevar" in t:
         return "⬆️ LEVANTAR"
-    if "bajar" in t or "descender" in t or "bajar" in t:
+    if "bajar" in t or "descender" in t:
         return "⬇️ BAJAR"
     if "pasar" in t or "transfer" in t or "entregar" in t:
         return "➡️ PASAR"
@@ -265,7 +269,7 @@ class SensorDataView(ctk.CTkFrame):
                     # Datos reales capturados por cámara
                     angle_r   = angle_r_real
                     angle_l   = angle_l_real
-                    therblig  = therblig_real if therblig_real and therblig_real != "N/A" else _detect_therblig(task)
+                    therblig  = therblig_real if therblig_real and therblig_real not in ["N/A", "ESPERANDO MANO...", "None", ""] else _detect_therblig(task)
                     src_label = ""
                 else:
                     # Usar perfil biomecánico por nombre de tarea

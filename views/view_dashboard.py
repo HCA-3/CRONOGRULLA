@@ -75,15 +75,24 @@ class DashboardView(ctk.CTkFrame):
         all_angles = []
         for m in measurements:
             for s in m.get("splits", []):
+                ergo = s.get("ergo_summary", {}) or {}
+                ar = ergo.get("avg_elbow_r", 0)
+                al = ergo.get("avg_elbow_l", 0)
                 ang = s.get("avg_angle", 0)
+                if ang == 0 and (ar > 0 or al > 0):
+                    ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
                 if ang > 0: all_angles.append(ang)
         max_angle = max(all_angles) if all_angles else 0.0
         
-        # Reglas simples del semáforo
-        if max_angle >= 70:
+        # Reglas del semáforo basadas en ergonomía ISO 11226 / RULA
+        if max_angle > 150 or (max_angle > 0 and max_angle < 60):
             ergo_status = "🔴 Riesgo Alto"
             ergo_color = "#e74c3c"
-            ergo_desc = "Mala postura frecuente detectada (Ángulo > 70°).\nSe sugiere ajustar altura del puesto de trabajo."
+            ergo_desc = "Posturas forzadas detectadas (Ángulo fuera de 60°-150°).\nSe sugiere rotación o ajuste de plano de trabajo."
+        elif max_angle > 130 or (max_angle > 0 and max_angle < 80):
+            ergo_status = "🟡 Riesgo Medio"
+            ergo_color = "#f1c40f"
+            ergo_desc = "Ángulos articulares al límite de confort (60°-80° ó 130°-150°).\nSe recomiendan pausas activas programadas."
         elif total_m > 8:
             ergo_status = "🟡 Riesgo Medio"
             ergo_color = "#f1c40f"
@@ -116,7 +125,12 @@ class DashboardView(ctk.CTkFrame):
             for s in m.get("splits", []):
                 act = s.get("activity", "Tarea")
                 dur = s.get("duration", 0)
+                ergo = s.get("ergo_summary", {}) or {}
+                ar = ergo.get("avg_elbow_r", 0)
+                al = ergo.get("avg_elbow_l", 0)
                 ang = s.get("avg_angle", 0)
+                if ang == 0 and (ar > 0 or al > 0):
+                    ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
                 if dur > 0:
                     if act not in task_fatigue:
                         task_fatigue[act] = []

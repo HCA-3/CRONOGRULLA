@@ -9,6 +9,72 @@ import threading
 import numpy as np
 import mediapipe as mp
 from views.env_table import EnvTableEditor
+from views.view_sensor_data import _detect_therblig, _get_ergo
+
+class SoundSensorMonitor:
+    """Monitor acústico continuo en segundo plano utilizando sounddevice para medir decibelios reales."""
+    def __init__(self):
+        self.current_db = 48.0
+        self.status_text = "Confort acústico (Normal)"
+        self.status_color = "#2ecc71"
+        self.running = False
+        self.available = False
+        self.thread = None
+        self.sample_rate = 44100
+        self.block_size = 4096
+        self.start()
+
+    def start(self):
+        try:
+            import sounddevice as sd
+            devs = sd.query_devices()
+            has_input = any(d.get('max_input_channels', 0) > 0 for d in devs)
+            if not has_input:
+                self.status_text = "Micrófono no detectado"
+                self.status_color = "#7f8c8d"
+                return
+            self.running = True
+            self.available = True
+            self.thread = threading.Thread(target=self._run_loop, daemon=True)
+            self.thread.start()
+        except Exception as e:
+            print(f"[SoundSensor Warning] sounddevice no disponible: {e}")
+            self.available = False
+            self.status_text = "Sensor no disponible"
+            self.status_color = "#7f8c8d"
+
+    def _run_loop(self):
+        import sounddevice as sd
+        try:
+            with sd.InputStream(samplerate=self.sample_rate, channels=1,
+                                blocksize=self.block_size, dtype='float32') as stream:
+                while self.running:
+                    data, _ = stream.read(self.block_size)
+                    if not self.running:
+                        break
+                    rms = float(np.sqrt(np.mean(data**2)))
+                    # Mapeo calibrado: 20*log10(rms) + 110 da ~38-48 dB en silencio y ~65-80 dB con voz
+                    db_spl = 20.0 * np.log10(max(rms, 1e-6)) + 110.0
+                    # Suavizado exponencial para evitar oscilaciones excesivas
+                    alpha = 0.35
+                    self.current_db = round(alpha * max(35.0, min(100.0, db_spl)) + (1 - alpha) * self.current_db, 1)
+
+                    if self.current_db < 70.0:
+                        self.status_text = "Confort acústico (Normal)"
+                        self.status_color = "#2ecc71"
+                    elif self.current_db < 85.0:
+                        self.status_text = "Ruido moderado (Alerta)"
+                        self.status_color = "#f39c12"
+                    else:
+                        self.status_text = "Ruido alto (Riesgo auditivo)"
+                        self.status_color = "#e74c3c"
+                    time.sleep(0.12)
+        except Exception as e:
+            print(f"[SoundSensor] Stream finalizado o no disponible: {e}")
+            self.running = False
+
+    def stop(self):
+        self.running = False
 
 class StudySetupDialog(ctk.CTkToplevel):
     def __init__(self, master):
@@ -38,6 +104,23 @@ class StudySetupDialog(ctk.CTkToplevel):
         
         self.s_editor = EnvTableEditor(ts, unit_label="Nivel (dB)")
         self.s_editor.pack(fill="both", expand=True, padx=5, pady=5)
+
+        # Pre-cargar datos anteriores si existen para mantener continuidad
+        try:
+            prev_m = self.master.app.data.get("measurements", [])
+            last_lux, last_db = [], []
+            for pm in reversed(prev_m):
+                if pm.get("lux_data") and not last_lux: last_lux = pm["lux_data"]
+                if pm.get("db_data") and not last_db: last_db = pm["db_data"]
+                if last_lux and last_db: break
+            if last_lux: self.l_editor.load_data(last_lux)
+            if last_db: self.s_editor.load_data(last_db)
+            if not last_db:
+                cur_db = getattr(self.master, "sound_monitor", None)
+                val_db = f"{cur_db.current_db:.1f}" if cur_db else "52.0"
+                self.s_editor.load_data([{"id": "Mic", "val": val_db, "op": "General", "loc": "Estación de Trabajo"}])
+        except Exception:
+            pass
         
         # Checkbox para modo flujo
         self.flow_mode_var = tk.BooleanVar(value=True)
@@ -83,6 +166,13 @@ class TimerView(ctk.CTkFrame):
         self.yolo_score = 0.0
         self.last_ergo = {}
         
+        # --- SENSOR DE SONIDO Y MICROMOVIMIENTOS ---
+        self.sound_monitor = SoundSensorMonitor()
+        self.cycle_db_readings = []
+        self.current_therblig = "Esperando mano..."
+        self.current_therblig_color = (255, 255, 255)
+        self.current_flexion = 0
+
         self.build_ui()
         
         # --- ML MODEL SETUP ---
@@ -207,17 +297,50 @@ class TimerView(ctk.CTkFrame):
         self.gesture_status_lbl.pack(pady=2)
         
         # Panel de IA Avanzada (YOLO y Fatiga)
-        self.ai_panel = ctk.CTkFrame(self.upper_container, corner_radius=20, width=280)
+        self.ai_panel = ctk.CTkScrollableFrame(self.upper_container, corner_radius=20, width=300)
         self.ai_panel.pack(side="right", fill="both", padx=(10, 0))
-        self.ai_panel.pack_propagate(False)
         
         # UI del Panel de IA
-        ctk.CTkLabel(self.ai_panel, text="🧠 COPILOTO DE IA AVANZADO", font=ctk.CTkFont(size=13, weight="bold"), text_color="#3498db").pack(pady=(15, 10), padx=10)
+        ctk.CTkLabel(self.ai_panel, text="🧠 COPILOTO DE IA Y SENSORES", font=ctk.CTkFont(size=13, weight="bold"), text_color="#3498db").pack(pady=(10, 8), padx=10)
         
+        # Sección Micromovimientos (Therbligs en tiempo real)
+        therblig_frame = ctk.CTkFrame(self.ai_panel, fg_color=("#f1f2f6", "#2d3436"), corner_radius=10)
+        therblig_frame.pack(fill="x", padx=10, pady=4)
+        ctk.CTkLabel(therblig_frame, text="✊ Micromovimiento (Therblig IA)", font=ctk.CTkFont(size=11, weight="bold"), text_color="#9b59b6").pack(anchor="w", padx=10, pady=(4, 2))
+        
+        th_row = ctk.CTkFrame(therblig_frame, fg_color="transparent")
+        th_row.pack(fill="x", padx=10, pady=2)
+        ctk.CTkLabel(th_row, text="Gesto:", font=ctk.CTkFont(size=11)).pack(side="left")
+        self.lbl_therblig_live = ctk.CTkLabel(th_row, text="Rastreando...", font=ctk.CTkFont(size=11, weight="bold"), text_color="#3498db")
+        self.lbl_therblig_live.pack(side="right")
+        
+        th_detail_row = ctk.CTkFrame(therblig_frame, fg_color="transparent")
+        th_detail_row.pack(fill="x", padx=10, pady=(0, 4))
+        ctk.CTkLabel(th_detail_row, text="Flexión mano:", font=ctk.CTkFont(size=11)).pack(side="left")
+        self.lbl_therblig_flexion = ctk.CTkLabel(th_detail_row, text="—", font=ctk.CTkFont(size=10))
+        self.lbl_therblig_flexion.pack(side="right")
+
+        # Sección Sensor Acústico (Sonómetro en tiempo real)
+        sound_frame = ctk.CTkFrame(self.ai_panel, fg_color=("#f1f2f6", "#2d3436"), corner_radius=10)
+        sound_frame.pack(fill="x", padx=10, pady=4)
+        ctk.CTkLabel(sound_frame, text="🔊 Sensor Acústico (Sonómetro Mic)", font=ctk.CTkFont(size=11, weight="bold"), text_color="#3498db").pack(anchor="w", padx=10, pady=(4, 2))
+        
+        sound_row = ctk.CTkFrame(sound_frame, fg_color="transparent")
+        sound_row.pack(fill="x", padx=10, pady=2)
+        ctk.CTkLabel(sound_row, text="Nivel Ruido:", font=ctk.CTkFont(size=11)).pack(side="left")
+        self.lbl_sound_level = ctk.CTkLabel(sound_row, text="48.0 dB", font=ctk.CTkFont(size=12, weight="bold"), text_color="#2ecc71")
+        self.lbl_sound_level.pack(side="right")
+        
+        sound_status_row = ctk.CTkFrame(sound_frame, fg_color="transparent")
+        sound_status_row.pack(fill="x", padx=10, pady=(0, 4))
+        ctk.CTkLabel(sound_status_row, text="Evaluación:", font=ctk.CTkFont(size=11)).pack(side="left")
+        self.lbl_sound_status = ctk.CTkLabel(sound_status_row, text="Confort acústico", font=ctk.CTkFont(size=10))
+        self.lbl_sound_status.pack(side="right")
+
         # Sección YOLO v8
         yolo_frame = ctk.CTkFrame(self.ai_panel, fg_color=("#f1f2f6", "#2d3436"), corner_radius=10)
-        yolo_frame.pack(fill="x", padx=15, pady=5)
-        ctk.CTkLabel(yolo_frame, text="🔍 Detección de Calidad (YOLOv8)", font=ctk.CTkFont(size=11, weight="bold"), text_color="#f1c40f").pack(anchor="w", padx=10, pady=(5, 2))
+        yolo_frame.pack(fill="x", padx=10, pady=4)
+        ctk.CTkLabel(yolo_frame, text="🔍 Detección de Calidad (YOLOv8)", font=ctk.CTkFont(size=11, weight="bold"), text_color="#f1c40f").pack(anchor="w", padx=10, pady=(4, 2))
         
         yolo_status_row = ctk.CTkFrame(yolo_frame, fg_color="transparent")
         yolo_status_row.pack(fill="x", padx=10, pady=2)
@@ -233,8 +356,8 @@ class TimerView(ctk.CTkFrame):
         
         # Sección IA Predictiva
         predict_frame = ctk.CTkFrame(self.ai_panel, fg_color=("#f1f2f6", "#2d3436"), corner_radius=10)
-        predict_frame.pack(fill="x", padx=15, pady=5)
-        ctk.CTkLabel(predict_frame, text="📈 IA Predictiva de Fatiga", font=ctk.CTkFont(size=11, weight="bold"), text_color="#e74c3c").pack(anchor="w", padx=10, pady=(5, 2))
+        predict_frame.pack(fill="x", padx=10, pady=4)
+        ctk.CTkLabel(predict_frame, text="📈 IA Predictiva de Fatiga", font=ctk.CTkFont(size=11, weight="bold"), text_color="#e74c3c").pack(anchor="w", padx=10, pady=(4, 2))
         
         fatigue_row = ctk.CTkFrame(predict_frame, fg_color="transparent")
         fatigue_row.pack(fill="x", padx=10, pady=2)
@@ -250,10 +373,10 @@ class TimerView(ctk.CTkFrame):
         
         # Recomendación Ergonómica
         recom_frame = ctk.CTkFrame(self.ai_panel, fg_color=("#f1f2f6", "#2c3e50"), corner_radius=10)
-        recom_frame.pack(fill="both", expand=True, padx=15, pady=(5, 15))
-        ctk.CTkLabel(recom_frame, text="💡 Recomendación de Métodos:", font=ctk.CTkFont(size=11, weight="bold"), text_color="#2ecc71").pack(anchor="w", padx=10, pady=(5, 2))
-        self.lbl_recom = ctk.CTkLabel(recom_frame, text="Estudio no iniciado.", font=ctk.CTkFont(size=10, slant="italic"), justify="left", wraplength=220)
-        self.lbl_recom.pack(fill="both", expand=True, padx=10, pady=(0, 5))
+        recom_frame.pack(fill="both", expand=True, padx=10, pady=(4, 10))
+        ctk.CTkLabel(recom_frame, text="💡 Recomendación de Métodos:", font=ctk.CTkFont(size=11, weight="bold"), text_color="#2ecc71").pack(anchor="w", padx=10, pady=(4, 2))
+        self.lbl_recom = ctk.CTkLabel(recom_frame, text="Estudio no iniciado.", font=ctk.CTkFont(size=10, slant="italic"), justify="left", wraplength=230)
+        self.lbl_recom.pack(fill="both", expand=True, padx=10, pady=(0, 4))
 
         # Control
         control_p = ctk.CTkFrame(self, fg_color="transparent")
@@ -351,63 +474,54 @@ class TimerView(ctk.CTkFrame):
         return np.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
 
     def detect_therblig(self, hand_lms):
-        # ==============================================================================
-        # CLASIFICADOR DE GESTOS POR MACHINE LEARNING (SVM)
-        # ==============================================================================
-        if self.use_ml and self.ml_model is not None:
-            try:
-                # Extraer vector de 63 caracteristicas: coordenadas 3D (x,y,z) de los 21 landmarks
-                features = []
-                for lm in hand_lms.landmark:
-                    features.extend([lm.x, lm.y, lm.z])
-                
-                # Realizar prediccion en tiempo real
-                prediction = self.ml_model.predict([features])
-                
-                if prediction[0] == 0:
-                    return "✊ TOMAR (G)", (46, 204, 113) # Verde
-                else:
-                    return "🖐️ SOLTAR (RL)", (52, 152, 219) # Azul
-            except Exception as e:
-                # Ante cualquier error de ejecucion, fallback silencioso al heuristico multivariable
-                pass
-
-        # ==============================================================================
-        # CLASIFICADOR MULTIVARIABLE DE GESTOS (Heuristico de Respaldo)
-        # ==============================================================================
-        # En lugar de usar un umbral simple en un solo dedo, extraemos un vector de 
-        # caracteristicas de extension de los 4 dedos principales, normalizado por la 
-        # escala intrinseca de la mano. Esto equivale a un clasificador lineal (SVM/MLP) 
-        # calibrado para detectar Puño Cerrado (✊ TOMAR) vs Mano Abierta (🖐️ Soltar).
-        
-        # 1. Obtener la escala relativa de la mano (distancia entre Muneca [0] y base del Dedo Medio [9])
+        # 1. Obtener la escala relativa de la mano (distancia entre Muñeca [0] y base del Dedo Medio [9])
         p0 = hand_lms.landmark[0]
         p9 = hand_lms.landmark[9]
         scale = self.calculate_distance(p0, p9)
-        if scale < 0.001:
-            scale = 0.001  # Prevenir division por cero
-            
-        # 2. Calcular distancias normalizadas de las puntas de los dedos a la muneca
-        # Puntas: Indice (8), Medio (12), Anular (16), Menique (20)
-        fingertips = [8, 12, 16, 20]
-        norm_dists = []
+        if scale < 0.001: scale = 0.001
+
+        # 2. Distancias normalizadas de las 5 puntas a la muñeca
+        fingertips = [4, 8, 12, 16, 20]
+        d_wrist = []
         for tip in fingertips:
             ptip = hand_lms.landmark[tip]
-            dist = self.calculate_distance(p0, ptip)
-            norm_dists.append(dist / scale)
-            
-        # 3. Calcular la media del vector de caracteristicas (extension general de la mano)
-        # En puno cerrado (Grasp), las distancias caen entre 0.8 y 1.25.
-        # En mano abierta (Release), las distancias suben entre 1.5 y 2.3.
-        avg_extension = np.mean(norm_dists)
-        
-        # 4. Frontera de decision del hiperplano de clasificacion (Umbral Calibrado)
-        decision_boundary = 1.38
-        
-        if avg_extension < decision_boundary:
-            return "✊ TOMAR (G)", (46, 204, 113) # Verde
+            d_wrist.append(self.calculate_distance(p0, ptip) / scale)
+
+        # 3. Distancias de puntas a sus bases (MCP knuckles: 8->5, 12->9, 16->13, 20->17)
+        mcp_pairs = [(8, 5), (12, 9), (16, 13), (20, 17)]
+        d_mcp = []
+        for tip, mcp in mcp_pairs:
+            ptip = hand_lms.landmark[tip]
+            pmcp = hand_lms.landmark[mcp]
+            d_mcp.append(self.calculate_distance(ptip, pmcp) / scale)
+
+        # 4. Separación entre puntas adyacentes (8->12, 12->16, 16->20)
+        spread = [
+            self.calculate_distance(hand_lms.landmark[8], hand_lms.landmark[12]) / scale,
+            self.calculate_distance(hand_lms.landmark[12], hand_lms.landmark[16]) / scale,
+            self.calculate_distance(hand_lms.landmark[16], hand_lms.landmark[20]) / scale,
+        ]
+
+        mean_ext = float(np.mean(d_wrist))
+        flexion_pct = int(max(0, min(100, (2.2 - mean_ext) / (2.2 - 0.9) * 100)))
+
+        # Clasificación con SVM invariante (13 features)
+        if self.use_ml and self.ml_model is not None:
+            try:
+                feats = list(d_wrist) + list(d_mcp) + list(spread) + [mean_ext]
+                pred = self.ml_model.predict([feats])[0]
+                if pred == 0:
+                    return "✊ TOMAR (G)", (46, 204, 113), flexion_pct
+                else:
+                    return "🖐️ SOLTAR (RL)", (52, 152, 219), flexion_pct
+            except Exception:
+                pass
+
+        # Heurístico multivariable calibrado de respaldo
+        if mean_ext < 1.38:
+            return "✊ TOMAR (G)", (46, 204, 113), flexion_pct
         else:
-            return "🖐️ SOLTAR (RL)", (52, 152, 219) # Azul
+            return "🖐️ SOLTAR (RL)", (52, 152, 219), flexion_pct
 
 
     def process_vision(self, frame):
@@ -478,20 +592,32 @@ class TimerView(ctk.CTkFrame):
             cv2.putText(frame, "INICIANDO IA...",
                         (12, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 80, 80), 2, cv2.LINE_AA)
 
-        # --- ANÁLISIS ERGONÓMICO ---
+        # --- ANÁLISIS ERGONÓMICO CON FUSIÓN DE SENSORES POSE + MANOS ---
         current_ergo = {}
         if results and results.pose_landmarks:
             lms = results.pose_landmarks.landmark
             # Hombro(12), Codo(14), Muñeca(16) - Brazo Derecho
-            if lms[12].visibility > 0.5 and lms[14].visibility > 0.5 and lms[16].visibility > 0.5:
-                angle_r = self.calculate_angle(lms[12], lms[14], lms[16])
+            rw_vis = lms[16].visibility
+            rw_pt = lms[16]
+            if rw_vis < 0.35 and results.right_hand_landmarks:
+                rw_pt = results.right_hand_landmarks.landmark[0]
+                rw_vis = 0.8
+
+            if lms[12].visibility > 0.3 and lms[14].visibility > 0.3 and rw_vis > 0.3:
+                angle_r = self.calculate_angle(lms[12], lms[14], rw_pt)
                 current_ergo["elbow_r"] = angle_r
                 cv2.putText(frame, f"{int(angle_r)}deg", (int(lms[14].x*w), int(lms[14].y*h)), 
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
             
             # Hombro(11), Codo(13), Muñeca(15) - Brazo Izquierdo
-            if lms[11].visibility > 0.5 and lms[13].visibility > 0.5 and lms[15].visibility > 0.5:
-                angle_l = self.calculate_angle(lms[11], lms[13], lms[15])
+            lw_vis = lms[15].visibility
+            lw_pt = lms[15]
+            if lw_vis < 0.35 and results.left_hand_landmarks:
+                lw_pt = results.left_hand_landmarks.landmark[0]
+                lw_vis = 0.8
+
+            if lms[11].visibility > 0.3 and lms[13].visibility > 0.3 and lw_vis > 0.3:
+                angle_l = self.calculate_angle(lms[11], lms[13], lw_pt)
                 current_ergo["elbow_l"] = angle_l
                 cv2.putText(frame, f"{int(angle_l)}deg", (int(lms[13].x*w), int(lms[13].y*h)), 
                             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
@@ -501,30 +627,48 @@ class TimerView(ctk.CTkFrame):
         # Lógica de Trigger por Zonas (usando las manos detectadas)
         zw = (w - 40) // num
         
-        # --- ANÁLISIS DE THERBLIGS (Tomar/Soltar) ---
-        therblig_info = "ESPERANDO MANO..."
+        # --- ANÁLISIS DE THERBLIGS (Tomar/Soltar) EN TIEMPO REAL ---
+        therblig_info = None
         therblig_color = (255, 255, 255)
+        flexion_val = 0
         
-        # Recopilar puntos de las manos para verificar colisión con las zonas
         hand_points = []
         if results:
+            active_hand = None
             if results.right_hand_landmarks:
-                idx_tip = results.right_hand_landmarks.landmark[8]
-                hand_points.append((int(idx_tip.x * w), int(idx_tip.y * h)))
-                therblig_info, therblig_color = self.detect_therblig(results.right_hand_landmarks)
+                active_hand = results.right_hand_landmarks
             elif results.left_hand_landmarks:
-                idx_tip = results.left_hand_landmarks.landmark[8]
+                active_hand = results.left_hand_landmarks
+
+            if active_hand:
+                idx_tip = active_hand.landmark[8]
                 hand_points.append((int(idx_tip.x * w), int(idx_tip.y * h)))
-                therblig_info, therblig_color = self.detect_therblig(results.left_hand_landmarks)
+                therblig_info, therblig_color, flexion_val = self.detect_therblig(active_hand)
+                self.current_therblig = therblig_info
+                self.current_therblig_color = therblig_color
+                self.current_flexion = flexion_val
+                
+                # Actualizar tarjeta en vivo en el copiloto de IA
+                if hasattr(self, 'lbl_therblig_live') and self.lbl_therblig_live.winfo_exists():
+                    hex_color = f"#{therblig_color[0]:02x}{therblig_color[1]:02x}{therblig_color[2]:02x}"
+                    self.lbl_therblig_live.configure(text=therblig_info, text_color=hex_color)
+                    self.lbl_therblig_flexion.configure(text=f"Flexión dedos: {flexion_val}%")
+                
+                # Acumular detección de micromovimiento para el operario activo
+                if self.running and not self.paused and therblig_info:
+                    for n, s in self.op_states.items():
+                        if s.get("active") and not s.get("done"):
+                            s.setdefault("therblig_log", []).append(therblig_info)
+            else:
+                if hasattr(self, 'lbl_therblig_live') and self.lbl_therblig_live.winfo_exists():
+                    self.lbl_therblig_live.configure(text="Rastreando manos...", text_color="#7f8c8d")
+                    self.lbl_therblig_flexion.configure(text="—")
             
             if not hand_points and results.pose_landmarks:
                 for pt_idx in [15, 16]: # Muñecas
                     lm = results.pose_landmarks.landmark[pt_idx]
-                    if lm.visibility > 0.5:
+                    if lm.visibility > 0.3:
                         hand_points.append((int(lm.x * w), int(lm.y * h)))
-        
-        self.current_therblig = therblig_info
-        # (Texto de Therblig oculto de la cámara por petición del usuario)
         
         # FALLBACK: Si no hay IA o no detecta, usar detección de movimiento simple en las zonas
         use_fallback = (results is None or (not results.pose_landmarks and not results.right_hand_landmarks and not results.left_hand_landmarks))
@@ -693,18 +837,56 @@ class TimerView(ctk.CTkFrame):
                 except Exception:
                     pass
             
+            # --- DETERMINAR THERBLIG PREDOMINANTE (CON FILTRADO DE ESTADOS DE ESPERA) ---
+            th_log = [t for t in s.get("therblig_log", []) if "ESPERANDO" not in t.upper() and t.strip()]
+            if th_log:
+                counts = {}
+                for t in th_log:
+                    counts[t] = counts.get(t, 0) + 1
+                predominant_therblig = max(counts, key=counts.get)
+            else:
+                predominant_therblig = _detect_therblig(self.app.ACTIVITIES[global_task_idx])
+
+            # --- RESUMEN ERGONÓMICO Y ÁNGULO PROMEDIO ---
+            r_vals = [e["elbow_r"] for e in s.get("ergo_log", []) if "elbow_r" in e]
+            l_vals = [e["elbow_l"] for e in s.get("ergo_log", []) if "elbow_l" in e]
+            avg_r = round(float(np.mean(r_vals)), 1) if r_vals else 0.0
+            avg_l = round(float(np.mean(l_vals)), 1) if l_vals else 0.0
+
+            if avg_r > 0 and avg_l > 0:
+                combined_ang = round((avg_r + avg_l) / 2.0, 1)
+            elif avg_r > 0:
+                combined_ang = avg_r
+            elif avg_l > 0:
+                combined_ang = avg_l
+            else:
+                fb_r, fb_l, _ = _get_ergo(self.app.ACTIVITIES[global_task_idx])
+                avg_r = float(fb_r)
+                avg_l = float(fb_l)
+                combined_ang = round((avg_r + avg_l) / 2.0, 1)
+
+            # --- NIVEL DE RUIDO MEDIDO DURANTE EL PASO ---
+            s_log = s.get("sound_log", [])
+            step_db = round(float(np.mean(s_log)), 1) if s_log else (
+                round(self.sound_monitor.current_db, 1) if hasattr(self, 'sound_monitor') and self.sound_monitor else 50.0
+            )
+
             self.current_cycles_data[s["g"]]["splits"][global_task_idx] = {
                 "duration": round(elapsed, 2),
                 "activity": self.app.ACTIVITIES[global_task_idx],
                 "operator": name,
                 "evidence": os.path.join(self.media_path, filename) if filename else "",
-                "therblig": getattr(self, "current_therblig", "N/A"),
+                "therblig": predominant_therblig,
+                "avg_angle": combined_ang,
                 "ergo_summary": {
-                    "avg_elbow_r": np.mean([e["elbow_r"] for e in s["ergo_log"] if "elbow_r" in e]) if s["ergo_log"] else 0,
-                    "avg_elbow_l": np.mean([e["elbow_l"] for e in s["ergo_log"] if "elbow_l" in e]) if s["ergo_log"] else 0
-                }
+                    "avg_elbow_r": avg_r,
+                    "avg_elbow_l": avg_l
+                },
+                "db_level": step_db
             }
             s["ergo_log"] = [] # Limpiar para el siguiente paso
+            s["therblig_log"] = [] # Limpiar para el siguiente paso
+            s["sound_log"] = [] # Limpiar para el siguiente paso
             self.current_cycles_data[s["g"]]["total_time"] += round(elapsed, 2)
         
         s["lt"] = now
@@ -764,21 +946,36 @@ class TimerView(ctk.CTkFrame):
         self.op_cards[name]["step"].configure(text=f"Paso {s['idx']+1} (G:{s['g']})")
 
     def update_clock(self):
+        # Actualizar sonómetro en tiempo real independientemente de si el estudio arrancó
+        if hasattr(self, 'sound_monitor') and self.sound_monitor:
+            cur_db = self.sound_monitor.current_db
+            st_text = self.sound_monitor.status_text
+            st_color = self.sound_monitor.status_color
+            if hasattr(self, 'lbl_sound_level') and self.lbl_sound_level.winfo_exists():
+                self.lbl_sound_level.configure(text=f"{cur_db:.1f} dB", text_color=st_color)
+                self.lbl_sound_status.configure(text=st_text)
+
         if not self.running: 
             self.calculate_fatigue_and_projections()
             return
         
         if not self.paused:
             now = time.time()
+            # Acumular lectura de decibelios del ciclo
+            if hasattr(self, 'sound_monitor') and self.sound_monitor:
+                self.cycle_db_readings.append(self.sound_monitor.current_db)
+
             for n, s in self.op_states.items():
                 if s["active"] and not s["done"]: 
                     # Mostrar tiempo acumulado del operario en la tarjeta
                     elapsed_op = now - s["op_total_start"]
                     self.op_cards[n]["time"].configure(text=f"{elapsed_op:.2f}s")
                     
-                    # Registrar ergonomía periódicamente
+                    # Registrar ergonomía y acústica periódicamente
                     if hasattr(self, 'last_ergo') and self.last_ergo:
-                        s["ergo_log"].append(self.last_ergo)
+                        s.setdefault("ergo_log", []).append(self.last_ergo)
+                    if hasattr(self, 'sound_monitor') and self.sound_monitor:
+                        s.setdefault("sound_log", []).append(self.sound_monitor.current_db)
                 elif not s["active"]:
                     self.op_cards[n]["time"].configure(text="0.00s")
             
@@ -815,6 +1012,11 @@ class TimerView(ctk.CTkFrame):
 
         if "measurements" not in self.app.data:
             self.app.data["measurements"] = []
+
+        # Calcular promedio real medido por el micrófono durante el estudio
+        real_avg_db = round(float(np.mean(self.cycle_db_readings)), 1) if self.cycle_db_readings else (
+            round(self.sound_monitor.current_db, 1) if hasattr(self, 'sound_monitor') and self.sound_monitor else 50.0
+        )
             
         for g in range(1, self.total_g + 1):
              cycle = self.current_cycles_data[g]
@@ -824,6 +1026,19 @@ class TimerView(ctk.CTkFrame):
                  if self.flow_mode:
                      cycle["global_lead_time"] = round(total_lead_time, 2)
                      cycle["op_station_times"] = op_summaries
+                 
+                 # Asegurar que el registro de ruido real del micrófono quede guardado en db_data
+                 if not cycle.get("db_data"):
+                     cycle["db_data"] = [{"id": "Mic Real", "val": str(real_avg_db), "op": "General", "loc": "Estación de Trabajo"}]
+                 else:
+                     has_mic = False
+                     for d_entry in cycle["db_data"]:
+                         if "Mic" in d_entry.get("id", "") or "Sonómetro" in d_entry.get("loc", ""):
+                             d_entry["val"] = str(real_avg_db)
+                             has_mic = True
+                     if not has_mic and real_avg_db > 0:
+                         cycle["db_data"].append({"id": "Mic Real", "val": str(real_avg_db), "op": "Sensor", "loc": "Puesto"})
+
                  self.app.data["measurements"].append(cycle)
                  
         self.app.save_data()
@@ -833,6 +1048,31 @@ class TimerView(ctk.CTkFrame):
         self.btn_reset.configure(state="disabled")
         messagebox.showinfo("CronoGrulla", "Estudio finalizado y guardado exitosamente.")
         self.app.show_dashboard()
+
+    def destroy(self):
+        """Detención limpia y liberación de recursos de hardware (cámara, micrófono, MediaPipe)."""
+        try:
+            if hasattr(self, 'sound_monitor') and self.sound_monitor:
+                self.sound_monitor.stop()
+        except Exception:
+            pass
+
+        self.camera_active = False
+        if self.cap:
+            try:
+                self.cap.release()
+            except Exception:
+                pass
+            self.cap = None
+
+        if self.holistic:
+            try:
+                self.holistic.close()
+            except Exception:
+                pass
+            self.holistic = None
+
+        super().destroy()
 
     def calculate_fatigue_and_projections(self):
         # Si no esta corriendo el estudio, mostrar valores base o N/A
@@ -880,7 +1120,10 @@ class TimerView(ctk.CTkFrame):
                 except: pass
                 
         avg_lux = np.mean(lux_levels) if lux_levels else 500
-        avg_db = np.mean(db_levels) if db_levels else 60
+        if hasattr(self, 'sound_monitor') and self.sound_monitor and self.sound_monitor.current_db > 0:
+            avg_db = self.sound_monitor.current_db
+        else:
+            avg_db = np.mean(db_levels) if db_levels else 60
         
         # Penalizaciones ambientales
         amp_env = 1.0

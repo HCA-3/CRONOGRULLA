@@ -1,0 +1,204 @@
+Created At: 2026-11-07T19:02:13-05:00
+Completed At: 2026-11-07T19:02:13-05:00
+Showing lines 750-950 of 1121
+750:                     "points": pts_bust,
+751:                     "z": avg_z,
+752:                     "fill": "#0f233d" if avg_z > 0 else "#091424",
+753:                     "outline": "#ec4899" if avg_z > 0 else "#831843",
+754:                     "width": 2 if avg_z > 0 else 1
+755:                 })
+756:         else:
+757:             # Placas pectorales masculinas
+758:             for side in [-1, 1]:
+759:                 pts_pec = [
+760:                     (side * 8, -45, 28),
+761:                     (side * 52, -45, 28),
+762:                     (side * 48, -8, 30),
+763:                     (side * 8, -8, 28)
+764:                 ]
+765:                 avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in pts_pec])
+766:                 render_queue.append({
+767:                     "type": "polygon",
+768:                     "points": pts_pec,
+769:                     "z": avg_z,
+770:                     "fill": "#0f233d" if avg_z > 0 else "#091424",
+771:                     "outline": "#38bdf8" if avg_z > 0 else "#1e3a5f",
+772:                     "width": 2 if avg_z > 0 else 1
+773:                 })
+774: 
+775:         # ── C. Cabeza de Maniquí 3D ──────────────────────────────────────────
+776:         head_cy = -145.0
+777:         head_rx = 28.0 if is_female else 34.0
+778:         head_ry = 38.0
+779:         head_rz = 30.0
+780:         
+781:         # Anillos de latitud de la cabeza
+782:         for h_step in [-22, -8, 8, 22]:
+783:             rad_fac = math.cos(h_step / 35.0)
+784:             pts_head_ring = []
+785:             for i in range(14):
+786:                 theta = 2 * math.pi * i / 14
+787:                 px = head_rx * rad_fac * math.cos(theta)
+788:                 pz = head_rz * rad_fac * math.sin(theta)
+789:                 pts_head_ring.append((px, head_cy + h_step, pz))
+790:             avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in pts_head_ring])
+791:             render_queue.append({
+792:                 "type": "ring",
+793:                 "points": pts_head_ring,
+794:                 "z": avg_z,
+795:                 "color": "#60a5fa" if avg_z > 0 else "#1e3a5f",
+796:                 "width": 1 if avg_z < 0 else 2
+797:             })
+798: 
+799:         # Línea central facial / visor
+800:         face_pts = [
+801:             (0, head_cy - head_ry * 0.7, head_rz * 0.8),
+802:             (0, head_cy - 4, head_rz * 1.1),      # Nariz / Visor
+803:             (0, head_cy + head_ry * 0.5, head_rz * 0.7), # Barbilla
+804:             (0, head_cy + head_ry * 0.8, 0)
+805:         ]
+806:         avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in face_pts])
+807:         render_queue.append({
+808:             "type": "line_strip",
+809:             "points": face_pts,
+810:             "z": avg_z,
+811:             "color": "#93c5fd" if avg_z > 0 else "#1e3a5f",
+812:             "width": 2
+813:         })
+814: 
+815:         # ── D. Columna Vertebral y Escápulas (Espalda Z < 0) ───────────────────
+816:         spine_pts = [
+817:             (0, -95, -12),
+818:             (0, -65, -28),
+819:             (0, -30, -32),
+820:             (0, 10, -34),
+821:             (0, 50, -30),
+822:             (0, 90, -25),
+823:             (0, 130, -18)
+824:         ]
+825:         avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in spine_pts])
+826:         render_queue.append({
+827:             "type": "line_strip",
+828:             "points": spine_pts,
+829:             "z": avg_z,
+830:             "color": "#38bdf8" if avg_z > 0 else "#1e293b",
+831:             "width": 3 if avg_z > 0 else 1,
+832:             "dash": (4, 3)
+833:         })
+834: 
+835:         # Escápulas / Omóplatos a ambos lados
+836:         for side in [-1, 1]:
+837:             scap_pts = [
+838:                 (side * 20, -55, -28),
+839:                 (side * 52, -50, -26),
+840:                 (side * 28, -10, -30)
+841:             ]
+842:             avg_z = np.mean([self.rotate_point_3d(px, py, pz)[2] for px, py, pz in scap_pts])
+843:             render_queue.append({
+844:                 "type": "polygon",
+845:                 "points": scap_pts,
+846:                 "z": avg_z,
+847:                 "fill": "#0e1e33" if avg_z > 0 else "#08101a",
+848:                 "outline": "#38bdf8" if avg_z > 0 else "#1e293b",
+849:                 "width": 2 if avg_z > 0 else 1
+850:             })
+851: 
+852:         # ── E. Extremidades Superiores (Hombros, Codos, Muñecas y Manos) ──────
+853:         # Articulación de hombros
+854:         sh_pos_l = (-sh_w, -sh_drop, 0)
+855:         sh_pos_r = (sh_w, -sh_drop, 0)
+856: 
+857:         # Codos con ángulo medido en el operario
+858:         # 105° es reposo. A menor ángulo, mayor flexión hacia adelante (Z+) y adentro (X-)
+859:         ang_r = self.metrics["avg_elbow_r"]
+860:         ang_l = self.metrics["avg_elbow_l"]
+861:         
+862:         # Cinemática de antebrazo según ángulo medido
+863:         rad_r = math.radians(ang_r)
+864:         rad_l = math.radians(ang_l)
+865:         
+866:         elbow_pos_l = (sh_pos_l[0] - 22, sh_pos_l[1] + 85, 12 + math.cos(rad_l)*20)
+867:         elbow_pos_r = (sh_pos_r[0] + 22, sh_pos_r[1] + 85, 12 + math.cos(rad_r)*20)
+868:         
+869:         wrist_pos_l = (elbow_pos_l[0] + 38, elbow_pos_l[1] + 75, elbow_pos_l[2] + 45)
+870:         wrist_pos_r = (elbow_pos_r[0] - 38, elbow_pos_r[1] + 75, elbow_pos_r[2] + 45)
+871:         
+872:         hand_pos_l = (wrist_pos_l[0] + 24, wrist_pos_l[1] + 28, wrist_pos_l[2] + 15)
+873:         hand_pos_r = (wrist_pos_r[0] - 24, wrist_pos_r[1] + 28, wrist_pos_r[2] + 15)
+874: 
+875:         # Brazos superiores e inferiores
+876:         for p1, p2 in [(sh_pos_l, elbow_pos_l), (sh_pos_r, elbow_pos_r)]:
+877:             avg_z = (self.rotate_point_3d(*p1)[2] + self.rotate_point_3d(*p2)[2]) / 2.0
+878:             render_queue.append({
+879:                 "type": "segment", "p1": p1, "p2": p2, "z": avg_z,
+880:                 "color": "#38bdf8" if avg_z > 0 else "#1e3a5f", "width": 5 if avg_z > 0 else 2
+881:             })
+882:             
+883:         for p1, p2 in [(elbow_pos_l, wrist_pos_l), (elbow_pos_r, wrist_pos_r)]:
+884:             avg_z = (self.rotate_point_3d(*p1)[2] + self.rotate_point_3d(*p2)[2]) / 2.0
+885:             render_queue.append({
+886:                 "type": "segment", "p1": p1, "p2": p2, "z": avg_z,
+887:                 "color": "#38bdf8" if avg_z > 0 else "#1e3a5f", "width": 4 if avg_z > 0 else 2
+888:             })
+889:             
+890:         for p1, p2 in [(wrist_pos_l, hand_pos_l), (wrist_pos_r, hand_pos_r)]:
+891:             avg_z = (self.rotate_point_3d(*p1)[2] + self.rotate_point_3d(*p2)[2]) / 2.0
+892:             render_queue.append({
+893:                 "type": "segment", "p1": p1, "p2": p2, "z": avg_z,
+894:                 "color": "#94a3b8" if avg_z > 0 else "#334155", "width": 3 if avg_z > 0 else 1
+895:             })
+896: 
+897:         # ── F. Hotspots Articulares de Lesión en el Espacio 3D ────────────────
+898:         time_mult = self._get_time_multiplier()
+899:         self.projected_hotspots = {}
+900: 
+901:         hotspots_3d = {
+902:             "cuello":       (0, -90, -5, 24),
+903:             "hombro_l":     (sh_pos_l[0], sh_pos_l[1], sh_pos_l[2], 26),
+904:             "hombro_r":     (sh_pos_r[0], sh_pos_r[1], sh_pos_r[2], 26),
+905:             "codo_l":       (elbow_pos_l[0], elbow_pos_l[1], elbow_pos_l[2], 24),
+906:             "codo_r":       (elbow_pos_r[0], elbow_pos_r[1], elbow_pos_r[2], 24),
+907:             "muñeca_l":     (wrist_pos_l[0], wrist_pos_l[1], wrist_pos_l[2], 22),
+908:             "muñeca_r":     (wrist_pos_r[0], wrist_pos_r[1], wrist_pos_r[2], 22),
+909:             "espalda_alta": (0, -25, -34, 25) # Ubicada en la espalda posterior
+910:         }
+911: 
+912:         for z_key, (hx, hy, hz, hr) in hotspots_3d.items():
+913:             u, v, rz = self.project_3d(hx, hy, hz, cx, cy)
+914:             base_imp = self.zone_impacts.get(z_key, 0.4)
+915:             curr_imp = min(1.0, base_imp * time_mult)
+916:             color = self._get_heat_color(curr_imp)
+917:             is_active = (z_key == self.selected_zone.get())
+918:             
+919:             # Guardar para detección de clics en pantalla
+920:             self.projected_hotspots[z_key] = (u, v, hr * self.zoom_level, rz)
+921:             
+922:             render_queue.append({
+923:                 "type": "hotspot",
+924:                 "u": u, "v": v, "r": hr * self.zoom_level, "z": rz,
+925:                 "color": color, "key": z_key, "active": is_active
+926:             })
+927: 
+928:         # ── 3. ORDENAR POR PROFUNDIDAD Z Y RENDERIZAR EN CANVAS (Painter's Alg) ─
+929:         render_queue.sort(key=lambda item: item["z"])
+930: 
+931:         for item in render_queue:
+932:             t = item["type"]
+933:             
+934:             if t == "ring":
+935:                 proj_pts = []
+936:                 for pt in item["points"]:
+937:                     u, v, _ = self.project_3d(*pt, cx, cy)
+938:                     proj_pts.extend([u, v])
+939:                 if len(proj_pts) >= 4:
+940:                     c.create_polygon(proj_pts, fill="", outline=item["color"], 
+941:                                      width=item["width"], smooth=True)
+942:                                      
+943:             elif t == "polygon":
+944:                 proj_pts = []
+945:                 for pt in item["points"]:
+946:                     u, v, _ = self.project_3d(*pt, cx, cy)
+947:                     proj_pts.extend([u, v])
+948:                 if len(proj_pts) >= 6:
+949:                     c.create_polygon(proj_pts, fill=item["fill"], outline=item["outline"], 
+950:                                      width=item["width"], smooth=True)

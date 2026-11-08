@@ -876,8 +876,23 @@ class PDFManager:
             ergo_data = []
             for m in measurements:
                 for s in m.get("splits", []):
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
                     ang = s.get("avg_angle", 0)
-                    status = "Optimo" if ang < 45 else ("Precaucion" if ang < 90 else "Riesgo")
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = round((ar + al) / 2.0, 1) if (ar > 0 and al > 0) else round(ar or al, 1)
+                    if 80 <= ang <= 130:
+                        status = "Optimo"
+                    elif 60 <= ang <= 150:
+                        status = "Precaucion"
+                    else:
+                        status = "Riesgo"
                     ergo_data.append((s.get("operator", "N/A"), s.get("activity", "N/A"), ang, status))
             
             pdf.set_font('Arial', 'B', 9)
@@ -929,28 +944,42 @@ class PDFManager:
             all_angles = []
             for m in measurements:
                 for s in m.get("splits", []):
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
                     ang = s.get("avg_angle", 0)
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = round((ar + al) / 2.0, 1) if (ar > 0 and al > 0) else round(ar or al, 1)
                     if ang > 0: all_angles.append(ang)
             max_angle = max(all_angles) if all_angles else 0.0
             total_m = len(measurements)
 
-            # Reglas simples del semáforo
-            if max_angle >= 70:
+            # Reglas del semáforo (ISO 11226 / RULA)
+            if max_angle > 150 or (max_angle > 0 and max_angle < 60):
                 ergo_status = "RIESGO ALTO"
                 color_rgb = (231, 76, 60) # Rojo (#e74c3c)
-                ergo_desc = "Mala postura frecuente detectada (Angulo de flexion de codo >= 70 deg). Se sugiere ajustar altura del puesto de trabajo, reubicar componentes de ensamble y programar pausas activas obligatorias para prevenir trastornos musculoesqueleticos."
+                ergo_desc = "Posturas forzadas criticas detectadas (Angulo de codo < 60 deg o > 150 deg). Se sugiere ajustar altura del puesto de trabajo, reubicar componentes de ensamble y programar pausas activas obligatorias para prevenir trastornos musculoesqueleticos."
+            elif max_angle > 130 or (max_angle > 0 and max_angle < 80):
+                ergo_status = "RIESGO MEDIO"
+                color_rgb = (241, 196, 15) # Amarillo (#f1c40f)
+                ergo_desc = "Posturas en zona de precaucion (Angulo de codo 60-80 deg o 130-150 deg). Se sugiere optimizar la posicion de los materiales y regular la altura de la silla o mesa."
             elif total_m > 8:
                 ergo_status = "RIESGO MEDIO"
                 color_rgb = (241, 196, 15) # Amarillo (#f1c40f)
-                ergo_desc = "Repetitividad elevada detectada (más de 8 ciclos registrados). Se recomiendan pausas activas programadas y rotación periódica de operarios entre estaciones de trabajo."
+                ergo_desc = "Repetitividad elevada detectada (mas de 8 ciclos registrados). Se recomiendan pausas activas programadas y rotacion periodica de operarios entre estaciones de trabajo."
             elif avg_lux >= 450:
                 ergo_status = "BAJO RIESGO"
                 color_rgb = (46, 204, 113) # Verde (#2ecc71)
-                ergo_desc = "Condiciones óptimas detectadas en el taller. Iluminación excelente (promedio >= 450 lux) y mantenimiento de posturas confortables y seguras durante el ciclo."
+                ergo_desc = "Condiciones optimas detectadas en el taller. Iluminacion excelente (promedio >= 450 lux) y mantenimiento de posturas confortables y seguras durante el ciclo."
             else:
                 ergo_status = "BAJO RIESGO"
                 color_rgb = (46, 204, 113) # Verde (#2ecc71)
-                ergo_desc = "Nivel ergonómico aceptable general. Posturas confortables observadas en el ciclo y condiciones generales de iluminación y repetibilidad dentro de los parámetros de confort."
+                ergo_desc = "Nivel ergonomico aceptable general. Posturas confortables observadas en el ciclo y condiciones generales de iluminacion y repetibilidad dentro de los parametros de confort."
 
             # Renderizar el Semáforo Ergonómico con un Badge de color
             pdf.set_font('Arial', 'B', 10)
@@ -976,7 +1005,12 @@ class PDFManager:
                 for s in m.get("splits", []):
                     act = s.get("activity", "Tarea")
                     dur = s.get("duration", 0)
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
                     ang = s.get("avg_angle", 0)
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
                     if dur > 0:
                         if act not in task_fatigue:
                             task_fatigue[act] = []
@@ -1346,7 +1380,12 @@ class PDFManager:
             for m in measurements:
                 for s in m.get("splits", []):
                     dur = s.get("duration", 0)
+                    ergo = s.get("ergo_summary", {}) or {}
+                    ar = ergo.get("avg_elbow_r", 0)
+                    al = ergo.get("avg_elbow_l", 0)
                     ang = s.get("avg_angle", 0)
+                    if ang == 0 and (ar > 0 or al > 0):
+                        ang = (ar + al)/2.0 if (ar > 0 and al > 0) else (ar or al)
                     if dur > 0:
                         if ang == 0:
                             dev = float(np.clip(dur * 1.6 + np.random.normal(5, 4), 8, 58))

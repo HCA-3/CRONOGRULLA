@@ -120,7 +120,9 @@ class EnvTableEditor(ctk.CTkFrame):
 
 
     def on_double_click(self, event):
-        item = self.tree.selection()[0]
+        sel = self.tree.selection()
+        if not sel: return
+        item = sel[0]
         col = self.tree.identify_column(event.x)
         if not col: return
         col_idx = int(col.replace('#', '')) - 1

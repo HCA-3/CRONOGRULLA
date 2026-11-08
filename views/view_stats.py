@@ -28,6 +28,8 @@ class StatsView(ctk.CTkFrame):
         for widget in self.stats_container.winfo_children():
             widget.destroy()
 
+        plt.close('all')
+
         measurements = [m for m in self.app.data.get("measurements", []) if m.get("model") == model_name or (not m.get("model") and model_name == "Grulla Clásica")]
         if not measurements:
             ctk.CTkLabel(self.stats_container, text=f"No hay datos suficientes para '{model_name}'.", text_color="gray", font=ctk.CTkFont(size=14)).pack(pady=50)
