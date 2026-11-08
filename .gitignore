@@ -28,3 +28,6 @@ backups/
 .vscode/
 .idea/
 *.swp
+
+# Pruebas temporales
+scratch/

@@ -174,7 +174,7 @@ class CraneFlowApp(ctk.CTk):
             ("📸 Evidencia Visual", self.show_media_gallery),
             ("📡 Datos del Sensor", self.show_sensor_data),
             ("🦴 Modelo 3D de Lesiones", self.show_lesiones_3d),
-            ("🎯 Test de Micromovimientos & Postura", self.show_test_micromovimientos),
+            ("🎯 Test Movimiento", self.show_test_micromovimientos),
             ("📊 Comparativa Operarios", self.show_comparison),
             ("🗑️ Papelera", self.show_trash),
             ("📈 Estadísticas", self.show_stats),
