@@ -21,6 +21,7 @@ from views.view_standard_time import StandardTimeView
 from utils.pdf_report import PDFManager
 from views.view_objectives import ObjectivesView
 from views.view_lesiones_3d import ModeloLesiones3DView
+from views.view_test_micromovimientos import TestMicromovimientosView
 
 
 # Configuración de apariencia Premium..
@@ -173,6 +174,7 @@ class CraneFlowApp(ctk.CTk):
             ("📸 Evidencia Visual", self.show_media_gallery),
             ("📡 Datos del Sensor", self.show_sensor_data),
             ("🦴 Modelo 3D de Lesiones", self.show_lesiones_3d),
+            ("🎯 Test de Micromovimientos & Postura", self.show_test_micromovimientos),
             ("📊 Comparativa Operarios", self.show_comparison),
             ("🗑️ Papelera", self.show_trash),
             ("📈 Estadísticas", self.show_stats),
@@ -259,8 +261,17 @@ class CraneFlowApp(ctk.CTk):
         self.destroy()
 
     def clear_main_frame(self):
+        if self.current_view and hasattr(self.current_view, 'destroy'):
+            try:
+                self.current_view.destroy()
+            except Exception:
+                pass
         for widget in self.main_frame.winfo_children():
-            widget.destroy()
+            try:
+                widget.destroy()
+            except Exception:
+                pass
+        self.current_view = None
 
     def show_dashboard(self):
         self.clear_main_frame()
@@ -324,6 +335,11 @@ class CraneFlowApp(ctk.CTk):
 
     # Alias de compatibilidad
     show_atlas_biomecanico = show_lesiones_3d
+
+    def show_test_micromovimientos(self):
+        self.clear_main_frame()
+        self.current_view = TestMicromovimientosView(self.main_frame, self)
+        self.current_view.pack(fill="both", expand=True)
 
     def show_standard_time(self):
         self.clear_main_frame()
