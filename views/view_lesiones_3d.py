@@ -70,6 +70,23 @@ class ModeloLesiones3DView(ctk.CTkFrame):
         self.selected_gender = tk.StringVar(value="Femenino")
         self.selected_horizon = tk.StringVar(value="1 Año")
         self.selected_zone = tk.StringVar(value="dedos_r")
+        self.visual_layer_mode = tk.StringVar(value="⚡ Completo (Músculos+Esqueleto)")
+        
+        # Parámetros biomecánicos de entrada ISO 11226
+        self.param_trunk = 15.0
+        self.param_neck = 22.0
+        self.param_sh_l = 25.0
+        self.param_sh_r = 40.0
+        self.param_dur = 25.0
+        self.param_fatigue_f = 0.42
+        
+        # Simulación de turno laboral dinámico
+        self.is_shift_simulating = False
+        self.sim_shift_time = 0.0
+        
+        # Widgets de telemetría muscular
+        self.muscle_bars = {}
+        self.muscle_val_labels = {}
         
         # Proporción de distribución: 38% Maniquí / 62% Panel Clínico para legibilidad óptima
         self.left_weight = 38
@@ -335,6 +352,270 @@ class ModeloLesiones3DView(ctk.CTkFrame):
             "espalda_alta": min(1.0, (0.40 + (lux_penalty * 0.30) + (db_penalty * 0.15)))
         }
 
+    # ── MOTOR BIOMECÁNICO ISO 11226 Y SISTEMA MUSCULAR 3D ─────────────────────
+    def compute_iso_muscle_risks(self):
+        """Calcula el riesgo de fatiga musculoesquelética (0.0 a 1.0) para los 10 grupos musculares según norma ISO 11226."""
+        m = self.metrics
+        trunk = getattr(self, "param_trunk", 15.0)
+        neck = getattr(self, "param_neck", 22.0)
+        sh_l = getattr(self, "param_sh_l", 25.0)
+        sh_r = getattr(self, "param_sh_r", 40.0)
+        el_l = m.get("avg_elbow_l", 98.0)
+        el_r = m.get("avg_elbow_r", 101.0)
+        dur = getattr(self, "param_dur", 25.0)
+        f_idx = getattr(self, "param_fatigue_f", 0.42)
+
+        if getattr(self, "is_shift_simulating", False):
+            st = getattr(self, "sim_shift_time", 0.0)
+            p = min(1.0, max(0.0, st / 30.0))
+            f_idx = min(1.0, 0.15 + (0.70 * p))
+            dur = p * 45.0
+            sh_r = 25.0 + 55.0 * p + 10.0 * math.sin(st * 1.5)
+            trunk = 12.0 + 30.0 * p + 4.0 * math.cos(st)
+            neck = 15.0 + 25.0 * p
+
+        def lin(x, o, c):
+            return max(0.0, min(1.0, (x - o) / (c - o)))
+
+        def elb(e):
+            diff = 60.0 - e if e < 60.0 else (e - 100.0 if e > 100.0 else 0.0)
+            return lin(diff, 0.0, 50.0)
+
+        tr = lin(trunk, 20.0, 60.0)
+        nk = lin(neck, 25.0, 60.0)
+        s_l = lin(sh_l, 20.0, 60.0)
+        s_r = lin(sh_r, 20.0, 60.0)
+        e_l = elb(el_l)
+        e_r = elb(el_r)
+        d = max(0.0, min(1.0, dur / 30.0))
+
+        def fuse(a):
+            r = 0.5 * a + 0.35 * f_idx + 0.15 * d
+            if f_idx >= 0.75 or a >= 1.0:
+                r = max(r, 0.75)
+            return max(0.0, min(1.0, r))
+
+        return {
+            "trapL": fuse(0.65 * s_l + 0.35 * nk),
+            "trapR": fuse(0.65 * s_r + 0.35 * nk),
+            "delL":  fuse(s_l),
+            "delR":  fuse(s_r),
+            "bicL":  fuse(0.6 * e_l + 0.4 * s_l),
+            "bicR":  fuse(0.6 * e_r + 0.4 * s_r),
+            "triL":  fuse(0.4 * e_l + 0.6 * s_l),
+            "triR":  fuse(0.4 * e_r + 0.6 * s_r),
+            "erL":   fuse(tr),
+            "erR":   fuse(tr)
+        }
+
+    def get_risk_color(self, score_0_to_1):
+        """Retorna código de color hexadecimal según nivel de riesgo ISO 11226."""
+        s = max(0.0, min(1.0, score_0_to_1))
+        if s < 0.35:
+            return "#10b981"
+        elif s < 0.65:
+            return "#f59e0b"
+        else:
+            return "#ef4444"
+
+    def toggle_shift_simulation(self):
+        """Inicia o detiene la simulación progresiva de un turno laboral."""
+        self.is_shift_simulating = not self.is_shift_simulating
+        if self.is_shift_simulating:
+            self.sim_shift_time = 0.0
+            if hasattr(self, "btn_sim_shift") and self.btn_sim_shift.winfo_exists():
+                self.btn_sim_shift.configure(text="⏸ Pausar Turno", fg_color="#ef4444")
+            self._start_animation_loop()
+        else:
+            if hasattr(self, "btn_sim_shift") and self.btn_sim_shift.winfo_exists():
+                self.btn_sim_shift.configure(text="▶ Simular Turno", fg_color="#0284c7")
+
+    def apply_scenario_preset(self, scen_key):
+        """Aplica un escenario ergonómico predefinido."""
+        presets = {
+            "neutral": {"trunk": 5.0, "neck": 8.0, "sh_l": 10.0, "sh_r": 12.0, "dur": 5.0, "F": 0.15},
+            "reach":   {"trunk": 25.0, "neck": 25.0, "sh_l": 60.0, "sh_r": 85.0, "dur": 18.0, "F": 0.52},
+            "fold":    {"trunk": 20.0, "neck": 30.0, "sh_l": 20.0, "sh_r": 35.0, "dur": 32.0, "F": 0.65},
+            "critical":{"trunk": 55.0, "neck": 48.0, "sh_l": 75.0, "sh_r": 95.0, "dur": 45.0, "F": 0.84}
+        }
+        data = presets.get(scen_key, presets["neutral"])
+        self.is_shift_simulating = False
+        if hasattr(self, "btn_sim_shift") and self.btn_sim_shift.winfo_exists():
+            self.btn_sim_shift.configure(text="▶ Simular Turno", fg_color="#0284c7")
+        self.param_trunk = data["trunk"]
+        self.param_neck = data["neck"]
+        self.param_sh_l = data["sh_l"]
+        self.param_sh_r = data["sh_r"]
+        self.param_dur = data["dur"]
+        self.param_fatigue_f = data["F"]
+        self.draw_mannequin_3d()
+        self.update_diagnostic_panel()
+
+    def open_webgl_atlas(self):
+        """Exporta el estado biomecánico actual y abre el visor interactivo Three.js WebGL en el navegador."""
+        import webbrowser
+        try:
+            state = {
+                "operator": self.selected_operator.get(),
+                "gender": self.selected_gender.get(),
+                "trunk": getattr(self, "param_trunk", 18.0),
+                "neck": getattr(self, "param_neck", 28.0),
+                "shL": getattr(self, "param_sh_l", 25.0),
+                "shR": getattr(self, "param_sh_r", 40.0),
+                "elL": self.metrics.get("avg_elbow_l", 98.0),
+                "elR": self.metrics.get("avg_elbow_r", 101.0),
+                "dur": getattr(self, "param_dur", 25.0),
+                "F": getattr(self, "param_fatigue_f", 0.45),
+                "therblig": "✊ TOMAR (G)" if self.metrics.get("tomar_count", 0) > self.metrics.get("soltar_count", 0) else "🖐️ SOLTAR (RL)"
+            }
+            assets_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
+            os.makedirs(assets_dir, exist_ok=True)
+            json_path = os.path.join(assets_dir, "cronogrulla_current_state.json")
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(state, f, indent=2)
+                
+            desktop_html = r"c:\Users\dsant\Desktop\atlas3d_cronogrulla.html"
+            assets_html = os.path.join(assets_dir, "atlas3d_cronogrulla.html")
+            target_html = desktop_html if os.path.exists(desktop_html) else assets_html
+            
+            if os.name == 'nt' and os.path.exists(target_html):
+                try:
+                    os.startfile(target_html)
+                except Exception:
+                    webbrowser.open_new_tab(f"file:///{target_html.replace(os.sep, '/')}")
+            else:
+                webbrowser.open_new_tab(f"file:///{target_html.replace(os.sep, '/')}")
+        except Exception as e:
+            print(f"[ModeloLesiones3D] Error abriendo Atlas 3D WebGL: {e}")
+
+    def _build_muscle_geometry_3d(self, sh_l, sh_r, el_l, el_r, wr_l, wr_r, spine_pts, neck_dy, shoulder_dy, rk, eff_yaw, eff_pitch):
+        """Construye las mallas 3D poligonales de los 10 grupos musculares (ISO 11226) con sombreado de profundidad."""
+        muscle_items = []
+        
+        # 1. Deltoides Izquierdo y Derecho (Capuchón tridimensional sobre el hombro)
+        for side, sh_pos, el_pos, s_key, sx in [("L", sh_l, el_l, "delL", -1.0), ("R", sh_r, el_r, "delR", 1.0)]:
+            r_val = rk.get(s_key, 0.45)
+            col = self.get_risk_color(r_val)
+            dx, dy, dz = el_pos[0] - sh_pos[0], el_pos[1] - sh_pos[1], el_pos[2] - sh_pos[2]
+            
+            top_pt = (sh_pos[0], sh_pos[1] - 8, sh_pos[2])
+            ant_pt = (sh_pos[0] + sx * 16, sh_pos[1] + 8, sh_pos[2] + 16)
+            lat_pt = (sh_pos[0] + sx * 22, sh_pos[1] + 16, sh_pos[2])
+            post_pt = (sh_pos[0] + sx * 16, sh_pos[1] + 8, sh_pos[2] - 16)
+            ins_pt = (sh_pos[0] + dx * 0.35, sh_pos[1] + dy * 0.35, sh_pos[2] + dz * 0.35)
+            
+            faces = [
+                [top_pt, ant_pt, lat_pt, ins_pt],
+                [top_pt, lat_pt, post_pt, ins_pt]
+            ]
+            for face in faces:
+                avg_z = np.mean([self.rotate_point_3d(p[0], p[1], p[2], eff_yaw, eff_pitch)[2] for p in face])
+                fill_col = col if avg_z > -40 else "#091728"
+                muscle_items.append({
+                    "type": "polygon",
+                    "points": face,
+                    "z": avg_z + 3,
+                    "fill": fill_col,
+                    "outline": col,
+                    "width": 2 if avg_z > 0 else 1,
+                    "muscle_key": s_key
+                })
+
+        # 2. Bíceps Braquial (Vientre anterior con abultamiento dinámico en flexión)
+        for side, sh_pos, el_pos, s_key, sx in [("L", sh_l, el_l, "bicL", -1.0), ("R", sh_r, el_r, "bicR", 1.0)]:
+            r_val = rk.get(s_key, 0.45)
+            col = self.get_risk_color(r_val)
+            mid_x = (sh_pos[0] + el_pos[0]) / 2.0
+            mid_y = (sh_pos[1] + el_pos[1]) / 2.0
+            mid_z = (sh_pos[2] + el_pos[2]) / 2.0
+            
+            bic_pts = [
+                (sh_pos[0] + sx * 6, sh_pos[1] + 18, sh_pos[2] + 10),
+                (mid_x + sx * 10, mid_y, mid_z + 18),
+                (el_pos[0] + sx * 4, el_pos[1] - 8, el_pos[2] + 12),
+                (mid_x - sx * 4, mid_y, mid_z + 14)
+            ]
+            avg_z = np.mean([self.rotate_point_3d(p[0], p[1], p[2], eff_yaw, eff_pitch)[2] for p in bic_pts])
+            muscle_items.append({
+                "type": "polygon",
+                "points": bic_pts,
+                "z": avg_z + 4,
+                "fill": col if avg_z > -40 else "#081524",
+                "outline": col,
+                "width": 2 if avg_z > 0 else 1,
+                "muscle_key": s_key
+            })
+
+        # 3. Tríceps Braquial (Vientre posterior)
+        for side, sh_pos, el_pos, s_key, sx in [("L", sh_l, el_l, "triL", -1.0), ("R", sh_r, el_r, "triR", 1.0)]:
+            r_val = rk.get(s_key, 0.45)
+            col = self.get_risk_color(r_val)
+            mid_x = (sh_pos[0] + el_pos[0]) / 2.0
+            mid_y = (sh_pos[1] + el_pos[1]) / 2.0
+            mid_z = (sh_pos[2] + el_pos[2]) / 2.0
+            
+            tri_pts = [
+                (sh_pos[0] + sx * 4, sh_pos[1] + 16, sh_pos[2] - 10),
+                (mid_x + sx * 8, mid_y, mid_z - 18),
+                (el_pos[0] + sx * 2, el_pos[1] - 6, el_pos[2] - 12),
+                (mid_x - sx * 4, mid_y, mid_z - 14)
+            ]
+            avg_z = np.mean([self.rotate_point_3d(p[0], p[1], p[2], eff_yaw, eff_pitch)[2] for p in tri_pts])
+            muscle_items.append({
+                "type": "polygon",
+                "points": tri_pts,
+                "z": avg_z + 2,
+                "fill": col if avg_z > -40 else "#081524",
+                "outline": col,
+                "width": 2 if avg_z > 0 else 1,
+                "muscle_key": s_key
+            })
+
+        # 4. Trapecios (Manto dorsal cervical/escapular)
+        for side, sh_pos, s_key, sx in [("L", sh_l, "trapL", -1.0), ("R", sh_r, "trapR", 1.0)]:
+            r_val = rk.get(s_key, 0.45)
+            col = self.get_risk_color(r_val)
+            trap_pts = [
+                (0, -110 + neck_dy, -14),
+                (0, -70 + shoulder_dy * 0.5, -24),
+                (sh_pos[0] * 0.72, sh_pos[1] - 4, sh_pos[2] - 14),
+                (0, 15, -30)
+            ]
+            avg_z = np.mean([self.rotate_point_3d(p[0], p[1], p[2], eff_yaw, eff_pitch)[2] for p in trap_pts])
+            muscle_items.append({
+                "type": "polygon",
+                "points": trap_pts,
+                "z": avg_z + 1,
+                "fill": col if avg_z > -40 else "#071220",
+                "outline": col,
+                "width": 2 if avg_z > 0 else 1,
+                "muscle_key": s_key
+            })
+
+        # 5. Erectores Espinales / Paravertebrales Dorsales
+        for side, s_key, sx in [("L", "erL", -1.0), ("R", "erR", 1.0)]:
+            r_val = rk.get(s_key, 0.45)
+            col = self.get_risk_color(r_val)
+            er_pts = [
+                (sx * 10, -50, -28),
+                (sx * 16, -50, -28),
+                (sx * 16, 85, -26),
+                (sx * 10, 85, -26)
+            ]
+            avg_z = np.mean([self.rotate_point_3d(p[0], p[1], p[2], eff_yaw, eff_pitch)[2] for p in er_pts])
+            muscle_items.append({
+                "type": "polygon",
+                "points": er_pts,
+                "z": avg_z + 1,
+                "fill": col if avg_z > -40 else "#06101c",
+                "outline": col,
+                "width": 2 if avg_z > 0 else 1,
+                "muscle_key": s_key
+            })
+
+        return muscle_items
+
+
     def build_ui(self):
         # ── 1. ENCABEZADO Y CONTROLES ─────────────────────────────────────────
         top_bar = ctk.CTkFrame(self, fg_color=("#ffffff", "#1e293b"), corner_radius=12)
@@ -355,7 +636,13 @@ class ModeloLesiones3DView(ctk.CTkFrame):
         self.btn_top_expand = ctk.CTkButton(controls_f, text="⛶ Ampliar Panel", command=self.toggle_panel_expand, 
                                             width=110, height=28, fg_color="#2563eb", hover_color="#1d4ed8",
                                             font=ctk.CTkFont(size=11, weight="bold"))
-        self.btn_top_expand.pack(side="left", padx=(0, 8))
+        self.btn_top_expand.pack(side="left", padx=(0, 6))
+
+        # Botón Lanzador Atlas 3D WebGL (Three.js)
+        self.btn_webgl_atlas = ctk.CTkButton(controls_f, text="🌐 Atlas 3D Web", command=self.open_webgl_atlas, 
+                                             width=110, height=28, fg_color="#0284c7", hover_color="#0369a1",
+                                             font=ctk.CTkFont(size=11, weight="bold"))
+        self.btn_webgl_atlas.pack(side="left", padx=(0, 8))
 
         # Operario
         ctk.CTkLabel(controls_f, text="Operario:", font=ctk.CTkFont(size=11, weight="bold")).pack(side="left", padx=(0, 4))
@@ -419,9 +706,21 @@ class ModeloLesiones3DView(ctk.CTkFrame):
             rot_bar,
             values=["👤 Frente (0°)", "📐 Persp. D (45°)", "📐 Perfil D (90°)", "🔙 Espalda (180°)", "📐 Perfil I (270°)", "📐 Persp. I (315°)", "🔝 Cenital"],
             command=self.on_view_preset_selected,
-            width=135, height=26, font=ctk.CTkFont(size=10, weight="bold")
+            width=130, height=26, font=ctk.CTkFont(size=10, weight="bold")
         )
         self.combo_view.pack(side="left", padx=(0, 4))
+
+        # Selector de Capa Visual (Músculos 3D + Esqueleto)
+        ctk.CTkLabel(rot_bar, text="Capa:", font=ctk.CTkFont(size=11, weight="bold")).pack(side="left", padx=(6, 3))
+        self.combo_layer_mode = ctk.CTkOptionMenu(
+            rot_bar,
+            values=["⚡ Completo (Músculos+Esqueleto)", "💪 Músculos 3D (ISO 11226)", "🦴 Esqueleto & Holograma", "🔬 Rayos X"],
+            command=lambda v: self.draw_mannequin_3d(),
+            variable=self.visual_layer_mode,
+            width=175, height=26, font=ctk.CTkFont(size=10, weight="bold"),
+            fg_color="#1e293b", button_color="#334155"
+        )
+        self.combo_layer_mode.pack(side="left", padx=(0, 4))
 
         # Controles de Zoom
         ctk.CTkButton(rot_bar, text="➕", command=self.zoom_in, width=28, height=24, 
@@ -544,6 +843,78 @@ class ModeloLesiones3DView(ctk.CTkFrame):
         self.prog_bar = ctk.CTkProgressBar(time_card, height=10, progress_color="#e67e22")
         self.prog_bar.set(0.68)
         self.prog_bar.pack(fill="x", padx=10, pady=(0, 8))
+
+        # ── SECCIÓN MUSCULAR & BIOMECÁNICA ISO 11226 ──────────────────────────
+        muscle_card = ctk.CTkFrame(right_box, fg_color=("#f1f5f9", "#0f172a"), corner_radius=10)
+        muscle_card.pack(fill="x", padx=10, pady=(4, 8))
+        self.muscle_card = muscle_card
+        
+        m_head_f = ctk.CTkFrame(muscle_card, fg_color="transparent")
+        m_head_f.pack(fill="x", padx=10, pady=(8, 4))
+        ctk.CTkLabel(m_head_f, text="💪 TELEMETRÍA MUSCULAR (ISO 11226)", 
+                     font=ctk.CTkFont(size=12, weight="bold"), text_color="#38bdf8").pack(side="left")
+                     
+        self.lbl_iso_global = ctk.CTkLabel(m_head_f, text="Fatiga F: 0.42", 
+                                           font=ctk.CTkFont(size=11, weight="bold"), text_color="#f59e0b")
+        self.lbl_iso_global.pack(side="right")
+        
+        # Botones de Simulación de Turno y Escenarios Rápidos
+        m_btn_f = ctk.CTkFrame(muscle_card, fg_color="transparent")
+        m_btn_f.pack(fill="x", padx=10, pady=(0, 6))
+        
+        self.btn_sim_shift = ctk.CTkButton(m_btn_f, text="▶ Simular Turno", command=self.toggle_shift_simulation,
+                                           height=26, fg_color="#0284c7", hover_color="#0369a1",
+                                           font=ctk.CTkFont(size=10, weight="bold"))
+        self.btn_sim_shift.pack(side="left", fill="x", expand=True, padx=(0, 4))
+        
+        btn_reset_scen = ctk.CTkButton(m_btn_f, text="🔄 Reset Postura", command=lambda: self.apply_scenario_preset("neutral"),
+                                       height=26, fg_color="#334155", hover_color="#475569",
+                                       font=ctk.CTkFont(size=10, weight="bold"))
+        btn_reset_scen.pack(side="left", fill="x", expand=True)
+
+        # Fila de Escenarios
+        scen_f = ctk.CTkFrame(muscle_card, fg_color="transparent")
+        scen_f.pack(fill="x", padx=10, pady=(0, 8))
+        scens = [
+            ("🟢 Neutra", "neutral"),
+            ("🟡 Alcance", "reach"),
+            ("🟠 Plegado", "fold"),
+            ("🔴 Crítica", "critical")
+        ]
+        for s_lbl, s_key in scens:
+            b = ctk.CTkButton(scen_f, text=s_lbl, command=lambda k=s_key: self.apply_scenario_preset(k),
+                              height=22, fg_color=("#e2e8f0", "#1e293b"), text_color=("#1e293b", "#f8fafc"),
+                              hover_color=("#cbd5e1", "#334155"), font=ctk.CTkFont(size=9, weight="bold"))
+            b.pack(side="left", fill="x", expand=True, padx=1)
+
+        # Contenedor de barras para los 10 grupos musculares
+        m_bars_f = ctk.CTkFrame(muscle_card, fg_color=("#ffffff", "#1e293b"), corner_radius=8)
+        m_bars_f.pack(fill="x", padx=10, pady=(0, 8))
+        
+        muscle_names = [
+            ("trapL", "Trapecio Izq."), ("trapR", "Trapecio Der."),
+            ("delL", "Deltoides Izq."), ("delR", "Deltoides Der."),
+            ("bicL", "Bíceps Izq."), ("bicR", "Bíceps Der."),
+            ("triL", "Tríceps Izq."), ("triR", "Tríceps Der."),
+            ("erL", "Erector Espinal I."), ("erR", "Erector Espinal D.")
+        ]
+        
+        for k, name in muscle_names:
+            row = ctk.CTkFrame(m_bars_f, fg_color="transparent")
+            row.pack(fill="x", padx=8, pady=2)
+            
+            lbl_n = ctk.CTkLabel(row, text=name, font=ctk.CTkFont(size=10, weight="bold"), width=105, anchor="w")
+            lbl_n.pack(side="left")
+            
+            pbar = ctk.CTkProgressBar(row, height=8, progress_color="#10b981")
+            pbar.set(0.2)
+            pbar.pack(side="left", fill="x", expand=True, padx=6)
+            
+            lbl_v = ctk.CTkLabel(row, text="20%", font=ctk.CTkFont(size=10, weight="bold"), width=32, anchor="e")
+            lbl_v.pack(side="right")
+            
+            self.muscle_bars[k] = pbar
+            self.muscle_val_labels[k] = lbl_v
 
         # 3. Tarjeta de Diagnóstico Patológico (Zona Seleccionada)
         self.diag_card = ctk.CTkFrame(right_box, fg_color=("#f1f5f9", "#0f172a"), corner_radius=10)
@@ -803,7 +1174,7 @@ class ModeloLesiones3DView(ctk.CTkFrame):
 
     def _anim_loop(self):
         mode = self.human_motion_mode.get()
-        needs_anim = (mode != "⏸ Estático" or self.auto_rotate)
+        needs_anim = (mode != "⏸ Estático" or self.auto_rotate or getattr(self, "is_shift_simulating", False))
         
         if not needs_anim:
             self.is_animating = False
@@ -812,14 +1183,20 @@ class ModeloLesiones3DView(ctk.CTkFrame):
 
         self.is_animating = True
         
-        # 1. Giro 360° automático si está activo (incremento suave por frame)
+        # 1. Simulación de turno laboral acumulativo si está activa
+        if getattr(self, "is_shift_simulating", False):
+            self.sim_shift_time += 0.033
+            if self.sim_shift_time > 35.0:
+                self.sim_shift_time = 0.0
+            
+        # 2. Giro 360° automático si está activo (incremento suave por frame)
         if self.auto_rotate:
             self.yaw = (self.yaw + math.radians(1.6)) % (2 * math.pi)
             
-        # 2. Renderizar maniquí con cinemática humana viva
+        # 3. Renderizar maniquí con cinemática humana viva
         self.draw_mannequin_3d()
         
-        # 3. Próximo fotograma a ~30 FPS (33 ms)
+        # 4. Próximo fotograma a ~30 FPS (33 ms)
         self.anim_timer_id = self.after(33, self._anim_loop)
 
     def toggle_autorotate(self):
@@ -1357,6 +1734,39 @@ class ModeloLesiones3DView(ctk.CTkFrame):
                     "width": 2 if is_active_pinch else 1
                 })
 
+        # ── 6.B. Capa Muscular ISO 11226 (Volúmenes 3D con Sombreado de Fatiga) ──
+        v_mode = self.visual_layer_mode.get() if hasattr(self, 'visual_layer_mode') else "⚡ Completo (Músculos+Esqueleto)"
+        show_muscles = ("Músculo" in v_mode or "Completo" in v_mode)
+        
+        iso_risks = self.compute_iso_muscle_risks()
+        
+        # Sincronizar barras y valores de telemetría muscular en el panel
+        if hasattr(self, 'muscle_bars') and self.muscle_bars:
+            for mk, val in iso_risks.items():
+                pbar = self.muscle_bars.get(mk)
+                lbl_v = self.muscle_val_labels.get(mk)
+                if pbar and pbar.winfo_exists():
+                    pbar.set(val)
+                    pbar.configure(progress_color=self.get_risk_color(val))
+                if lbl_v and lbl_v.winfo_exists():
+                    lbl_v.configure(text=f"{int(val * 100)}%", text_color=self.get_risk_color(val))
+
+        if hasattr(self, 'lbl_iso_global') and self.lbl_iso_global.winfo_exists():
+            f_val = getattr(self, "param_fatigue_f", 0.42)
+            if getattr(self, "is_shift_simulating", False):
+                st = getattr(self, "sim_shift_time", 0.0)
+                p = min(1.0, max(0.0, st / 30.0))
+                f_val = min(1.0, 0.15 + (0.70 * p))
+            f_col = "#ef4444" if f_val >= 0.75 else ("#f59e0b" if f_val >= 0.45 else "#10b981")
+            self.lbl_iso_global.configure(text=f"Fatiga F: {f_val:.2f}", text_color=f_col)
+
+        if show_muscles:
+            muscle_items = self._build_muscle_geometry_3d(
+                sh_pos_l, sh_pos_r, elbow_pos_l, elbow_pos_r, wrist_pos_l, wrist_pos_r,
+                spine_pts, neck_dy, shoulder_dy, iso_risks, eff_yaw, eff_pitch
+            )
+            render_queue.extend(muscle_items)
+
         # 7. Mesa de Trabajo y Hoja de Origami Holográfica en 3D
         paper_y = 125.0
         paper_pts = [
@@ -1520,7 +1930,11 @@ class ModeloLesiones3DView(ctk.CTkFrame):
                           fill="#38bdf8", font=("Helvetica", 10, "bold"))
             
             pinch_pct = int(fold_factor_r * 100)
-            if is_work:
+            if getattr(self, "is_shift_simulating", False):
+                f_sim = min(1.0, 0.15 + (0.70 * (self.sim_shift_time / 30.0)))
+                status_txt = f"⚡ SIMULACIÓN TURNO ACTIVA · Fatiga F: {f_sim:.2f} · Telemetría ISO 11226 Músculos 3D"
+                status_col = "#ef4444" if f_sim >= 0.75 else "#f59e0b"
+            elif is_work:
                 status_txt = f"⚙️ PLEGADO COORDINADO · Hombro + Codo {cur_ang_r:.1f}° + Muñeca + Dedos ({pinch_pct}%)"
                 status_col = "#c084fc"
             elif is_artic:
